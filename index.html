@@ -1,0 +1,3296 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Celebso Group - Building the Future</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* ===== GLOBAL RESET & BASE ===== */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+body {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        color: #1a1a1a;
+        background-color: #ffffff;
+        line-height: 1.6;
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+        padding-top: 76px;
+      }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* ===== HEADER / NAVBAR ===== */
+    header {
+      height: auto;
+      border: 0;
+      background: transparent;
+      position: fixed;
+      top: 14px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: min(1180px, calc(100% - 48px));
+      max-width: min(1180px, calc(100% - 48px));
+      padding: 0 20px;
+      z-index: 100;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .logo img {
+      height: 44px;
+      width: auto;
+      object-fit: contain;
+      transition: transform 0.3s ease;
+    }
+
+    .logo:hover img {
+      transform: scale(1.05);
+    }
+
+    nav {
+      justify-self: center;
+      width: min(680px, 100%);
+      height: 54px;
+      padding: 0 14px;
+      border: 1px solid rgba(226, 232, 240, 0.9);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.75);
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.4), 0 0 36px rgba(15, 23, 42, 0.08);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.8px;
+    }
+
+    nav a:not(.btn-funding),
+    nav a:not(.btn-funding):visited {
+      display: inline-flex;
+      align-items: center;
+      position: relative;
+      white-space: nowrap;
+      color: #334155;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      padding: 6px 3px;
+      transition: color 0.3s ease;
+    }
+
+    nav a:not(.btn-funding)::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: #ff5023;
+      transition: width 0.3s ease, left 0.3s ease;
+      box-shadow: 0 0 8px rgba(255, 80, 35, 0.5);
+    }
+
+    nav a:not(.btn-funding):hover,
+    nav a.active {
+      color: #ff5023;
+    }
+
+    nav a:not(.btn-funding):hover::after,
+    nav a.active::after {
+      width: 100%;
+      left: 0;
+    }
+
+    .btn-funding {
+      height: 54px;
+      border: 1px solid rgba(255, 80, 35, 0.6);
+      border-radius: 999px;
+      background: linear-gradient(135deg, #ff5023, #f97316);
+      box-shadow: inset 0 0 22px rgba(239, 113, 61, 0.15), 0 0 24px rgba(255, 80, 35, 0.25);
+      color: #fff;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.8px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 0 24px;
+      white-space: nowrap;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .btn-funding::after {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #ffffff;
+      box-shadow: 0 0 16px 6px rgba(255, 128, 67, 0.6);
+    }
+
+    .btn-funding:hover {
+      transform: translateY(-1px);
+      box-shadow: inset 0 0 22px rgba(239, 113, 61, 0.2), 0 0 34px rgba(255, 80, 35, 0.4);
+    }
+
+    .nav-square-icon {
+      display: none;
+    }
+
+    header.nav-hidden {
+      transform: translateX(-50%) translateY(-120%);
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    header {
+      transition: transform 0.4s ease, opacity 0.4s ease, visibility 0.4s ease;
+    }
+
+    /* ===== HERO SECTION ===== */
+    .hero {
+      position: relative;
+      background: linear-gradient(135deg, #f2f6ff 0%, #fafcff 50%, #fef6f0 100%);
+      padding: 90px 40px 110px;
+      border-radius: 20px;
+      overflow: hidden;
+      min-height: 520px;
+      display: flex;
+      align-items: center;
+      margin-bottom: 40px;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 62%;
+      height: 100%;
+      background: url('images/ChatGPT Image Sep 11, 2026, 11_03_29 AM.png') right center/cover no-repeat;
+      opacity: 0.9;
+      mask-image: linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,0.55) 75%, rgba(0,0,0,0.15) 100%);
+      -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,0.55) 75%, rgba(0,0,0,0.15) 100%);
+      pointer-events: none;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.6) 45%, rgba(255,255,255,0) 75%);
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .hero-content {
+      max-width: 620px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .tagline {
+      color: #ff5023;
+      font-weight: 800;
+      font-size: 12px;
+      letter-spacing: 2px;
+      margin-bottom: 18px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 80, 35, 0.08);
+      border: 1px solid rgba(255, 80, 35, 0.25);
+      padding: 8px 16px;
+      border-radius: 30px;
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      line-height: 1.12;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 22px;
+      letter-spacing: -0.5px;
+    }
+
+    .hero h1 .blue-text {
+      color: #ff5023;
+    }
+
+    .hero p {
+      font-size: 13px;
+      color: #475569;
+      margin-bottom: 34px;
+      line-height: 1.7;
+      max-width: 460px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: nowrap;
+      align-items: center;
+    }
+
+    .btn-blue {
+      background: linear-gradient(135deg, #ff5023 0%, #f97316 100%);
+      color: #ffffff;
+      border: none;
+      padding: 13px 26px;
+      border-radius: 30px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.8px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 8px 22px rgba(255, 80, 35, 0.4);
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+    }
+
+    .btn-blue:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(255, 80, 35, 0.5);
+    }
+
+    .btn-outline {
+      background: #ffffff;
+      color: #0f172a;
+      border: 1px solid #cbd5e1;
+      padding: 13px 26px;
+      border-radius: 30px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+    }
+
+    .btn-outline:hover {
+      background: #f1f5f9;
+      border-color: #94a3b8;
+    }
+
+    /* ===== PARTNERS ===== */
+    .partners {
+      display: flex;
+      align-items: center;
+      padding: 50px 0;
+      border-bottom: 1px solid #f0f0f0;
+      overflow: hidden;
+    }
+
+    .partners-track {
+      display: flex;
+      gap: 60px;
+      animation: partners-scroll 22s linear infinite;
+    }
+
+    .partners-set {
+      display: flex;
+      align-items: center;
+      gap: 60px;
+      flex-shrink: 0;
+    }
+
+    @keyframes partners-scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .partner-logo {
+      font-weight: 800;
+      font-size: 20px;
+      color: #333;
+      letter-spacing: 1px;
+      white-space: nowrap;
+    }
+
+    .partner-softbank { color: #555; }
+    .partner-100x { color: #e53935; font-weight: 900; }
+    .partner-sequoia { color: #1b5e20; font-family: serif; letter-spacing: 2px; }
+    .partner-titan { color: #0d47a1; letter-spacing: 3px; }
+
+    /* ===== ABOUT SECTION ===== */
+    .about-section {
+      padding: 50px 20px 30px;
+      text-align: left;
+    }
+
+    .about-section p {
+      font-size: 13.5px;
+      color: #334155;
+      margin-bottom: 16px;
+      line-height: 1.6;
+      font-weight: 500;
+    }
+
+    /* ===== STATS GRID ===== */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      text-align: center;
+      padding: 30px 0 50px;
+    }
+
+    .stat-item h2 {
+      font-size: 26px;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 4px;
+    }
+
+    .stat-item p {
+      font-size: 11px;
+      color: #64748b;
+      font-weight: 600;
+      line-height: 1.2;
+    }
+
+    /* ===== VISION & MISSION ===== */
+    .vision-mission {
+      display: flex;
+      gap: 40px;
+      align-items: flex-start;
+      padding: 20px 0 60px;
+    }
+
+    .founder-card {
+      flex: 1;
+      max-width: 320px;
+    }
+
+    .founder-image-container {
+      width: 100%;
+      height: 320px;
+      border-radius: 16px;
+      overflow: hidden;
+      background-color: #cbd5e1;
+      margin-bottom: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+
+    .founder-image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .founder-caption {
+      text-align: center;
+      font-size: 12px;
+      font-weight: 700;
+      color: #334155;
+    }
+
+    .vision-content {
+      flex: 1.5;
+      padding-top: 10px;
+    }
+
+    .vision-content h3 {
+      font-size: 15px;
+      font-weight: 700;
+      color: #1e293b;
+      margin-bottom: 20px;
+    }
+
+    .vision-content ul {
+      list-style-type: disc;
+      padding-left: 18px;
+    }
+
+    .vision-content li {
+      font-size: 12px;
+      color: #475569;
+      margin-bottom: 18px;
+      line-height: 1.6;
+    }
+
+    /* ===== BIG BRANDING FOOTER (from file 1) ===== */
+    .brand-footer {
+      text-align: center;
+      padding: 40px 0 60px;
+    }
+
+    .brand-logo-large {
+      font-size: 72px;
+      font-weight: 900;
+      letter-spacing: -2px;
+      color: #000;
+    }
+
+    .brand-logo-large .yellow-x {
+      color: #f5a623;
+    }
+
+    /* ===== ECOSYSTEM MAP (file 2) ===== */
+    .ecosystem-map-section {
+      position: relative;
+      width: 100%;
+      height: 480px;
+      margin: 20px auto 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .ecosystem-map-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('images/ChatGPT Image Sep 11, 2026, 11_07_59 AM.png');
+      background-size: 80% auto;
+      background-position: center;
+      background-repeat: no-repeat;
+      border-radius: 16px;
+      opacity: 1;
+      z-index: 1;
+    }
+
+    .eco-node {
+      position: absolute;
+      z-index: 10;
+      width: 0;
+      height: 0;
+    }
+
+    .node-dot {
+      position: absolute;
+      top: -6px;
+      left: -6px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.75), 0 0 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .node-label {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 12px;
+      font-weight: 700;
+      color: #1e293b;
+      white-space: nowrap;
+      background: rgba(255, 255, 255, 0.88);
+      padding: 3px 10px;
+      border-radius: 999px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    }
+
+    .eco-antellay-top { top: 13%; left: 45%; }
+    .eco-antellay-top .node-dot { background-color: #000; }
+
+    .eco-celebsox { top: 25%; left: 22%; }
+    .eco-celebsox .node-dot { background-color: #f5a623; }
+
+    .eco-nxtfund { top: 22%; left: 76%; }
+    .eco-nxtfund .node-dot { background-color: #ff5232; }
+
+    .eco-productions { top: 40%; left: 16%; }
+    .eco-productions .node-dot { background-color: #ef4444; }
+
+    .eco-antellay-space { top: 39%; left: 81%; }
+    .eco-antellay-space .node-dot { background-color: #000; }
+
+    .eco-byizon { top: 54%; left: 23%; }
+    .eco-byizon .node-dot { background-color: #eab308; }
+
+    .eco-numerixx { top: 55%; left: 78%; }
+    .eco-numerixx .node-dot { background-color: #10b981; }
+
+    .eco-school { top: 68%; left: 21%; }
+    .eco-school .node-dot { background-color: #000; }
+
+    .eco-startup-valley { top: 70%; left: 82%; }
+    .eco-startup-valley .node-dot { background-color: #f5a623; }
+
+    .eco-spacerentiya { top: 92%; left: 28%; }
+    .eco-spacerentiya .node-dot { background-color: #000; }
+
+    .eco-grehni { top: 91%; left: 45%; }
+    .eco-grehni .node-dot { background-color: #7c3aed; }
+
+    .eco-triphike { top: 87%; left: 64%; }
+    .eco-triphike .node-dot { background-color: #000; font-size: 11px; }
+
+    .eco-flag {
+      top: 49%;
+      left: 63.5%;
+      width: auto;
+      height: auto;
+      transform: translate(-50%, -50%);
+      font-size: 14px;
+    }
+
+    .eco-center {
+      top: 200px;
+      left: 49.5%;
+      width: auto;
+      height: auto;
+      transform: translate(-50%, -50%);
+      z-index: 0;
+    }
+
+    .center-circle {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: #ffffff;
+      border: 1.5px solid #10b981;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    }
+
+    .center-circle svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    .eco-flag {
+      top: 235px;
+      right: 36.5%;
+      font-size: 12px;
+    }
+
+    /* ===== ECOSYSTEM ANIMATED LINES ===== */
+    .ecosystem-lines {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 5;
+      pointer-events: none;
+      mask-image: radial-gradient(circle at 49.5% 41.7%, transparent 0px, transparent 30px, black 38px);
+      -webkit-mask-image: radial-gradient(circle at 49.5% 41.7%, transparent 0px, transparent 30px, black 38px);
+    }
+
+    .ecosystem-lines path {
+      fill: none;
+      stroke: #ff5023;
+      stroke-width: 1.5;
+      stroke-dasharray: 8 6;
+      vector-effect: non-scaling-stroke;
+      animation: line-flow 1.4s linear infinite;
+      opacity: 0.85;
+    }
+
+    @keyframes line-flow {
+      to { stroke-dashoffset: -28; }
+    }
+
+    /* ===== NXTFUND GRID ===== */
+    .nxtfund-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.3fr 0.7fr;
+      gap: 20px;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+
+    .building-img-card {
+      width: 100%;
+      height: 250px;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    }
+
+    .building-img-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .nxtfund-info {
+      padding: 0 10px;
+    }
+
+    .nxtfund-tag {
+      color: #ff3b30;
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .nxtfund-info ul {
+      list-style-type: disc;
+      padding-left: 14px;
+    }
+
+    .nxtfund-info li {
+      font-size: 10.5px;
+      color: #334155;
+      margin-bottom: 8px;
+      line-height: 1.5;
+    }
+
+    .incubation-card {
+      background: #ffffff;
+      border: 1px solid #f1f5f9;
+      border-radius: 12px;
+      padding: 25px 15px;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+    }
+
+    .incubation-icon {
+      width: 42px;
+      height: 42px;
+      background-color: #fff1f0;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 12px;
+      color: #ff3b30;
+    }
+
+    .incubation-card h4 {
+      font-size: 11px;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 8px;
+    }
+
+    .incubation-card .divider {
+      width: 24px;
+      height: 1.5px;
+      background-color: #e2e8f0;
+      margin: 8px auto;
+    }
+
+    .incubation-card p {
+      font-size: 9.5px;
+      color: #64748b;
+      line-height: 1.3;
+    }
+
+    /* ===== CTA BANNER ===== */
+    .cta-banner-wrapper {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr;
+      gap: 20px;
+      align-items: center;
+      min-height: 240px;
+      margin-bottom: 40px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 16px;
+      padding: 36px 38px;
+      background:
+        linear-gradient(180deg, rgba(2, 6, 23, 0.6) 0%, rgba(2, 6, 23, 0.3) 55%, rgba(2, 6, 23, 0) 100%),
+        linear-gradient(90deg, rgba(2, 6, 23, 0.85) 0%, rgba(2, 6, 23, 0.45) 55%, rgba(2, 6, 23, 0) 100%),
+        url('images/ChatGPT Image Aug 29, 2026, 12_23_34 PM.png') center 85%/cover no-repeat;
+      box-shadow: 0 8px 24px rgba(2, 6, 23, 0.15);
+    }
+
+    .cta-left {
+      position: relative;
+      z-index: 2;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 15px;
+    }
+
+    .btn-red {
+      background-color: #ff4d29;
+      color: #ffffff;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 4px;
+      font-size: 10px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .btn-outline-dark {
+      background: rgba(255, 255, 255, 0.08);
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      padding: 8px 14px;
+      border-radius: 4px;
+      font-size: 10px;
+      font-weight: 700;
+      cursor: pointer;
+      backdrop-filter: blur(4px);
+    }
+
+    .btn-outline-dark:hover {
+      background: rgba(255, 255, 255, 0.18);
+      border-color: rgba(255, 255, 255, 0.6);
+    }
+
+    .cta-text p {
+      font-size: 11px;
+      color: #e2e8f0;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .cta-text .brand-red {
+      color: #ff9a76;
+    }
+
+    .tagline-star {
+      font-size: 10px;
+      font-weight: 700;
+      color: #e2e8f0;
+    }
+
+    .tagline-star span {
+      color: #ff6a4d;
+    }
+
+    .banner-overlay-card {
+      position: relative;
+      z-index: 2;
+      justify-self: end;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(6px);
+      padding: 14px 20px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    }
+
+    .banner-overlay-card .small-icon {
+      color: #ff3b30;
+      font-size: 16px;
+    }
+
+    .banner-overlay-card .text {
+      font-size: 10.5px;
+      font-weight: 800;
+      color: #0f172a;
+      line-height: 1.3;
+    }
+
+    /* ===== MEETUP BANNER ===== */
+    .meetup-card {
+      background-color: #080c14;
+      border-radius: 12px;
+      padding: 20px;
+      display: flex;
+      gap: 24px;
+      align-items: center;
+      color: #ffffff;
+    }
+
+    .meetup-img {
+      width: 220px;
+      height: 125px;
+      border-radius: 8px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .meetup-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .meetup-content {
+      flex: 1;
+    }
+
+    .badge-upcoming {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background-color: rgba(255, 77, 41, 0.15);
+      color: #ff5232;
+      font-size: 8px;
+      font-weight: 800;
+      letter-spacing: 0.8px;
+      padding: 3px 8px;
+      border-radius: 4px;
+      margin-bottom: 8px;
+    }
+
+    .badge-upcoming span {
+      display: inline-block;
+      width: 5px;
+      height: 5px;
+      background-color: #ff5232;
+      border-radius: 50%;
+    }
+
+    .meetup-content h3 {
+      font-size: 15px;
+      font-weight: 800;
+      margin-bottom: 6px;
+      color: #ffffff;
+    }
+
+    .meetup-content p {
+      font-size: 10.5px;
+      color: #94a3b8;
+      margin-bottom: 16px;
+    }
+
+    .meetup-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .meetup-meta {
+      display: flex;
+      gap: 15px;
+      font-size: 10px;
+      color: #cbd5e1;
+      font-weight: 600;
+    }
+
+    .btn-register {
+      background: transparent;
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 6px 16px;
+      border-radius: 4px;
+      font-size: 10px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: border 0.3s;
+    }
+
+    .btn-register:hover {
+      border-color: #ff5232;
+    }
+
+    /* ===== CATEGORIES ROW (file 3) ===== */
+    .categories-section {
+      padding: 30px 0;
+      background-color: #f8fafc;
+    }
+
+    .categories-row {
+      display: grid;
+      grid-template-columns: repeat(10, 1fr);
+      gap: 8px;
+      margin-bottom: 50px;
+    }
+
+    .category-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 12px 6px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+    }
+
+    .category-icon {
+      width: 28px;
+      height: 28px;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #334155;
+    }
+
+    .category-icon svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .category-title {
+      font-size: 8px;
+      font-weight: 800;
+      color: #0f172a;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      margin-bottom: 4px;
+      line-height: 1.1;
+    }
+
+    .category-desc {
+      font-size: 7px;
+      color: #64748b;
+      line-height: 1.2;
+      font-weight: 500;
+    }
+
+    /* ===== HERO BRAND LOGO ===== */
+    .hero-brand {
+      text-align: center;
+      padding: 20px 0 50px;
+    }
+
+    .brand-title {
+      font-size: 52px;
+      font-weight: 800;
+      letter-spacing: 14px;
+      color: #0f172a;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .brand-subtext {
+      font-size: 11px;
+      font-weight: 700;
+      color: #64748b;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    /* ===== FEATURED BRANDS ===== */
+    .featured-section {
+      background: #f1f5f9;
+      border-radius: 20px;
+      padding: 35px 30px;
+      margin-bottom: 40px;
+    }
+
+    .featured-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 25px;
+    }
+
+    .featured-title-wrap {
+      position: relative;
+      display: inline-block;
+    }
+
+    .featured-title-wrap::before {
+      content: '';
+      position: absolute;
+      left: -10px;
+      top: -4px;
+      width: 140px;
+      height: 38px;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 30px;
+      z-index: 1;
+    }
+
+    .featured-header h2 {
+      font-size: 20px;
+      font-weight: 800;
+      color: #0f172a;
+      position: relative;
+      z-index: 2;
+    }
+
+    .view-all-link {
+      font-size: 10px;
+      font-weight: 800;
+      color: #1e293b;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    .brands-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 20px;
+    }
+
+    .main-brand-card {
+      background: #ffffff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .main-card-image {
+      width: 100%;
+      height: 250px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .main-card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .main-card-body {
+      padding: 20px;
+    }
+
+    .main-card-title {
+      font-size: 18px;
+      font-weight: 800;
+      color: #0f172a;
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+    }
+
+    .main-card-desc {
+      font-size: 10.5px;
+      color: #64748b;
+      line-height: 1.5;
+      margin-bottom: 16px;
+    }
+
+    .tags {
+      display: flex;
+      gap: 8px;
+    }
+
+    .tag {
+      background: #f1f5f9;
+      color: #475569;
+      font-size: 8px;
+      font-weight: 700;
+      padding: 4px 8px;
+      border-radius: 4px;
+    }
+
+    .side-brands-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .side-card {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 12px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+      height: 160px;
+    }
+
+    .side-card-img {
+      width: 110px;
+      height: 100%;
+      border-radius: 12px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .side-card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .side-card-content h3 {
+      font-size: 16px;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 6px;
+    }
+
+    .side-card-content p {
+      font-size: 10px;
+      color: #64748b;
+      line-height: 1.4;
+    }
+
+    /* ===== SPACE BANNER ===== */
+    .space-banner {
+      background: #030712;
+      border-radius: 16px;
+      padding: 30px 40px;
+      color: #ffffff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      background-image:
+        linear-gradient(90deg, rgba(3, 7, 18, 0.92) 0%, rgba(3, 7, 18, 0.55) 55%, rgba(3, 7, 18, 0.2) 100%),
+        url('images/ChatGPT Image Sep 11, 2026, 11_09_11 AM.png');
+      background-size: cover;
+      background-position: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+    }
+
+    .space-banner-content {
+      z-index: 2;
+    }
+
+    .space-banner-title {
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: 3px;
+      margin-bottom: 4px;
+      text-transform: uppercase;
+    }
+
+    .space-banner-sub {
+      font-size: 11px;
+      font-weight: 800;
+      color: #cbd5e1;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .space-banner-graphic {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .satellite-img {
+      width: 220px;
+      height: 90px;
+      object-fit: contain;
+    }
+
+    .launch-badge {
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      background: rgba(255, 255, 255, 0.03);
+      padding: 8px 12px;
+      border-radius: 6px;
+      text-align: right;
+    }
+
+    .launch-badge .label {
+      font-size: 9px;
+      font-weight: 800;
+      color: #ff5232;
+      letter-spacing: 1px;
+      display: block;
+    }
+
+    .launch-badge .date {
+      font-size: 11px;
+      font-weight: 800;
+      color: #ffffff;
+      letter-spacing: 0.5px;
+    }
+
+    /* ===== COUNTRIES MAP (file 4) ===== */
+    .countries-section {
+      padding: 40px 0;
+      background-color: #f8fafc;
+    }
+
+    .map-section-title {
+      font-size: 20px;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 20px;
+    }
+
+    .map-card {
+      background: #faf8f5;
+      border-radius: 16px;
+      position: relative;
+      width: 100%;
+      height: 480px;
+      overflow: hidden;
+      border: 1px solid #f1f5f9;
+      margin-bottom: 35px;
+    }
+
+    .map-world-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('images/ChatGPT Image Sep 11, 2026, 07_36_28 PM.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      opacity: 1;
+    }
+
+    .country-node {
+      position: absolute;
+      z-index: 5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .node-icon-wrap {
+      width: 32px;
+      height: 32px;
+      background: #ffffff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+      border: 1px solid #e2e8f0;
+      margin-bottom: 4px;
+      font-size: 14px;
+    }
+
+    .node-country {
+      font-size: 10px;
+      font-weight: 800;
+      color: #0f172a;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .node-desc {
+      font-size: 7.5px;
+      font-weight: 700;
+      color: #64748b;
+      letter-spacing: 0.3px;
+      text-transform: uppercase;
+      max-width: 110px;
+      line-height: 1.2;
+    }
+
+    .node-usa { top: 35px; left: 16%; }
+    .node-uk { top: 40px; left: 35%; }
+    .node-switzerland { top: 30px; left: 49%; }
+    .node-uae { top: 45px; left: 71%; }
+    .node-singapore { top: 190px; right: 8%; }
+    .node-asia-pacific { bottom: 40px; right: 15%; }
+    .node-latin { bottom: 40px; left: 24%; }
+    .node-europe { top: 210px; left: 36%; }
+
+    .node-india {
+      top: 175px;
+      left: 55%;
+      z-index: 10;
+    }
+
+    .india-shape {
+      width: 48px;
+      height: 52px;
+      background-color: #ff4d29;
+      clip-path: polygon(30% 0%, 70% 10%, 100% 35%, 80% 70%, 50% 100%, 20% 80%, 0% 40%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 800;
+      box-shadow: 0 0 20px rgba(255, 77, 41, 0.5);
+      margin-bottom: 6px;
+    }
+
+    .india-pill {
+      background: #000000;
+      color: #ffffff;
+      font-size: 9px;
+      font-weight: 800;
+      padding: 3px 10px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .india-subtext {
+      font-size: 8px;
+      color: #64748b;
+      font-weight: 600;
+      margin-top: 2px;
+    }
+
+    /* ===== ANTELLAY-X BANNER ===== */
+    .cyber-banner {
+      background-color: #030408;
+      border-radius: 12px;
+      height: 220px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      margin-bottom: 35px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      background-image:
+        linear-gradient(90deg, rgba(3, 4, 8, 0.88) 0%, rgba(3, 4, 8, 0.4) 55%, rgba(3, 4, 8, 0.2) 100%),
+        url('images/ChatGPT Image Sep 11, 2026, 11_11_48 AM.png');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .cyber-halo {
+      position: absolute;
+      top: -40px;
+      width: 400px;
+      height: 120px;
+      border: 1.5px solid rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+    }
+
+    .cyber-robot-img {
+      position: absolute;
+      top: 20px;
+      height: 180px;
+      opacity: 0.45;
+      mix-blend-mode: lighten;
+      object-fit: contain;
+    }
+
+    .cyber-title {
+      font-size: 30px;
+      font-weight: 800;
+      letter-spacing: 14px;
+      text-transform: uppercase;
+      position: relative;
+      z-index: 3;
+      margin-bottom: 6px;
+      text-shadow: 0 0 20px rgba(255,255,255,0.4);
+    }
+
+    .cyber-sub {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 5px;
+      color: #94a3b8;
+      text-transform: uppercase;
+      position: relative;
+      z-index: 3;
+    }
+
+    /* ===== CELEBSO STARTUP SCHOOL ===== */
+    .school-card {
+      background: #ffffff;
+      border: 1px solid #f1f5f9;
+      border-radius: 16px;
+      padding: 24px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+      margin-bottom: 35px;
+      color: #1a1a1a;
+    }
+
+    .school-left {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .school-logo {
+      width: 64px;
+      height: 64px;
+      position: relative;
+    }
+
+    .school-logo svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .school-title h3 {
+      font-size: 15px;
+      font-weight: 800;
+      color: #0f172a;
+      line-height: 1.2;
+    }
+
+    .school-title span {
+      font-size: 10px;
+      color: #ea580c;
+      font-weight: 700;
+    }
+
+    .school-center {
+      border-left: 1px solid #f1f5f9;
+      padding-left: 30px;
+    }
+
+    .school-center h4 {
+      font-size: 16px;
+      font-weight: 800;
+      color: #0f172a;
+      line-height: 1.2;
+    }
+
+    .school-center h4 .highlight {
+      color: #ff4d29;
+    }
+
+    .school-center .batch {
+      font-size: 16px;
+      font-weight: 800;
+      color: #0f172a;
+      position: relative;
+      display: inline-block;
+    }
+
+    .school-center .batch::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 28px;
+      height: 3px;
+      background: #ff4d29;
+      border-radius: 2px;
+    }
+
+    .school-right {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .student-types {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .student-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 10px;
+      font-weight: 700;
+      color: #334155;
+    }
+
+    .student-item .icon {
+      font-size: 14px;
+    }
+
+    .btn-apply-wrap {
+      text-align: right;
+    }
+
+    .btn-apply-school {
+      border: 1px solid #ff4d29;
+      background: #ffffff;
+      color: #ff4d29;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      display: inline-block;
+      margin-bottom: 6px;
+      transition: all 0.2s;
+    }
+
+    .btn-apply-school:hover {
+      background: #ff4d29;
+      color: #ffffff;
+    }
+
+    .school-subtext {
+      font-size: 9px;
+      font-weight: 600;
+      color: #94a3b8;
+    }
+
+    /* ===== TESTIMONIAL ===== */
+    .testimonial-card {
+      background: #ffffff;
+      border: 1px solid #f1f5f9;
+      border-radius: 20px;
+      padding: 24px;
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 35px;
+      align-items: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+      position: relative;
+    }
+
+    .testimonial-img-wrap {
+      position: relative;
+      width: 100%;
+      height: 340px;
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    .testimonial-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .roi-badge {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(8px);
+      padding: 10px 18px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    }
+
+    .roi-badge .number {
+      font-size: 22px;
+      font-weight: 800;
+      color: #ff4d29;
+      line-height: 1;
+    }
+
+    .roi-badge .label {
+      font-size: 8px;
+      font-weight: 800;
+      color: #64748b;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+
+    .testimonial-content {
+      padding-right: 20px;
+    }
+
+    .tag-success {
+      font-size: 9px;
+      font-weight: 800;
+      color: #ff4d29;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .testimonial-title {
+      font-size: 24px;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 18px;
+      letter-spacing: -0.3px;
+    }
+
+    .testimonial-quote {
+      font-size: 13px;
+      font-style: italic;
+      color: #334155;
+      line-height: 1.65;
+      margin-bottom: 24px;
+      font-weight: 500;
+    }
+
+    .author-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .author-avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+
+    .author-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .author-info h5 {
+      font-size: 11px;
+      font-weight: 800;
+      color: #0f172a;
+    }
+
+    .author-info p {
+      font-size: 9.5px;
+      color: #64748b;
+      font-weight: 600;
+    }
+
+    .read-more-link {
+      font-size: 10px;
+      font-weight: 700;
+      color: #475569;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .side-controls {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      background: #f8fafc;
+      padding: 8px 5px;
+      border-radius: 20px;
+      border: 1px solid #f1f5f9;
+    }
+
+    .side-icon {
+      width: 16px;
+      height: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      color: #64748b;
+      cursor: pointer;
+    }
+
+    /* ===== APPLY SECTION (file 5) ===== */
+    .apply-section {
+      text-align: center;
+      padding: 20px 0 35px;
+      background-color: #faf8f5;
+    }
+
+    .orange-dash {
+      width: 28px;
+      height: 3px;
+      background-color: #d9532f;
+      margin: 0 auto 16px;
+      border-radius: 2px;
+    }
+
+    .apply-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 34px;
+      font-weight: 600;
+      color: #0f172a;
+      margin-bottom: 8px;
+    }
+
+    .apply-title i {
+      font-style: italic;
+      color: #d9532f;
+      font-family: 'Playfair Display', Georgia, serif;
+    }
+
+    .apply-subtitle {
+      font-size: 11px;
+      color: #64748b;
+      margin-bottom: 22px;
+      font-weight: 500;
+    }
+
+    .btn-apply-dark {
+      display: inline-block;
+      background-color: #000000;
+      color: #ffffff;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 10px 36px;
+      border-radius: 20px;
+      text-decoration: none;
+      transition: background-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .btn-apply-dark:hover {
+      background-color: #222222;
+      transform: translateY(-1px);
+    }
+
+    .gallery-scroll {
+      overflow: hidden;
+      margin-top: 35px;
+      margin-bottom: 50px;
+      width: 100vw;
+      margin-left: calc(-50vw + 50%);
+    }
+
+    .gallery-track {
+      display: flex;
+      gap: 12px;
+      width: max-content;
+      animation: gallery-move-right 40s linear infinite;
+    }
+
+    .gallery-set {
+      display: flex;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+
+    @keyframes gallery-move-right {
+      from { transform: translateX(-50%); }
+      to { transform: translateX(0); }
+    }
+
+    .gallery-item {
+      width: 260px;
+      height: 140px;
+      flex-shrink: 0;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* ===== NEWS SECTION ===== */
+    .news-section {
+      margin-bottom: 40px;
+      padding: 30px 0;
+    }
+
+    .news-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 28px;
+    }
+
+    .news-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 26px;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .view-all-press {
+      font-size: 10px;
+      font-weight: 700;
+      color: #d9532f;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: gap 0.2s ease;
+    }
+
+    .view-all-press:hover {
+      gap: 8px;
+    }
+
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
+    .news-card {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      background: #ffffff;
+      border: 1px solid #f1f5f9;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .news-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.07);
+    }
+
+    .news-date {
+      font-size: 9px;
+      color: #94a3b8;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .news-card-title {
+      font-size: 13px;
+      font-weight: 800;
+      color: #0f172a;
+      line-height: 1.45;
+      margin-bottom: 4px;
+      min-height: auto;
+    }
+
+    .news-card:nth-child(3) .news-card-title {
+      color: #b91c1c;
+    }
+
+    .news-read-more {
+      font-size: 10px;
+      font-weight: 700;
+      color: #d9532f;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: gap 0.2s ease;
+      margin-top: auto;
+    }
+
+    .news-read-more:hover {
+      gap: 8px;
+    }
+
+    /* ===== PRESS LOGOS ===== */
+    .press-section {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 25px 10px;
+      margin-bottom: 40px;
+      opacity: 0.75;
+      background-color: #faf8f5;
+    }
+
+    .press-logo {
+      font-weight: 800;
+      color: #475569;
+      font-size: 14px;
+      letter-spacing: -0.3px;
+      display: flex;
+      align-items: center;
+    }
+
+    .logo-entrepreneur {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-style: italic;
+      font-size: 16px;
+    }
+
+    .logo-entrepreneur span {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-style: normal;
+      font-size: 8px;
+      margin-left: 3px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .logo-zoom {
+      font-weight: 900;
+      font-size: 18px;
+      letter-spacing: -1px;
+    }
+
+    .logo-startupnews {
+      border: 1.5px solid #64748b;
+      padding: 2px 6px;
+      font-size: 9px;
+      border-radius: 2px;
+      font-weight: 800;
+    }
+
+    .logo-yourstory {
+      border: 1.5px solid #64748b;
+      padding: 3px 8px;
+      font-size: 10px;
+      letter-spacing: 0.5px;
+      font-weight: 800;
+    }
+
+    .logo-forbes {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .logo-forbes span {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 8px;
+      margin-left: 3px;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    /* ===== INCUBATION HERO ===== */
+    .incubation-hero {
+      position: relative;
+      height: 140px;
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 40px;
+      background: url('images/ChatGPT Image Aug 29, 2026, 12_23_34 PM.png') center 88%/cover no-repeat;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+
+    .incubation-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.4) 100%);
+    }
+
+    .incubation-badge {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: #ffffff;
+      padding: 8px 14px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+      z-index: 2;
+    }
+
+    .rocket-icon {
+      color: #ea580c;
+      font-size: 16px;
+    }
+
+    .incubation-badge-text {
+      font-size: 10px;
+      font-weight: 800;
+      color: #0f172a;
+      line-height: 1.2;
+    }
+
+    /* ===== FOOTER ===== */
+    .nxt-footer-section {
+      background: url('images/footer-bg.png') center 30%/cover no-repeat #080c14;
+      position: relative;
+      padding: 50px 20px 30px;
+      color: #ffffff;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .nxt-footer-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 50% 0%, rgba(255, 80, 35, 0.08) 0%, transparent 50%),
+        linear-gradient(180deg, rgba(15, 23, 42, 0.55) 0%, rgba(8, 12, 20, 0.85) 100%);
+      z-index: 1;
+    }
+
+    .nxt-footer-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .nxt-logo-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      padding: 10px 24px;
+      border-radius: 30px;
+      margin-bottom: 12px;
+    }
+
+    .nxt-logo-pill .nxt-text {
+      font-size: 20px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      color: #ffffff;
+    }
+
+    .nxt-logo-pill .x-red {
+      color: #ff5023;
+    }
+
+    .nxt-logo-pill .fund-text {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      color: #94a3b8;
+      margin-left: 2px;
+    }
+
+    .nxt-tagline {
+      font-size: 11px;
+      color: #94a3b8;
+      letter-spacing: 1px;
+      margin-bottom: 28px;
+      font-weight: 500;
+    }
+
+    .footer-links-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px 0;
+      margin-bottom: 20px;
+    }
+
+    .footer-links-row a {
+      color: #94a3b8;
+      font-size: 11px;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 4px 12px;
+      transition: color 0.2s;
+    }
+
+    .footer-links-row a:hover {
+      color: #ffffff;
+    }
+
+    .footer-links-row .sep {
+      color: #334155;
+      font-size: 9px;
+    }
+
+    .footer-email {
+      font-size: 11px;
+      color: #94a3b8;
+      margin-bottom: 22px;
+      font-weight: 500;
+    }
+
+    .footer-email i {
+      color: #ff5023;
+      margin-right: 6px;
+    }
+
+    .social-icons-row {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+
+    .social-btn {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.04);
+      color: #94a3b8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      text-decoration: none;
+      transition: all 0.25s ease;
+    }
+
+    .social-btn:hover {
+      background: #ff3b1d;
+      border-color: #ff3b1d;
+    }
+
+    .copyright-text {
+      font-size: 9.5px;
+      color: #475569;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 900px) {
+      .categories-row {
+        grid-template-columns: repeat(5, 1fr);
+      }
+      .brands-grid {
+        grid-template-columns: 1fr;
+      }
+      .space-banner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+      }
+      .space-banner-graphic {
+        width: 100%;
+        justify-content: space-between;
+      }
+    }
+
+    @media (max-width: 850px) {
+      .nxtfund-grid {
+        grid-template-columns: 1fr;
+      }
+      .cta-banner-wrapper {
+        grid-template-columns: 1fr;
+      }
+      .meetup-card {
+        flex-direction: column;
+      }
+      .meetup-img {
+        width: 100%;
+        height: 160px;
+      }
+      .meetup-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+      }
+      .school-card {
+        flex-direction: column;
+        gap: 20px;
+        align-items: flex-start;
+      }
+      .school-center {
+        border-left: none;
+        padding-left: 0;
+      }
+      .testimonial-card {
+        grid-template-columns: 1fr;
+      }
+      .testimonial-img-wrap {
+        height: 240px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      header {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        width: calc(100% - 28px);
+        top: 10px;
+      }
+      nav {
+        width: 100%;
+        height: auto;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 4px;
+        padding: 10px;
+        border-radius: 20px;
+      }
+      nav a:not(.btn-funding) {
+        font-size: 9px;
+        padding: 5px 7px;
+      }
+      .btn-funding {
+        height: 46px;
+        width: 100%;
+        padding: 0 18px;
+      }
+      .hero h1 {
+        font-size: 28px;
+      }
+      .hero {
+        padding: 70px 24px;
+        min-height: auto;
+      }
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .vision-mission {
+        flex-direction: column;
+        align-items: center;
+      }
+      .founder-card {
+        max-width: 100%;
+      }
+      .brand-logo-large {
+        font-size: 48px;
+      }
+      .gallery-item {
+        width: 200px;
+      }
+      .news-grid {
+        grid-template-columns: 1fr;
+      }
+      .press-section {
+        flex-wrap: wrap;
+        gap: 15px;
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .categories-row {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .brand-title {
+        font-size: 32px;
+        letter-spacing: 6px;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .categories-row {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .main-brand-card {
+        flex-direction: column;
+      }
+      .featured-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
+      .meetup-card {
+        padding: 20px 16px;
+      }
+      .countries-section {
+        padding: 28px 0;
+      }
+      .map-section-title {
+        font-size: 17px;
+      }
+      .ecosystem-map-section {
+        min-height: 460px;
+      }
+      .press-section {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .container {
+        padding: 0 14px;
+      }
+      .hero {
+        padding: 90px 14px 46px;
+      }
+      .hero h1 {
+        font-size: 26px;
+        letter-spacing: -0.3px;
+      }
+      .tagline {
+        font-size: 10px;
+        padding: 7px 12px;
+      }
+      .hero-content p {
+        font-size: 13.5px;
+      }
+      .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+      }
+      .hero-buttons a {
+        justify-content: center;
+        padding: 14px 18px;
+      }
+      .partners {
+        padding: 30px 0;
+      }
+      .stats-grid {
+        gap: 8px;
+      }
+      .categories-section {
+        padding: 24px 0;
+      }
+      .category-card {
+        padding: 16px 10px;
+      }
+      .category-title {
+        font-size: 10px;
+      }
+      .brand-title {
+        font-size: 26px;
+        letter-spacing: 4px;
+      }
+      .brand-subtext {
+        font-size: 12px;
+      }
+      .space-banner {
+        padding: 24px 18px;
+      }
+      .space-banner-title {
+        font-size: 18px;
+        letter-spacing: 2px;
+      }
+      .space-banner-sub {
+        font-size: 9px;
+      }
+      .space-banner-graphic {
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+      .satellite-img {
+        width: 130px;
+        height: 54px;
+      }
+      .map-card {
+        height: 320px;
+      }
+      .cyber-banner {
+        padding: 18px 16px;
+      }
+      .cyber-title {
+        font-size: 22px;
+        letter-spacing: 3px;
+      }
+      .cyber-sub {
+        font-size: 10px;
+      }
+      .school-card {
+        padding: 20px 16px;
+      }
+      .school-left {
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
+      }
+      .school-center {
+        border-left: none;
+        padding-left: 0;
+        text-align: center;
+      }
+      .school-right {
+        flex-direction: column;
+        gap: 14px;
+        align-items: center;
+      }
+      .btn-apply-wrap {
+        text-align: center;
+      }
+      .student-types {
+        align-items: center;
+      }
+      .testimonial-card {
+        padding: 18px 16px;
+        gap: 20px;
+      }
+      .testimonial-img-wrap {
+        height: 200px;
+        border-radius: 12px;
+      }
+      .apply-section {
+        padding-top: 14px;
+      }
+      .apply-title {
+        font-size: 20px;
+      }
+      .gallery-item {
+        width: 150px;
+      }
+      .incubation-hero {
+        padding: 30px 18px;
+      }
+      .news-grid {
+        gap: 14px;
+      }
+      .press-section {
+        gap: 12px;
+      }
+    }
+  /* ================== SCROLL REVEAL ANIMATIONS ================== */
+    [data-reveal] {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
+      will-change: opacity, transform;
+    }
+    [data-reveal].in-view {
+      opacity: 1;
+      transform: none;
+    }
+    [data-reveal="left"] { transform: translateX(-36px); }
+    [data-reveal="right"] { transform: translateX(36px); }
+    [data-reveal="zoom"] { transform: scale(0.93); }
+    [data-reveal="left"].in-view,
+    [data-reveal="right"].in-view,
+    [data-reveal="zoom"].in-view { transform: none; }
+
+    .flagship-card, .wider-card, .next-card, .wider-card img {
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+    .flagship-card:hover, .wider-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 34px rgba(15, 23, 42, 0.1);
+      border-color: rgba(224, 83, 41, 0.28);
+    }
+
+    /* ================== HERO TEXT ANIMATIONS ================== */
+    .hero-content .tagline,
+    .hero-content p,
+    .hero-content .hero-buttons {
+      opacity: 0;
+      animation: hero-rise 0.9s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+    }
+
+    .hero-content .tagline {
+      animation-delay: 0.1s;
+    }
+
+    .hero-content p {
+      animation-delay: 0.45s;
+    }
+
+    .hero-content .hero-buttons {
+      animation-delay: 0.65s;
+    }
+
+    /* ================== HERO TITLE LINE REVEAL ================== */
+    .hero-title .hero-line {
+      display: block;
+      overflow: hidden;
+    }
+
+    .hero-title .hero-line-inner {
+      display: block;
+      transform: translateY(112%);
+      animation: hero-line-in 0.95s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+    }
+
+    .hero-title .hero-line:nth-child(1) .hero-line-inner { animation-delay: 0.2s; }
+    .hero-title .hero-line:nth-child(2) .hero-line-inner { animation-delay: 0.35s; }
+    .hero-title .hero-line:nth-child(3) .hero-line-inner { animation-delay: 0.5s; }
+
+    @keyframes hero-line-in {
+      to { transform: translateY(0); }
+    }
+
+    .hero-title .blue-text {
+      background: linear-gradient(90deg, #ff5023, #f97316, #fbbf24, #ff5023);
+      background-size: 250% auto;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: hero-gradient 3.5s linear infinite;
+    }
+
+    @keyframes hero-gradient {
+      to { background-position: 250% center; }
+    }
+
+    @keyframes hero-rise {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero-content .tagline,
+      .hero-content .hero-buttons,
+      .hero-content p {
+        opacity: 1 !important;
+        transform: none !important;
+        animation: none !important;
+      }
+      .hero-title .hero-line,
+      .hero-title .hero-line-inner,
+      .hero-title .blue-text {
+        transform: none !important;
+        animation: none !important;
+      }
+      .hero-title .blue-text {
+        background: none;
+        -webkit-text-fill-color: currentColor;
+      }
+      .hero-content .hero-buttons,
+      .hero-content p {
+        opacity: 1;
+      }
+    }
+
+    /* ================== MOBILE NAV ================== */
+    .menu-toggle, .mobile-only-btn { display: none; }
+
+    @media (max-width: 768px) {
+      header {
+        grid-template-columns: 1fr auto !important;
+        gap: 0 !important;
+        width: calc(100% - 24px) !important;
+        padding: 8px 12px;
+        top: 10px;
+      }
+      .menu-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        flex-direction: column;
+        gap: 5px;
+      }
+      .menu-toggle span {
+        display: block;
+        width: 20px;
+        height: 2px;
+        background: #0f172a;
+        border-radius: 4px;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+      }
+      header.menu-open .menu-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+      header.menu-open .menu-toggle span:nth-child(2) { opacity: 0; }
+      header.menu-open .menu-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+      header > nav {
+        position: fixed;
+        top: 60px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        height: auto;
+        width: 100%;
+        border-radius: 0;
+        padding: 0;
+        gap: 0;
+        border: none;
+        border-bottom: 1px solid #e2e8f0;
+        box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+        background: rgba(255,255,255,0.98);
+        backdrop-filter: blur(20px);
+        z-index: 200;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease, padding 0.4s ease;
+      }
+      header.menu-open > nav {
+        max-height: 400px;
+        padding: 8px 0 0;
+      }
+      header > nav a:not(.btn-funding) {
+        justify-content: center;
+        padding: 14px 24px;
+        font-size: 14px;
+        border-bottom: 1px solid #f1f5f9;
+        width: 100%;
+      }
+      header > nav a:not(.btn-funding):last-of-type { border-bottom: none; }
+      .desktop-only-btn { display: none !important; }
+      .mobile-only-btn {
+        display: inline-flex !important;
+        margin: 0 16px 12px;
+        width: calc(100% - 32px) !important;
+        height: 48px !important;
+        justify-content: center;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      [data-reveal] { opacity: 1 !important; transform: none !important; transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==================== HEADER ==================== -->
+  <header id="site-header">
+    <a href="index.html" class="logo" style="text-decoration:none;">
+      <img src="images/ChatGPT Image Aug 21, 2026, 03_45_23 PM.png" alt="Celebso" style="height: 40px; width: auto; object-fit: contain;">
+    </a>
+    <nav>
+      <a href="about.html">About</a>
+      <a href="leadership.html">Leadership</a>
+      <a href="news.html">News</a>
+      <a href="patner.html">Partners</a>
+      <a href="VENTURES.html">Ventures</a>
+      <a href="#" class="btn-funding mobile-only-btn">Apply for Funding</a>
+    </nav>
+    <a href="#" class="btn-funding desktop-only-btn">Apply for Funding</a>
+    <button class="menu-toggle" aria-label="Toggle Menu" onclick="document.getElementById('site-header').classList.toggle('menu-open')">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <!-- ==================== HERO SECTION ==================== -->
+  <div class="container">
+    <section class="hero">
+      <div class="hero-content">
+        <div class="tagline">&#10022; CELEBSO GROUP</div>
+        <h1 class="hero-title" aria-label="Building the Future Through Technology, Intelligence &amp; Innovation.">
+          <span class="hero-line"><span class="hero-line-inner">Building the Future</span></span>
+          <span class="hero-line"><span class="hero-line-inner">Through Technology,</span></span>
+          <span class="hero-line"><span class="hero-line-inner">Intelligence <span class="blue-text">&amp; Innovation.</span></span></span>
+        </h1>
+        <p>Celebso Group is a multi-platform technology group building and scaling companies across AI, software, professional networking, venture growth, space technology and future innovation.</p>
+        <div class="hero-buttons">
+          <a href="VENTURES.html" class="btn-blue">EXPLORE OUR COMPANIES &rarr;</a>
+          <a href="about.html" class="btn-outline">ABOUT THE GROUP</a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ==================== PARTNERS (Marquee) ==================== -->
+  <div class="container">
+    <section class="partners" data-reveal>
+      <div class="partners-track">
+        <div class="partners-set">
+          <div class="partner-logo partner-softbank">SoftBank</div>
+          <div class="partner-logo partner-100x">100X</div>
+          <div class="partner-logo partner-sequoia">SEQUOIA Sequoia</div>
+          <div class="partner-logo partner-titan">TITAN</div>
+        </div>
+        <div class="partners-set" aria-hidden="true">
+          <div class="partner-logo partner-softbank">SoftBank</div>
+          <div class="partner-logo partner-100x">100X</div>
+          <div class="partner-logo partner-sequoia">SEQUOIA Sequoia</div>
+          <div class="partner-logo partner-titan">TITAN</div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ==================== ABOUT + STATS ==================== -->
+  <div class="container">
+    <section class="about-section" data-reveal="left">
+      <p>Founded in 2021, Celebso Group is a multi-platform technology group building and scaling companies across artificial intelligence, software, professional networking, venture growth, space technology, robotics, and digital innovation.</p>
+      <p>Led by Mr. Veer Singh, Founder, CEO & Chairman, the Group is building a connected ecosystem that brings together technology, intelligence, capital, and people to create companies, platforms, and opportunities for the future.</p>
+    </section>
+
+    <section class="stats-grid" data-reveal="zoom">
+      <div class="stat-item">
+        <h2>4</h2>
+        <p>Flagship Companies</p>
+      </div>
+      <div class="stat-item">
+        <h2>7+</h2>
+        <p>Ecosystem Ventures</p>
+      </div>
+      <div class="stat-item">
+        <h2>6+</h2>
+        <p>Tech Sectors</p>
+      </div>
+      <div class="stat-item">
+        <h2>1</h2>
+        <p>One Connected<br>Ecosystem</p>
+      </div>
+    </section>
+  </div>
+
+  <!-- ==================== VISION & MISSION ==================== -->
+  <div class="container">
+    <section class="vision-mission" data-reveal="left">
+      <div class="founder-card">
+        <div class="founder-image-container">
+          <img src="images/ChatGPT Image Sep 11, 2026, 06_53_00 PM.png" alt="Mr. Veer Singh">
+        </div>
+        <div class="founder-caption">Mr .Veer Singh ( Chairman & CEO)</div>
+      </div>
+      <div class="vision-content">
+        <h3>Our Vision & Mission</h3>
+        <ul>
+          <li>To create a global powerhouse ecosystem originating from India &mdash; integrating social networking, technology, AI, startups, and the entertainment industry &mdash; where ambition transforms into influence, and ideas scale into impactful businesses.</li>
+          <li>To bridge the gap between ideas, execution, and visibility by combining technology, AI, media, and strategic networks &mdash; helping startups scale faster, creators build powerful brands, and investors discover high-potential opportunities.</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+
+  <!-- ==================== ECOSYSTEM MAP ==================== -->
+  <div class="container">
+    <section class="ecosystem-map-section" data-reveal="zoom">
+      <div class="ecosystem-map-bg"></div>
+
+      <svg class="ecosystem-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M49.5,41.7 Q45,20 45,13" />
+        <path d="M49.5,41.7 Q30,26 22,25" />
+        <path d="M49.5,41.7 Q74,26 76,22" />
+        <path d="M49.5,41.7 Q26,44 16,40" />
+        <path d="M49.5,41.7 Q73,44 81,39" />
+        <path d="M49.5,41.7 Q31,56 23,54" />
+        <path d="M49.5,41.7 Q71,55 78,55" />
+        <path d="M49.5,41.7 Q58,44 63.5,49" />
+        <path d="M49.5,41.7 Q28,62 21,68" />
+        <path d="M49.5,41.7 Q56,74 64,87" />
+        <path d="M49.5,41.7 Q79,59 82,70" />
+        <path d="M49.5,41.7 Q33,76 28,92" />
+        <path d="M49.5,41.7 Q46,76 45,91" />
+      </svg>
+
+      <div class="eco-node eco-antellay-top">
+        <span class="node-label">ANTELLAY</span>
+        <div class="node-dot"></div>
+      </div>
+
+      <div class="eco-node eco-celebsox">
+        <span class="node-label">CelebsoX</span>
+        <div class="node-dot"></div>
+      </div>
+
+      <div class="eco-node eco-nxtfund">
+        <span class="node-label">NXTFund</span>
+        <div class="node-dot"></div>
+      </div>
+
+      <div class="eco-node eco-productions">
+        <span class="node-label">Celebso Productions</span>
+        <div class="node-dot"></div>
+      </div>
+
+      <div class="eco-node eco-center">
+        <div class="center-circle">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#eab308" stroke-width="3">
+            <path d="M7 7h10M7 12h10M7 17h10M7 7v10M17 7v10"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="eco-node eco-antellay-space">
+        <span class="node-label">ANTELLAY Space</span>
+        <div class="node-dot"></div>
+      </div>
+
+      <div class="eco-node eco-byizon">
+        <span class="node-label">ByiZon.ai</span>
+        <div class="node-dot"></div>
+      </div>
+
+      <div class="eco-node eco-flag">
+        &#127470;&#127475;
+      </div>
+
+      <div class="eco-node eco-numerixx">
+        <span class="node-label">NumeriXX</span>
+        <div class="node-dot"></div>
+      </div>
+
+      <div class="eco-node eco-school">
+        <div class="node-dot"></div>
+        <span class="node-label">Celebso School</span>
+      </div>
+
+      <div class="eco-node eco-triphike">
+        <div class="node-dot"></div>
+        <span class="node-label">thetriphike</span>
+      </div>
+
+      <div class="eco-node eco-startup-valley">
+        <span class="node-label">Startup Valley</span>
+        <div class="node-dot"></div>
+      </div>
+
+      <div class="eco-node eco-spacerentiya">
+        <div class="node-dot"></div>
+        <span class="node-label">SpaceRentiya</span>
+      </div>
+
+      <div class="eco-node eco-grehni">
+        <div class="node-dot"></div>
+        <span class="node-label">Grehni.ai</span>
+      </div>
+    </section>
+  </div>
+
+  <!-- ==================== NXTFUND GRID ==================== -->
+  <div class="container">
+    <section class="nxtfund-grid" data-reveal="right">
+      <div class="building-img-card">
+        <img src="images/ChatGPT Image Aug 29, 2026, 12_23_34 PM.png" alt="NXTFund Building">
+      </div>
+      <div class="nxtfund-info">
+        <div class="nxtfund-tag">ABOUT NXTFUND</div>
+        <ul>
+          <li>Founded in 2025, Celebso Group is a multi-platform technology group building companies across AI, software, space technology, robotics and digital innovation.</li>
+          <li>Led by Mr. Veer Singh, Founder, CEO & Chairman, the Group is building a connected ecosystem for the future.</li>
+          <li>Its flagship companies include Antellay Labs, CelebsoX, NXTFUND and Antellay Space.</li>
+          <li>Through technology, intelligence, capital and innovation, Celebso Group creates new platforms and opportunities.</li>
+        </ul>
+      </div>
+      <div class="incubation-card">
+        <div class="incubation-icon">&#128640;</div>
+        <h4>Startup<br>Incubation</h4>
+        <div class="divider"></div>
+        <p>World-class incubation<br>at Startup Valley Jaipur</p>
+      </div>
+    </section>
+
+    <!-- CTA & Banner -->
+    <section class="cta-banner-wrapper" data-reveal="zoom">
+      <div class="cta-left">
+        <div class="cta-buttons">
+          <button class="btn-red">Apply For Funding &rarr;</button>
+          <button class="btn-outline-dark">Explore Startup Valley</button>
+        </div>
+        <div class="cta-text">
+          <p>NXTFund is the investment arm of <span class="brand-red">Celebso Group</span></p>
+          <div class="tagline-star"><span>&#10022;</span> Backed by Vision. Driven by Impact.</div>
+        </div>
+      </div>
+      <div class="banner-overlay-card">
+        <span class="small-icon">&#128640;</span>
+        <span class="text">Startup<br>Incubation</span>
+      </div>
+    </section>
+
+    <!-- Meetup Banner -->
+    <section class="meetup-card" data-reveal>
+      <div class="meetup-img">
+        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="Meetup Event">
+      </div>
+      <div class="meetup-content">
+        <div class="badge-upcoming">
+          <span></span> UPCOMING
+        </div>
+        <h3>NXTFund Founder Meetup &ndash; Bengaluru</h3>
+        <p>An exclusive evening for founders to connect, collaborate and grow together.</p>
+        <div class="meetup-footer">
+          <div class="meetup-meta">
+            <span>&#128197; 20 Aug 2026</span>
+            <span>&#128205; Bengaluru, India</span>
+          </div>
+          <button class="btn-register">Register &rarr;</button>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ==================== CATEGORIES + ANTELLAY BRANDS ==================== -->
+  <div class="categories-section">
+    <div class="container">
+      <!-- Categories Row -->
+      <section class="categories-row" data-reveal="left">
+        <div class="category-card">
+          <div class="category-icon">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+          </div>
+          <div class="category-title">AI AND TECH</div>
+          <div class="category-desc">Building intelligent solutions for a smarter tomorrow.</div>
+        </div>
+        <div class="category-card">
+          <div class="category-icon">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+          </div>
+          <div class="category-title">SPACE TECHNOLOGY</div>
+          <div class="category-desc">Advancing space innovation for a better future.</div>
+        </div>
+        <div class="category-card">
+          <div class="category-icon">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+          </div>
+          <div class="category-title">SOCIAL NETWORK</div>
+          <div class="category-desc">Connecting people, communities and opportunities.</div>
+        </div>
+        <div class="category-card">
+          <div class="category-icon">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+          </div>
+          <div class="category-title">MEDIA PRODUCTION</div>
+          <div class="category-desc">Creating impactful content that inspires.</div>
+        </div>
+        <div class="category-card">
+          <div class="category-icon">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          </div>
+          <div class="category-title">INCUBATION</div>
+          <div class="category-desc">Nurturing ideas and startups for future success.</div>
+        </div>
+        <div class="category-card">
+          <div class="category-icon">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+          </div>
+          <div class="category-title">VENTURE CAPITAL</div>
+          <div class="category-desc">Investing in visionary founders and disruptive ideas.</div>
+        </div>
+        <div class="category-card">
+          <div class="category-icon">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+          </div>
+          <div class="category-title">REAL ESTATE</div>
+          <div class="category-desc">Developing spaces that build a better lifestyle.</div>
+        </div>
+        <div class="category-card">
+          <div class="category-icon">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
+          </div>
+          <div class="category-title">TRAVEL</div>
+          <div class="category-desc">Exploring the world and creating memorable journeys.</div>
+        </div>
+        <div class="category-card">
+          <div class="category-icon">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+          </div>
+          <div class="category-title">RESEARCH</div>
+          <div class="category-desc">Driving innovation through deep research and insights.</div>
+        </div>
+        <div class="category-card">
+          <div class="category-icon">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+          </div>
+          <div class="category-title">NGO</div>
+          <div class="category-desc">Making a positive impact and building a better society.</div>
+        </div>
+      </section>
+
+      <!-- Antellay Brand Logo -->
+      <section class="hero-brand" data-reveal>
+        <h1 class="brand-title">A N T E L L A Y .</h1>
+        <div class="brand-subtext">AI &bull; GIS &bull; Engineering &bull; Innovation</div>
+      </section>
+
+      <!-- Featured Brands -->
+      <section class="featured-section" data-reveal="left">
+        <div class="featured-header">
+          <div class="featured-title-wrap">
+            <h2>Featured Brand's</h2>
+          </div>
+          <span class="view-all-link">View All Companies</span>
+        </div>
+        <div class="brands-grid">
+          <div class="main-brand-card">
+            <div class="main-card-image">
+              <img src="images/WhatsApp Image 2026-09-03 at 9.48.57 PM.jpeg" alt="VR Woman Antellay Space">
+            </div>
+            <div class="main-card-body">
+              <h3 class="main-card-title">A N T E L L A Y Space</h3>
+              <p class="main-card-desc">Revolutionizing logistics through real-time quantum optimization and autonomous fleet management.</p>
+              <div class="tags">
+                <span class="tag">AI/ML</span>
+                <span class="tag">Logistics</span>
+              </div>
+            </div>
+          </div>
+          <div class="side-brands-stack">
+            <div class="side-card">
+              <div class="side-card-img">
+                <img src="images/Gemini_Generated_Image_f7jqlof7jqlof7jq.png" alt="CelebsoX Phone App">
+              </div>
+              <div class="side-card-content">
+                <h3>CelebsoX</h3>
+                <p>Autonomous treasury management for high-grow...</p>
+              </div>
+            </div>
+            <div class="side-card">
+              <div class="side-card-img">
+                <img src="images/ChatGPT Image Aug 29, 2026, 01_44_16 PM.png" alt="NXTFund Pink Vertical Farming">
+              </div>
+              <div class="side-card-content">
+                <h3>NXTFund</h3>
+                <p>Precision vertical farming powered by adaptive climate...</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Space Banner -->
+      <section class="space-banner" data-reveal="zoom">
+        <div class="space-banner-content">
+          <h2 class="space-banner-title">A N T E L L A Y<br>Space OS</h2>
+          <div class="space-banner-sub">.THE OPERATING SYSTEM FOR THE SPACE AGE</div>
+        </div>
+        <div class="space-banner-graphic">
+          <div class="launch-badge">
+            <span class="label">LAUNCH</span>
+            <span class="date">JAN 2027</span>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- ==================== COUNTRIES MAP ==================== -->
+  <div class="countries-section">
+    <div class="container">
+      <h2 class="map-section-title">Work With Country's</h2>
+
+      <section class="map-card" data-reveal="right">
+        <div class="map-world-bg"></div>
+      </section>
+
+      <!-- Antellay-X Banner -->
+      <section class="cyber-banner" data-reveal>
+        <div class="cyber-halo"></div>
+        <h2 class="cyber-title">A N T E L L A Y - X</h2>
+        <div class="cyber-sub">AUTONOMY REDEFINED</div>
+      </section>
+
+      <!-- Startup School -->
+      <section class="school-card" data-reveal="left">
+        <div class="school-left">
+          <div class="school-logo">
+            <img src="images/ChatGPT Image Aug 30, 2026, 09_46_22 PM.png" alt="Celebso Startup School Logo" style="width: 100%; height: 100%; object-fit: contain; border-radius: 10px;">
+          </div>
+          <div class="school-title">
+            <h3>Celebso<br>Startup School</h3>
+            <span>by Celebso Group</span>
+          </div>
+        </div>
+        <div class="school-center">
+          <h4>Apply <span class="highlight">Admission</span></h4>
+          <div class="batch">2026 Batch</div>
+        </div>
+        <div class="school-right">
+          <div class="student-types">
+            <div class="student-item">
+              <span class="icon">&#127760;</span> International Students
+            </div>
+            <div class="student-item">
+              <span class="icon">&#127470;&#127475;</span> Indian Students
+            </div>
+          </div>
+          <div class="btn-apply-wrap">
+            <a href="#" class="btn-apply-school">Apply Now &rarr;</a>
+            <div class="school-subtext">Join. Learn. Grow.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonial -->
+      <section class="testimonial-card" data-reveal="zoom">
+        <div class="testimonial-img-wrap">
+          <img src="images/ChatGPT Image Aug 29, 2026, 01_32_42 PM.png" alt="Team of Founders">
+          <div class="roi-badge">
+            <div class="number">12x</div>
+            <div class="label">Avg. ROI</div>
+          </div>
+        </div>
+        <div class="testimonial-content">
+          <span class="tag-success">SUCCESS STORIES</span>
+          <h3 class="testimonial-title">From Vision to Velocity</h3>
+          <p class="testimonial-quote">
+            "NXTFund didn't just give us the capital; they gave us the roadmap. Their network opened doors that we didn't even know existed. They are truly the partner every visionary founder dreams of."
+          </p>
+          <div class="author-wrap">
+            <div class="author-avatar">
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80" alt="Sarah Chen">
+            </div>
+            <div class="author-info">
+              <h5>Sarah Chen</h5>
+              <p>CEO, Artificient</p>
+            </div>
+          </div>
+          <a href="#" class="read-more-link">Read More Growth Stories &rarr;</a>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- ==================== APPLY SECTION ==================== -->
+  <div class="apply-section">
+    <div class="container">
+      <section class="apply-section" style="padding: 0;" data-reveal="zoom">
+        <div class="orange-dash"></div>
+        <h1 class="apply-title">It's <i>never</i> too early to apply.</h1>
+        <p class="apply-subtitle">We fund companies with no revenue, product, or fully baked idea.</p>
+        <a href="#" class="btn-apply-dark">Apply</a>
+
+        <div class="gallery-scroll">
+          <div class="gallery-track">
+            <div class="gallery-set">
+              <div class="gallery-item">
+                <img src="images/WhatsApp Image 2026-09-01 at 10.42.11 AM (3).jpeg" alt="Speakers panel">
+              </div>
+              <div class="gallery-item">
+                <img src="images/WhatsApp Image 2026-09-01 at 10.42.13 AM.jpeg" alt="Founder talking">
+              </div>
+              <div class="gallery-item">
+                <img src="images/WhatsApp Image 2026-09-01 at 10.42.14 AM (1).jpeg" alt="Co-working founders">
+              </div>
+              <div class="gallery-item">
+                <img src="images/ChatGPT Image Aug 29, 2026, 01_33_38 PM.png" alt="Woman speaker">
+              </div>
+              <div class="gallery-item">
+                <img src="images/WhatsApp Image 2026-09-01 at 10.41.01 AM.jpeg" alt="Networking presentation">
+              </div>
+              <div class="gallery-item">
+                <img src="images/WhatsApp Image 2026-09-01 at 10.42.00 AM.jpeg" alt="Mentorship session">
+              </div>
+              <div class="gallery-item">
+                <img src="images/WhatsApp Image 2026-09-01 at 10.42.02 AM.jpeg" alt="Startup event">
+              </div>
+              <div class="gallery-item">
+                <img src="images/WhatsApp Image 2026-09-01 at 10.42.07 AM.jpeg" alt="Community meetup">
+              </div>
+            </div>
+            <div class="gallery-set" aria-hidden="true">
+              <div class="gallery-item">
+                <img src="images/WhatsApp Image 2026-09-01 at 10.42.11 AM (3).jpeg" alt="Speakers panel">
+              </div>
+              <div class="gallery-item">
+                <img src="images/WhatsApp Image 2026-09-01 at 10.42.13 AM.jpeg" alt="Founder talking">
+              </div>
+              <div class="gallery-item">
+                <img src="images/WhatsApp Image 2026-09-01 at 10.42.14 AM (1).jpeg" alt="Co-working founders">
+              </div>
+              <div class="gallery-item">
+                <img src="images/ChatGPT Image Aug 29, 2026, 01_33_38 PM.png" alt="Woman speaker">
+              </div>
+              <div class="gallery-item">
+                <img src="images/WhatsApp Image 2026-09-01 at 10.41.01 AM.jpeg" alt="Networking presentation">
+              </div>
+              <div class="gallery-item">
+                <img src="images/WhatsApp Image 2026-09-01 at 10.42.00 AM.jpeg" alt="Mentorship session">
+              </div>
+              <div class="gallery-item">
+                <img src="images/WhatsApp Image 2026-09-01 at 10.42.02 AM.jpeg" alt="Startup event">
+              </div>
+              <div class="gallery-item">
+                <img src="images/WhatsApp Image 2026-09-01 at 10.42.07 AM.jpeg" alt="Community meetup">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- ==================== NEWS SECTION ==================== -->
+  <div class="container">
+    <section class="news-section" data-reveal>
+      <div class="news-header">
+        <h2 class="news-title">Latest News</h2>
+        <a href="#" class="view-all-press">View All Press &rarr;</a>
+      </div>
+      <div class="news-grid" data-reveal="zoom">
+        <div class="news-card">
+          <span class="news-date">March 15, 2024</span>
+          <h3 class="news-card-title">CelebsoX Announces Delhi Fashion Runway</h3>
+          <a href="#" class="news-read-more">Read More &rarr;</a>
+        </div>
+        <div class="news-card">
+          <span class="news-date">March 10, 2024</span>
+          <h3 class="news-card-title">Celebso Group Expands Into AI Ecosystem</h3>
+          <a href="#" class="news-read-more">Read More &rarr;</a>
+        </div>
+        <div class="news-card">
+          <span class="news-date">March 5, 2024</span>
+          <h3 class="news-card-title">Celebso Launches Founder Growth Platform</h3>
+          <a href="#" class="news-read-more">Read More &rarr;</a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ==================== PRESS LOGOS ==================== -->
+  <div class="container">
+    <section class="press-section" data-reveal>
+      <div class="press-logo logo-entrepreneur">entrepreneur <span>INDIA</span></div>
+      <div class="press-logo logo-zoom">ZOOM</div>
+      <div class="press-logo logo-startupnews">StartupNews.fyi</div>
+      <div class="press-logo logo-yourstory">YOURSTORY</div>
+      <div class="press-logo logo-forbes">Forbes <span>INDIA</span></div>
+    </section>
+  </div>
+
+  <!-- ==================== INCUBATION HERO ==================== -->
+  <div class="container">
+    <section class="incubation-hero" data-reveal="zoom">
+      <div class="incubation-badge">
+        <span class="rocket-icon">&#128640;</span>
+        <div class="incubation-badge-text">Startup<br>Incubation</div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ==================== NXT FUND FOOTER ==================== -->
+  <footer class="nxt-footer-section">
+    <div class="nxt-footer-content">
+      <div class="nxt-logo-pill">
+        <img src="images/ChatGPT Image Aug 18, 2026, 10_51_46 PM.png" alt="Celebso Group" style="height: 28px; width: auto; object-fit: contain;">
+      </div>
+
+      <div class="nxt-tagline">Building the Future Through Technology, Intelligence &amp; Innovation</div>
+
+      <div class="footer-links-row">
+        <a href="about.html">About Us</a>
+        <span class="sep">&bull;</span>
+        <a href="leadership.html">Leadership</a>
+        <span class="sep">&bull;</span>
+        <a href="VENTURES.html">Ventures</a>
+        <span class="sep">&bull;</span>
+        <a href="patner.html">Partners</a>
+        <span class="sep">&bull;</span>
+        <a href="news.html">News</a>
+        <span class="sep">&bull;</span>
+        <a href="contact.html">Contact Us</a>
+      </div>
+
+      <div class="footer-email">
+        <i class="fa-regular fa-envelope"></i> info@celebso.com
+      </div>
+
+      <div class="social-icons-row">
+        <a href="#" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" class="social-btn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="#" class="social-btn"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+
+      <div class="copyright-text">&copy; 2026 Celebso Group. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script>
+    const navbar = document.getElementById('site-header');
+    let lastScrollY = window.scrollY;
+
+    window.addEventListener('scroll', () => {
+      const currentY = window.scrollY;
+      if (navbar.classList.contains('menu-open')) { navbar.classList.remove('nav-hidden'); return; }
+      if (currentY > lastScrollY && currentY > 100) {
+        navbar.classList.add('nav-hidden');
+      } else {
+        navbar.classList.remove('nav-hidden');
+      }
+      lastScrollY = currentY;
+    }, { passive: true });
+
+    navbar.querySelectorAll('nav a:not(.btn-funding)').forEach(link => {
+      link.addEventListener('click', () => navbar.classList.remove('menu-open'));
+    });
+  </script>
+
+<script>
+    (function () {
+      const els = document.querySelectorAll('[data-reveal]');
+      if (!('IntersectionObserver' in window)) { els.forEach(el => el.classList.add('in-view')); return; }
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+      els.forEach(el => io.observe(el));
+    })();
+  </script>
+</body>
+</html>

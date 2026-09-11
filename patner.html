@@ -1,0 +1,831 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NXTFund - Partners</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            orange: '#f05123',
+                            lightOrange: '#fff5f2',
+                            dark: '#111827',
+                            gray: '#6b7280',
+                            lightGray: '#f9fafb'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html, body { overflow-x: hidden; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; padding-top: 76px; overflow-x: hidden; }
+
+        header {
+            height: auto;
+            border: 0;
+            background: transparent;
+            position: fixed;
+            top: 14px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: min(1180px, calc(100% - 48px));
+            max-width: min(1180px, calc(100% - 48px));
+            padding: 0 20px;
+            z-index: 100;
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            align-items: center;
+            gap: 28px;
+            transition: transform 0.4s ease, opacity 0.4s ease, visibility 0.4s ease;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 44px;
+            width: auto;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover img {
+            transform: scale(1.05);
+        }
+
+        nav {
+            justify-self: center;
+            width: min(680px, 100%);
+            height: 54px;
+            padding: 0 14px;
+            border: 1px solid rgba(226, 232, 240, 0.9);
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.75);
+            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.4), 0 0 36px rgba(15, 23, 42, 0.08);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0;
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 0.8px;
+        }
+
+        nav a:not(.btn-funding),
+        nav a:not(.btn-funding):visited {
+            display: inline-flex;
+            align-items: center;
+            position: relative;
+            white-space: nowrap;
+            color: #334155;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            padding: 6px 3px;
+            transition: color 0.3s ease;
+        }
+
+        nav a:not(.btn-funding)::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: #ff5023;
+            transition: width 0.3s ease, left 0.3s ease;
+            box-shadow: 0 0 8px rgba(255, 80, 35, 0.5);
+        }
+
+        nav a:not(.btn-funding):hover,
+        nav a.active {
+            color: #ff5023;
+        }
+
+        nav a:not(.btn-funding):hover::after,
+        nav a.active::after {
+            width: 100%;
+            left: 0;
+        }
+
+        .btn-funding {
+            height: 54px;
+            border: 1px solid rgba(255, 80, 35, 0.6);
+            border-radius: 999px;
+            background: linear-gradient(135deg, #ff5023, #f97316);
+            box-shadow: inset 0 0 22px rgba(239, 113, 61, 0.15), 0 0 24px rgba(255, 80, 35, 0.25);
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 0.8px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 0 24px;
+            white-space: nowrap;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .btn-funding::after {
+            content: "";
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #ffffff;
+            box-shadow: 0 0 16px 6px rgba(255, 128, 67, 0.6);
+        }
+
+        .btn-funding:hover {
+            transform: translateY(-1px);
+            box-shadow: inset 0 0 22px rgba(239, 113, 61, 0.2), 0 0 34px rgba(255, 80, 35, 0.4);
+        }
+
+        header.nav-hidden {
+            transform: translateX(-50%) translateY(-120%);
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                grid-template-columns: 1fr;
+                gap: 12px;
+                width: calc(100% - 28px);
+                top: 10px;
+            }
+            nav {
+                width: 100%;
+                height: auto;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 4px;
+                padding: 10px;
+                border-radius: 20px;
+            }
+            nav a:not(.btn-funding) {
+                font-size: 9px;
+                padding: 5px 7px;
+            }
+            .btn-funding {
+                height: 46px;
+                width: 100%;
+                padding: 0 18px;
+            }
+        }
+
+        .nxt-footer-section {
+            background: url('images/footer-bg.png') center 30%/cover no-repeat #080c14;
+            position: relative;
+            padding: 50px 20px 30px;
+            color: #ffffff;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .nxt-footer-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse at 50% 0%, rgba(255, 80, 35, 0.08) 0%, transparent 50%),
+                linear-gradient(180deg, rgba(15, 23, 42, 0.55) 0%, rgba(8, 12, 20, 0.85) 100%);
+            z-index: 1;
+        }
+
+        .nxt-footer-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .nxt-logo-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 10px 24px;
+            border-radius: 30px;
+            margin-bottom: 12px;
+        }
+
+        .nxt-tagline {
+            font-size: 11px;
+            color: #94a3b8;
+            letter-spacing: 1px;
+            margin-bottom: 28px;
+            font-weight: 500;
+        }
+
+        .footer-links-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px 0;
+            margin-bottom: 20px;
+        }
+
+        .footer-links-row a {
+            color: #94a3b8;
+            font-size: 11px;
+            font-weight: 600;
+            text-decoration: none;
+            padding: 4px 12px;
+            transition: color 0.2s;
+        }
+
+        .footer-links-row a:hover {
+            color: #ffffff;
+        }
+
+        .footer-links-row .sep {
+            color: #334155;
+            font-size: 9px;
+        }
+
+        .footer-email {
+            font-size: 11px;
+            color: #94a3b8;
+            margin-bottom: 22px;
+            font-weight: 500;
+        }
+
+        .footer-email i {
+            color: #ff5023;
+            margin-right: 6px;
+        }
+
+        .social-icons-row {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 24px;
+        }
+
+        .social-btn {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            background: rgba(255, 255, 255, 0.04);
+            color: #94a3b8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            text-decoration: none;
+            transition: all 0.25s ease;
+        }
+
+        .social-btn:hover {
+            background: #ff3b1d;
+            border-color: #ff3b1d;
+        }
+
+        .copyright-text {
+            font-size: 9.5px;
+            color: #475569;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+        }
+
+        .hero-map-bg {
+            background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+    /* ================== SCROLL REVEAL ANIMATIONS ================== */
+    [data-reveal] {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
+      will-change: opacity, transform;
+    }
+    [data-reveal].in-view {
+      opacity: 1;
+      transform: none;
+    }
+    [data-reveal="left"] { transform: translateX(-36px); }
+    [data-reveal="right"] { transform: translateX(36px); }
+    [data-reveal="zoom"] { transform: scale(0.93); }
+    [data-reveal="left"].in-view,
+    [data-reveal="right"].in-view,
+    [data-reveal="zoom"].in-view { transform: none; }
+
+    .partner-card, #partners-grid > div {
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+    .partner-card:hover, #partners-grid > div:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 30px rgba(15, 23, 42, 0.08);
+      border-color: rgba(224, 83, 41, 0.25);
+    }
+
+    @media (max-width: 560px) {
+      .hero-map-bg {
+        height: 220px !important;
+      }
+      #partners-grid > div {
+        padding: 24px 18px;
+      }
+    }
+
+    /* ================== MOBILE NAV ================== */
+    .menu-toggle, .mobile-only-btn { display: none; }
+
+    @media (max-width: 768px) {
+      header {
+        grid-template-columns: 1fr auto !important;
+        gap: 0 !important;
+        width: calc(100% - 24px) !important;
+        padding: 8px 12px;
+        top: 10px;
+      }
+      .menu-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        flex-direction: column;
+        gap: 5px;
+      }
+      .menu-toggle span {
+        display: block;
+        width: 20px;
+        height: 2px;
+        background: #0f172a;
+        border-radius: 4px;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+      }
+      header.menu-open .menu-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+      header.menu-open .menu-toggle span:nth-child(2) { opacity: 0; }
+      header.menu-open .menu-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+      header > nav {
+        position: fixed;
+        top: 60px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        height: auto;
+        width: 100%;
+        border-radius: 0;
+        padding: 0;
+        gap: 0;
+        border: none;
+        border-bottom: 1px solid #e2e8f0;
+        box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+        background: rgba(255,255,255,0.98);
+        backdrop-filter: blur(20px);
+        z-index: 200;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease, padding 0.4s ease;
+      }
+      header.menu-open > nav {
+        max-height: 400px;
+        padding: 8px 0 0;
+      }
+      header > nav a:not(.btn-funding) {
+        justify-content: center;
+        padding: 14px 24px;
+        font-size: 14px;
+        border-bottom: 1px solid #f1f5f9;
+        width: 100%;
+      }
+      header > nav a:not(.btn-funding):last-of-type { border-bottom: none; }
+      .desktop-only-btn { display: none !important; }
+      .mobile-only-btn {
+        display: inline-flex !important;
+        margin: 0 16px 12px;
+        width: calc(100% - 32px) !important;
+        height: 48px !important;
+        justify-content: center;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      [data-reveal] { opacity: 1 !important; transform: none !important; transition: none !important; }
+    }
+  </style>
+</head>
+<body class="text-brand-dark antialiased bg-white selection:bg-brand-orange selection:text-white">
+
+  <header id="site-header">
+    <a href="index.html" class="logo" style="text-decoration:none;">
+      <img src="images/ChatGPT Image Aug 21, 2026, 03_45_23 PM.png" alt="Celebso" style="height: 40px; width: auto; object-fit: contain;">
+    </a>
+    <nav>
+      <a href="about.html">About</a>
+      <a href="leadership.html">Leadership</a>
+      <a href="news.html">News</a>
+      <a href="patner.html" class="active">Partners</a>
+      <a href="VENTURES.html">Ventures</a>
+      <a href="#" class="btn-funding mobile-only-btn">Apply for Funding</a>
+    </nav>
+    <a href="#" class="btn-funding desktop-only-btn">Apply for Funding</a>
+    <button class="menu-toggle" aria-label="Toggle Menu" onclick="document.getElementById('site-header').classList.toggle('menu-open')">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+    <section class="max-w-[1200px] mx-auto px-4 sm:px-8 py-12 md:py-16 flex flex-col md:flex-row items-center justify-between gap-10" data-reveal>
+        <div class="md:w-1/2 md:pr-8 text-center md:text-left">
+            <h3 class="text-brand-orange font-bold text-sm tracking-wide uppercase mb-4">Partners</h3>
+            <h1 class="text-4xl sm:text-5xl font-bold leading-tight mb-6 tracking-tight text-gray-900">
+                Stronger Partnerships.<br>Greater Impact<span class="text-brand-orange">.</span>
+            </h1>
+            <p class="text-gray-600 text-lg mb-8 max-w-md leading-relaxed">
+                We collaborate with leading companies, investors and ecosystem enablers to drive innovation and help founders build the future.
+            </p>
+            <a href="#" class="inline-flex items-center bg-brand-orange text-white px-6 py-3 rounded-md font-medium hover:bg-orange-600 transition-colors shadow-sm shadow-orange-200">
+                Become a Partner 
+                <i class="fa-solid fa-arrow-right ml-2 text-sm"></i>
+            </a>
+        </div>
+        
+<div class="md:w-1/2 relative h-[350px] w-full mt-12 md:mt-0 hero-map-bg rounded-3xl flex items-center justify-center bg-gradient-to-br from-orange-50 to-white border border-orange-100">
+            <img src="images/ChatGPT Image Sep 1, 2026, 09_58_49 AM.png" alt="Partners Illustration" class="w-full h-full object-cover rounded-3xl" onerror="this.style.display='none'">
+        </div>
+    </section>
+
+    <section class="max-w-[1200px] mx-auto px-4 sm:px-8 mb-10" data-reveal>
+        <div class="flex flex-wrap justify-center gap-x-2 gap-y-2 md:gap-x-8 border-b border-gray-200 overflow-x-auto">
+            <button class="pb-4 text-sm font-semibold text-brand-orange border-b-2 border-brand-orange" data-filter="all">All Partners</button>
+            <button class="pb-4 text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors" data-filter="investor">Investors</button>
+            <button class="pb-4 text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors" data-filter="corporate">Corporates</button>
+            <button class="pb-4 text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors" data-filter="technology">Technology</button>
+            <button class="pb-4 text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors" data-filter="ecosystem">Ecosystem</button>
+            <button class="pb-4 text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors" data-filter="service">Service Partners</button>
+        </div>
+    </section>
+
+    <section class="max-w-[1200px] mx-auto px-4 sm:px-8 mb-16 md:mb-20" data-reveal="zoom">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="partners-grid">
+            <!-- Dynamically rendered from /api/partners -->
+
+            <div class="border border-gray-100 rounded-2xl p-8 flex flex-col items-center text-center hover:shadow-lg transition-shadow bg-white" data-category="corporate technology">
+                <img src="images/ChatGPT Image Sep 1, 2026, 10_01_54 AM.png" alt="Microsoft" class="partner-logo-img h-12 object-contain mb-6">
+                <h4 class="font-bold text-gray-900 mb-1">Microsoft</h4>
+                <p class="text-xs font-semibold text-brand-orange mb-4">Technology Partner</p>
+                <p class="text-sm text-gray-500 mb-6 flex-grow leading-relaxed">Empowering startups with world-class technology and developer tools.</p>
+                <a href="#" class="text-brand-orange text-sm font-medium hover:underline inline-flex items-center">
+                    View Partner <i class="fa-solid fa-arrow-right ml-1 text-xs"></i>
+                </a>
+            </div>
+
+            <div class="border border-gray-100 rounded-2xl p-8 flex flex-col items-center text-center hover:shadow-lg transition-shadow bg-white" data-category="corporate service technology">
+                <img src="images/ChatGPT Image Sep 1, 2026, 10_07_02 AM.png" alt="HubSpot" class="partner-logo-img h-10 object-contain mb-8">
+                <h4 class="font-bold text-gray-900 mb-1">HubSpot</h4>
+                <p class="text-xs font-semibold text-brand-orange mb-4">Growth Partner</p>
+                <p class="text-sm text-gray-500 mb-6 flex-grow leading-relaxed">Helping startups grow better with CRM, marketing and automation tools.</p>
+                <a href="#" class="text-brand-orange text-sm font-medium hover:underline inline-flex items-center">
+                    View Partner <i class="fa-solid fa-arrow-right ml-1 text-xs"></i>
+                </a>
+            </div>
+
+            <div class="border border-gray-100 rounded-2xl p-8 flex flex-col items-center text-center hover:shadow-lg transition-shadow bg-white" data-category="corporate service technology">
+                <img src="images/ChatGPT Image Sep 1, 2026, 10_08_53 AM.png" alt="Slack" class="partner-logo-img h-10 object-contain mb-8">
+                <h4 class="font-bold text-gray-900 mb-1">Slack</h4>
+                <p class="text-xs font-semibold text-brand-orange mb-4">Collaboration Partner</p>
+                <p class="text-sm text-gray-500 mb-6 flex-grow leading-relaxed">Bringing teams and tools together to build and ship faster.</p>
+                <a href="#" class="text-brand-orange text-sm font-medium hover:underline inline-flex items-center">
+                    View Partner <i class="fa-solid fa-arrow-right ml-1 text-xs"></i>
+                </a>
+            </div>
+
+            <div class="border border-gray-100 rounded-2xl p-8 flex flex-col items-center text-center hover:shadow-lg transition-shadow bg-white" data-category="corporate technology">
+                <img src="images/ChatGPT Image Sep 11, 2026, 11_07_59 PM.png" alt="Google" class="partner-logo-img h-12 object-contain mb-6">
+                <h4 class="font-bold text-gray-900 mb-1">Google</h4>
+                <p class="text-xs font-semibold text-brand-orange mb-4">Technology Partner</p>
+                <p class="text-sm text-gray-500 mb-6 flex-grow leading-relaxed">Helping startups build, scale and innovate with Google's technology ecosystem.</p>
+                <a href="#" class="text-brand-orange text-sm font-medium hover:underline inline-flex items-center">
+                    View Partner <i class="fa-solid fa-arrow-right ml-1 text-xs"></i>
+                </a>
+            </div>
+
+            <div class="border border-gray-100 rounded-2xl p-8 flex flex-col items-center text-center hover:shadow-lg transition-shadow bg-white" data-category="corporate technology">
+                <img src="images/ChatGPT Image Sep 4, 2026, 12_12_03 PM.png" alt="Zoho" class="partner-logo-img h-12 object-contain mb-6">
+                <h4 class="font-bold text-gray-900 mb-1">Zoho</h4>
+                <p class="text-xs font-semibold text-brand-orange mb-4">Technology Partner</p>
+                <p class="text-sm text-gray-500 mb-6 flex-grow leading-relaxed">Empowering startups with business software and productivity solutions.</p>
+                <a href="#" class="text-brand-orange text-sm font-medium hover:underline inline-flex items-center">
+                    View Partner <i class="fa-solid fa-arrow-right ml-1 text-xs"></i>
+                </a>
+            </div>
+
+            <div class="border border-gray-100 rounded-2xl p-8 flex flex-col items-center text-center hover:shadow-lg transition-shadow bg-white" data-category="corporate service technology">
+                <img src="images/ChatGPT Image Sep 11, 2026, 11_06_33 PM.png" alt="WhatsApp" class="partner-logo-img h-12 object-contain mb-6">
+                <h4 class="font-bold text-gray-900 mb-1">WhatsApp</h4>
+                <p class="text-xs font-semibold text-brand-orange mb-4">Communication Partner</p>
+                <p class="text-sm text-gray-500 mb-6 flex-grow leading-relaxed">Helping businesses connect with customers through messaging.</p>
+                <a href="#" class="text-brand-orange text-sm font-medium hover:underline inline-flex items-center">
+                    View Partner <i class="fa-solid fa-arrow-right ml-1 text-xs"></i>
+                </a>
+            </div>
+
+            <div class="border border-gray-100 rounded-2xl p-8 flex flex-col items-center text-center hover:shadow-lg transition-shadow bg-white" data-category="ecosystem service">
+                <img src="images/ChatGPT Image Sep 4, 2026, 12_02_02 PM.png" alt="AllEvents" class="partner-logo-img h-12 object-contain mb-6">
+                <h4 class="font-bold text-gray-900 mb-1">AllEvents</h4>
+                <p class="text-xs font-semibold text-brand-orange mb-4">Events & Community Partner</p>
+                <p class="text-sm text-gray-500 mb-6 flex-grow leading-relaxed">Connecting founders and communities through events and experiences.</p>
+                <a href="#" class="text-brand-orange text-sm font-medium hover:underline inline-flex items-center">
+                    View Partner <i class="fa-solid fa-arrow-right ml-1 text-xs"></i>
+                </a>
+            </div>
+
+            <div class="border border-gray-100 rounded-2xl p-8 flex flex-col items-center text-center hover:shadow-lg transition-shadow bg-white" data-category="corporate service">
+                <img src="images/ChatGPT Image Sep 4, 2026, 12_03_34 PM.png" alt="IDFC FIRST Bank" class="partner-logo-img h-12 object-contain mb-6">
+                <h4 class="font-bold text-gray-900 mb-1">IDFC FIRST Bank</h4>
+                <p class="text-xs font-semibold text-brand-orange mb-4">Banking Partner</p>
+                <p class="text-sm text-gray-500 mb-6 flex-grow leading-relaxed">Supporting entrepreneurs and businesses with modern financial solutions.</p>
+                <a href="#" class="text-brand-orange text-sm font-medium hover:underline inline-flex items-center">
+                    View Partner <i class="fa-solid fa-arrow-right ml-1 text-xs"></i>
+                </a>
+            </div>
+
+            <div class="border border-gray-100 rounded-2xl p-8 flex flex-col items-center text-center hover:shadow-lg transition-shadow bg-white" data-category="ecosystem">
+                <img src="images/ChatGPT Image Sep 4, 2026, 12_06_13 PM.png" alt="Startup Chaupal" class="partner-logo-img h-12 object-contain mb-6">
+                <h4 class="font-bold text-gray-900 mb-1">Startup Chaupal</h4>
+                <p class="text-xs font-semibold text-brand-orange mb-4">Startup Ecosystem Partner</p>
+                <p class="text-sm text-gray-500 mb-6 flex-grow leading-relaxed">Connecting founders, investors and ecosystem stakeholders.</p>
+                <a href="#" class="text-brand-orange text-sm font-medium hover:underline inline-flex items-center">
+                    View Partner <i class="fa-solid fa-arrow-right ml-1 text-xs"></i>
+                </a>
+            </div>
+
+            <div class="border border-gray-100 rounded-2xl p-8 flex flex-col items-center text-center hover:shadow-lg transition-shadow bg-white" data-category="ecosystem investor">
+                <img src="images/ChatGPT Image Sep 4, 2026, 12_08_09 PM.png" alt="Marwari Catalysts" class="partner-logo-img h-12 object-contain mb-6">
+                <h4 class="font-bold text-gray-900 mb-1">Marwari Catalysts</h4>
+                <p class="text-xs font-semibold text-brand-orange mb-4">Investment & Startup Partner</p>
+                <p class="text-sm text-gray-500 mb-6 flex-grow leading-relaxed">Supporting high-potential startups through investment and mentorship.</p>
+                <a href="#" class="text-brand-orange text-sm font-medium hover:underline inline-flex items-center">
+                    View Partner <i class="fa-solid fa-arrow-right ml-1 text-xs"></i>
+                </a>
+            </div>
+
+            <div class="border border-gray-100 rounded-2xl p-8 flex flex-col items-center text-center hover:shadow-lg transition-shadow bg-white" data-category="ecosystem">
+                <img src="images/ChatGPT Image Sep 4, 2026, 12_08_56 PM.png" alt="iStart Rajasthan" class="partner-logo-img h-12 object-contain mb-6">
+                <h4 class="font-bold text-gray-900 mb-1">iStart Rajasthan</h4>
+                <p class="text-xs font-semibold text-brand-orange mb-4">Startup Ecosystem Partner</p>
+                <p class="text-sm text-gray-500 mb-6 flex-grow leading-relaxed">Supporting Rajasthan's startup ecosystem through incubation and mentorship.</p>
+                <a href="#" class="text-brand-orange text-sm font-medium hover:underline inline-flex items-center">
+                    View Partner <i class="fa-solid fa-arrow-right ml-1 text-xs"></i>
+                </a>
+            </div>
+
+            <div class="border border-gray-100 rounded-2xl p-8 flex flex-col items-center text-center hover:shadow-lg transition-shadow bg-white" data-category="investor ecosystem">
+                <img src="images/ChatGPT Image Sep 4, 2026, 12_04_21 PM.png" alt="Fluid Ventures" class="partner-logo-img h-12 object-contain mb-6">
+                <h4 class="font-bold text-gray-900 mb-1">Fluid Ventures</h4>
+                <p class="text-xs font-semibold text-brand-orange mb-4">Venture Partner</p>
+                <p class="text-sm text-gray-500 mb-6 flex-grow leading-relaxed">Supporting emerging startups with capital and strategic guidance.</p>
+                <a href="#" class="text-brand-orange text-sm font-medium hover:underline inline-flex items-center">
+                    View Partner <i class="fa-solid fa-arrow-right ml-1 text-xs"></i>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <script>
+        (function () {
+            window.partnerLogoFallback = function (img) {
+                img.onerror = null;
+                var name = img.getAttribute('alt') || 'Partner';
+                var svg = encodeURIComponent(
+                    "<svg xmlns='http://www.w3.org/2000/svg' width='260' height='70' viewBox='0 0 260 70'>" +
+                        "<text x='50%' y='50%' font-family='Plus Jakarta Sans, Arial, sans-serif' font-size='21' font-weight='700' fill='#64748b' text-anchor='middle' dominant-baseline='central'>" + name + "</text>" +
+                    "</svg>"
+                );
+                img.src = "data:image/svg+xml;charset=utf-8," + svg;
+            };
+            function initLogos() {
+                document.querySelectorAll('#partners-grid img').forEach(function (img) {
+                    img.onerror = function () { window.partnerLogoFallback(img); };
+                    if (img.complete && img.naturalWidth === 0) window.partnerLogoFallback(img);
+                });
+            }
+            initLogos();
+            document.addEventListener('DOMContentLoaded', initLogos);
+        })();
+    </script>
+
+    <section class="max-w-[1200px] mx-auto px-4 sm:px-8 mb-16 md:mb-20" data-reveal="zoom">
+        <div class="bg-brand-lightOrange rounded-2xl p-6 md:p-12 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex flex-col sm:flex-row items-center sm:items-center text-center sm:text-left mb-6 md:mb-0">
+                <div class="w-16 h-16 sm:w-20 sm:h-20 bg-orange-100 rounded-full flex items-center justify-center mr-0 sm:mr-6 mb-4 sm:mb-0 shrink-0 border-4 border-white shadow-sm">
+                    <i class="fa-regular fa-handshake text-3xl text-brand-orange"></i>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">Let's Build the Future Together</h3>
+                    <p class="text-gray-600 text-sm md:text-base max-w-md">Join our partner network and collaborate with us to empower the next generation of founders.</p>
+                </div>
+            </div>
+            <div class="flex flex-col space-y-4 md:items-end w-full md:w-auto">
+                <a href="#" class="bg-brand-orange text-white px-8 py-3 rounded-md font-medium text-center hover:bg-orange-600 transition-colors w-full md:w-auto shadow-sm shadow-orange-200">
+                    Become a Partner <i class="fa-solid fa-arrow-right ml-2 text-sm"></i>
+                </a>
+                <a href="#" class="text-brand-orange font-medium text-sm text-center md:text-right hover:underline flex items-center justify-center md:justify-end">
+                    Download Partner Deck <i class="fa-solid fa-download ml-2 text-xs"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="nxt-footer-section">
+    <div class="nxt-footer-content">
+      <div class="nxt-logo-pill">
+        <img src="images/ChatGPT Image Aug 18, 2026, 10_51_46 PM.png" alt="Celebso Group" style="height: 28px; width: auto; object-fit: contain;">
+      </div>
+
+      <div class="nxt-tagline">Building the Future Through Technology, Intelligence &amp; Innovation</div>
+
+      <div class="footer-links-row">
+        <a href="about.html">About Us</a>
+        <span class="sep">&bull;</span>
+        <a href="leadership.html">Leadership</a>
+        <span class="sep">&bull;</span>
+        <a href="VENTURES.html">Ventures</a>
+        <span class="sep">&bull;</span>
+        <a href="patner.html">Partners</a>
+        <span class="sep">&bull;</span>
+        <a href="news.html">News</a>
+        <span class="sep">&bull;</span>
+        <a href="contact.html">Contact Us</a>
+      </div>
+
+      <div class="footer-email">
+        <i class="fa-regular fa-envelope"></i> info@celebso.com
+      </div>
+
+      <div class="social-icons-row">
+        <a href="#" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" class="social-btn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="#" class="social-btn"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+
+      <div class="copyright-text">&copy; 2026 Celebso Group. All rights reserved.</div>
+    </div>
+  </footer>
+
+    <script>
+        (function() {
+            const filterBtns = document.querySelectorAll('[data-filter]');
+            const cards = document.querySelectorAll('[data-category]');
+
+            filterBtns.forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    filterBtns.forEach(function(b) {
+                        b.classList.remove('text-brand-orange', 'border-b-2', 'border-brand-orange', 'font-semibold');
+                        b.classList.add('text-gray-500', 'font-medium');
+                    });
+                    btn.classList.remove('text-gray-500', 'font-medium');
+                    btn.classList.add('text-brand-orange', 'border-b-2', 'border-brand-orange', 'font-semibold');
+
+                    const filter = btn.getAttribute('data-filter');
+
+                    cards.forEach(function(card) {
+                        const cats = (card.getAttribute('data-category') || '').split(' ');
+                        if (filter === 'all' || cats.indexOf(filter) !== -1) {
+                            card.style.display = '';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        })();
+    </script>
+    <script>
+        (function () {
+            const grid = document.getElementById('partners-grid');
+            if (!grid) return;
+
+            function mapCategory(cat) {
+                const c = String(cat || '').toLowerCase();
+                if (c.indexOf('vc') !== -1) return 'investor';
+                if (c.indexOf('accelerator') !== -1) return 'ecosystem';
+                if (c.indexOf('advisor') !== -1) return 'ecosystem investor';
+                if (c.indexOf('corporate') !== -1) return 'corporate technology';
+                return 'ecosystem';
+            }
+
+            function esc(str) {
+                const d = document.createElement('div');
+                d.textContent = str == null ? '' : String(str);
+                return d.innerHTML;
+            }
+
+            fetch('/api/partners')
+                .then(function (r) { return r.json(); })
+                .then(function (partners) {
+                    if (!Array.isArray(partners) || !partners.length) return;
+                    var html = '';
+                    partners.forEach(function (p) {
+                        const catAttr = mapCategory(p.category);
+                        const role = p.category || 'Partner';
+                        const link = p.website && p.website !== '#' ? p.website : '#';
+                        var img = p.logo_url
+                            ? '<img src="' + esc(p.logo_url) + '" alt="' + esc(p.name) + '" class="partner-logo-img h-12 object-contain mb-6" loading="lazy" onerror="window.partnerLogoFallback && partnerLogoFallback(this)">'
+                            : '';
+                        html += '' +
+                            '<div class="border border-gray-100 rounded-2xl p-6 md:p-8 flex flex-col items-center text-center hover:shadow-lg transition-shadow bg-white" data-category="' + catAttr + '">' +
+                                img +
+                                '<h4 class="font-bold text-gray-900 mb-1">' + esc(p.name) + '</h4>' +
+                                '<p class="text-xs font-semibold text-brand-orange mb-4">' + esc(role) + '</p>' +
+                                '<p class="text-sm text-gray-500 mb-6 flex-grow leading-relaxed">' + esc(p.description || '') + '</p>' +
+                                '<a href="' + link + '" class="text-brand-orange text-sm font-medium hover:underline inline-flex items-center"' + (link !== '#' ? ' target="_blank" rel="noopener"' : '') + '>' +
+                                    'View Partner <i class="fa-solid fa-arrow-right ml-1 text-xs"></i>' +
+                                '</a>' +
+                            '</div>';
+                    });
+                    grid.innerHTML = html;
+
+                    // Re-attach filtering
+                    const filterBtns = document.querySelectorAll('[data-filter]');
+                    function applyFilter(btn) {
+                        filterBtns.forEach(function (b) {
+                            b.classList.remove('text-brand-orange', 'border-b-2', 'border-brand-orange', 'font-semibold');
+                            b.classList.add('text-gray-500', 'font-medium');
+                        });
+                        btn.classList.remove('text-gray-500', 'font-medium');
+                        btn.classList.add('text-brand-orange', 'border-b-2', 'border-brand-orange', 'font-semibold');
+                        const filter = btn.getAttribute('data-filter');
+                        document.querySelectorAll('#partners-grid [data-category]').forEach(function (card) {
+                            const cats = (card.getAttribute('data-category') || '').split(' ');
+                            card.style.display = (filter === 'all' || cats.indexOf(filter) !== -1) ? '' : 'none';
+                        });
+                    }
+                    filterBtns.forEach(function (btn) {
+                        btn.addEventListener('click', function () { applyFilter(btn); });
+                    });
+                })
+                .catch(function () { /* keep hardcoded fallback */ });
+        })();
+    </script>
+    <script>
+        const navbar = document.getElementById('site-header');
+        let lastScrollY = window.scrollY;
+
+        window.addEventListener('scroll', () => {
+            const currentY = window.scrollY;
+            if (navbar.classList.contains('menu-open')) { navbar.classList.remove('nav-hidden'); return; }
+            if (currentY > lastScrollY && currentY > 100) {
+                navbar.classList.add('nav-hidden');
+            } else {
+                navbar.classList.remove('nav-hidden');
+            }
+            lastScrollY = currentY;
+        }, { passive: true });
+
+        navbar.querySelectorAll('nav a:not(.btn-funding)').forEach(link => {
+            link.addEventListener('click', () => navbar.classList.remove('menu-open'));
+        });
+    </script>
+<script>
+    (function () {
+      const els = document.querySelectorAll('[data-reveal]');
+      if (!('IntersectionObserver' in window)) { els.forEach(el => el.classList.add('in-view')); return; }
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+      els.forEach(el => io.observe(el));
+    })();
+  </script>
+</body>
+</html>

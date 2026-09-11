@@ -1,0 +1,2095 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Celebso Group - Ventures</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* ================= GLOBAL RESETS ================= */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+body {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        background-color: #fcfbf9;
+        color: #0f172a;
+        line-height: 1.5;
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+        padding-top: 110px;
+      }
+
+    .container {
+      max-width: 1260px;
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .tag-orange {
+      color: #e05329;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      display: inline-block;
+      margin-bottom: 14px;
+    }
+
+    .section-tag {
+      font-size: 12px;
+      font-weight: 800;
+      color: #e05329;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    /* ================= 1. NAVBAR ================= */
+    header {
+      height: auto;
+      border: 0;
+      background: transparent;
+      position: fixed;
+      top: 14px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: min(1180px, calc(100% - 48px));
+      max-width: min(1180px, calc(100% - 48px));
+      padding: 0 20px;
+      z-index: 100;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .logo img {
+      height: 44px;
+      width: auto;
+      object-fit: contain;
+      transition: transform 0.3s ease;
+    }
+
+    .logo:hover img {
+      transform: scale(1.05);
+    }
+
+    nav {
+      justify-self: center;
+      width: min(680px, 100%);
+      height: 54px;
+      padding: 0 14px;
+      border: 1px solid rgba(226, 232, 240, 0.9);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.75);
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.4), 0 0 36px rgba(15, 23, 42, 0.08);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.8px;
+    }
+
+    nav a:not(.btn-funding),
+    nav a:not(.btn-funding):visited {
+      display: inline-flex;
+      align-items: center;
+      position: relative;
+      white-space: nowrap;
+      color: #334155;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      padding: 6px 3px;
+      transition: color 0.3s ease;
+    }
+
+    nav a:not(.btn-funding)::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: #ff5023;
+      transition: width 0.3s ease, left 0.3s ease;
+      box-shadow: 0 0 8px rgba(255, 80, 35, 0.5);
+    }
+
+    nav a:not(.btn-funding):hover,
+    nav a.active {
+      color: #ff5023;
+    }
+
+    nav a:not(.btn-funding):hover::after,
+    nav a.active::after {
+      width: 100%;
+      left: 0;
+    }
+
+    .btn-funding {
+      height: 54px;
+      border: 1px solid rgba(255, 80, 35, 0.6);
+      border-radius: 999px;
+      background: linear-gradient(135deg, #ff5023, #f97316);
+      box-shadow: inset 0 0 22px rgba(239, 113, 61, 0.15), 0 0 24px rgba(255, 80, 35, 0.25);
+      color: #fff;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.8px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 0 24px;
+      white-space: nowrap;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .btn-funding::after {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #ffffff;
+      box-shadow: 0 0 16px 6px rgba(255, 128, 67, 0.6);
+    }
+
+    .btn-funding:hover {
+      transform: translateY(-1px);
+      box-shadow: inset 0 0 22px rgba(239, 113, 61, 0.2), 0 0 34px rgba(255, 80, 35, 0.4);
+    }
+
+    header.nav-hidden {
+      transform: translateX(-50%) translateY(-120%);
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    header {
+      transition: transform 0.4s ease, opacity 0.4s ease, visibility 0.4s ease;
+    }
+
+    /* ================= 2. HERO SECTION ================= */
+    .hero-section {
+      padding: 60px 0 40px;
+      display: grid;
+      grid-template-columns: 1fr 1.15fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .hero-left {
+      max-width: 500px;
+    }
+
+    .hero-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 52px;
+      font-weight: 700;
+      line-height: 1.15;
+      color: #0f172a;
+      margin-bottom: 22px;
+      letter-spacing: -0.5px;
+    }
+
+    .hero-text {
+      font-size: 16px;
+      color: #64748b;
+      line-height: 1.65;
+      margin-bottom: 30px;
+    }
+
+    .hero-link {
+      font-size: 14px;
+      font-weight: 800;
+      color: #0f172a;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .hero-right {
+      position: relative;
+      height: 450px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hub-container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hub-lines-svg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .hub-center {
+      width: 150px;
+      height: 150px;
+      background: #ffffff;
+      border-radius: 50%;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.06), inset 0 0 0 1px #f1f5f9;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 3;
+      border: 1px solid #e2e8f0;
+      text-align: center;
+      position: relative;
+    }
+
+    .hub-center::before {
+      content: '';
+      position: absolute;
+      inset: -10px;
+      border-radius: 50%;
+      border: 1px dashed #cbd5e1;
+      opacity: 0.6;
+    }
+
+    .hub-center .hub-title {
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      color: #0f172a;
+    }
+
+    .hub-center .hub-sub {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      color: #64748b;
+    }
+
+    .satellite {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      z-index: 4;
+      background: #ffffff;
+      padding: 7px 16px;
+      border-radius: 24px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+      border: 1px solid #f1f5f9;
+    }
+
+    .sat-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+    }
+
+    .sat-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .sat-name {
+      font-size: 11.5px;
+      font-weight: 800;
+      color: #0f172a;
+      letter-spacing: 0.5px;
+    }
+
+    .sat-cat {
+      font-size: 9.5px;
+      color: #64748b;
+      font-weight: 500;
+    }
+
+    .node-top { top: 0px; left: 50%; transform: translateX(-50%); }
+    .node-top-right { top: 55px; right: 8%; }
+    .node-right { top: 175px; right: 1%; }
+    .node-bottom-right { bottom: 55px; right: 7%; }
+    .node-bottom { bottom: 0px; left: 55%; transform: translateX(-50%); }
+    .node-bottom-left { bottom: 90px; left: 9%; }
+    .node-left { top: 190px; left: 1%; }
+    .node-top-left { top: 80px; left: 11%; }
+
+    /* ================= HERO ANIMATIONS ================= */
+    .hub-container {
+      animation: hub-in 1s ease-out both;
+    }
+
+    @keyframes hub-in {
+      from { opacity: 0; transform: scale(0.92); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .hub-center {
+      animation: hub-breathe 4s ease-in-out infinite;
+    }
+
+    @keyframes hub-breathe {
+      0%, 100% { transform: scale(1); box-shadow: 0 10px 30px rgba(0,0,0,0.06), inset 0 0 0 1px #f1f5f9; }
+      50% { transform: scale(1.05); box-shadow: 0 12px 40px rgba(224, 83, 41, 0.18), inset 0 0 0 1px #f1f5f9; }
+    }
+
+    .hub-center::after {
+      content: '';
+      position: absolute;
+      inset: -6px;
+      border-radius: 50%;
+      border: 2px solid rgba(224, 83, 41, 0.5);
+      animation: hub-pulse 2.6s cubic-bezier(0.2, 0.6, 0.35, 1) infinite;
+      pointer-events: none;
+    }
+
+    @keyframes hub-pulse {
+      0% { transform: scale(1); opacity: 0.85; }
+      100% { transform: scale(2.15); opacity: 0; }
+    }
+
+    .hub-center .hub-title {
+      animation: title-glow 3s ease-in-out infinite;
+    }
+
+    @keyframes title-glow {
+      0%, 100% { text-shadow: 0 0 0 transparent; }
+      50% { text-shadow: 0 0 14px rgba(224, 83, 41, 0.45); }
+    }
+
+    .satellite {
+      animation: sat-float 5s ease-in-out infinite;
+    }
+
+    @keyframes sat-float {
+      0%, 100% { translate: 0 0; }
+      50% { translate: 0 -9px; }
+    }
+
+    .node-top .satellite,
+    .node-top .sat-icon { animation-delay: 0s; }
+    .node-top-right .satellite,
+    .node-top-right .sat-icon { animation-delay: 0.6s; }
+    .node-right .satellite,
+    .node-right .sat-icon { animation-delay: 1.2s; }
+    .node-bottom-right .satellite,
+    .node-bottom-right .sat-icon { animation-delay: 1.8s; }
+    .node-bottom .satellite,
+    .node-bottom .sat-icon { animation-delay: 2.4s; }
+    .node-bottom-left .satellite,
+    .node-bottom-left .sat-icon { animation-delay: 3.0s; }
+    .node-left .satellite,
+    .node-left .sat-icon { animation-delay: 3.6s; }
+    .node-top-left .satellite,
+    .node-top-left .sat-icon { animation-delay: 4.2s; }
+
+    .sat-icon {
+      background: #fff;
+      animation: icon-pulse 3s ease-in-out infinite;
+    }
+
+    @keyframes icon-pulse {
+      0%, 100% { transform: scale(1); border-color: #e2e8f0; }
+      30% { box-shadow: 0 0 0 5px rgba(224, 83, 41, 0.08); }
+      50% { transform: scale(1.14); border-color: rgba(224, 83, 41, 0.55); color: #e05329; }
+    }
+
+    .hub-lines-svg path {
+      fill: none;
+    }
+
+    .hub-lines-svg .base-line {
+      stroke: #e2e8f0;
+      stroke-width: 1.5;
+      stroke-dasharray: 3 5;
+      opacity: 0.9;
+    }
+
+    .hub-lines-svg .flow-line {
+      stroke: url(#hubGradient);
+      stroke-width: 2.4;
+      stroke-linecap: round;
+      stroke-dasharray: 6 10;
+      animation: line-flow 1.9s linear infinite;
+      filter: drop-shadow(0 0 4px rgba(255, 80, 35, 0.6));
+    }
+
+    @keyframes line-flow {
+      to { stroke-dashoffset: -32; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hub-container, .hub-center, .hub-center::after,
+      .hub-center .hub-title, .satellite, .sat-icon,
+      .hub-lines-svg .flow-line {
+        animation: none !important;
+      }
+    }
+
+    /* ================= 3. STATS SECTION ================= */
+    .stats-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 32px 38px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      text-align: center;
+      margin-bottom: 60px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+    }
+
+    .stat-item {
+      position: relative;
+    }
+
+    .stat-item:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 15%;
+      height: 70%;
+      width: 1px;
+      background-color: #f1f5f9;
+    }
+
+    .stat-num {
+      font-size: 38px;
+      font-weight: 800;
+      color: #0f172a;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .stat-label {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: #64748b;
+    }
+
+    /* ================= COMMON SECTION LAYOUT ================= */
+    .ecosystem-row {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 36px;
+      margin-bottom: 65px;
+    }
+
+    .sidebar-info {
+      padding-top: 4px;
+    }
+
+    .sidebar-info h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 27px;
+      font-weight: 700;
+      color: #0f172a;
+      line-height: 1.25;
+      margin-bottom: 12px;
+    }
+
+    .sidebar-info p {
+      font-size: 14px;
+      color: #64748b;
+      line-height: 1.6;
+    }
+
+    /* === COMMON SECTION ROW (from second file) === */
+    .section-row {
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      gap: 38px;
+      margin-bottom: 60px;
+      align-items: start;
+    }
+
+    .section-sidebar h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 30px;
+      font-weight: 700;
+      color: #0f172a;
+      line-height: 1.25;
+      margin-bottom: 14px;
+      letter-spacing: -0.3px;
+    }
+
+    .section-sidebar p {
+      font-size: 14px;
+      color: #64748b;
+      line-height: 1.6;
+    }
+
+    /* ================= 4. A CONNECTED ECOSYSTEM (DARK MAP) ================= */
+    .network-banner {
+      background-color: #08090b;
+      border-radius: 14px;
+      padding: 35px 25px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    .network-banner::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 320px;
+      height: 200px;
+      background: radial-gradient(ellipse at center, rgba(224, 83, 41, 0.18) 0%, rgba(224, 83, 41, 0.03) 50%, transparent 75%);
+      pointer-events: none;
+    }
+
+    .network-grid {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .net-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .net-center-hub {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      background: #0f1115;
+      border: 1px solid #e05329;
+      box-shadow: 0 0 20px rgba(224, 83, 41, 0.35);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      margin: 0 15px;
+    }
+
+    .net-center-hub .hub-title {
+      font-size: 13px;
+      font-weight: 800;
+      color: #ffffff;
+      letter-spacing: 0.8px;
+    }
+
+    .net-center-hub .hub-sub {
+      font-size: 8.5px;
+      font-weight: 600;
+      color: #94a3b8;
+      letter-spacing: 1.5px;
+    }
+
+    .net-node {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 8px 16px;
+      border-radius: 24px;
+      color: #ffffff;
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      backdrop-filter: blur(4px);
+    }
+
+    .net-node i {
+      font-size: 12px;
+      color: #cbd5e1;
+    }
+
+    /* ================= 5. ONE ECOSYSTEM FLOW ================= */
+    .flow-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .flow-card {
+      flex: 1;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 22px 18px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.01);
+      min-height: 165px;
+      justify-content: flex-start;
+    }
+
+    .flow-icon {
+      width: 38px;
+      height: 38px;
+      color: #e05329;
+      font-size: 20px;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .flow-title {
+      font-size: 13px;
+      font-weight: 800;
+      color: #0f172a;
+      letter-spacing: 0.8px;
+      margin-bottom: 8px;
+    }
+
+    .flow-desc {
+      font-size: 12px;
+      color: #64748b;
+      line-height: 1.45;
+    }
+
+    .flow-arrow {
+      color: #94a3b8;
+      font-size: 16px;
+      font-weight: 300;
+    }
+
+    /* ================= 6. FLAGSHIP COMPANIES (4 CARDS) ================= */
+    .flagship-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .flagship-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+    }
+
+    .card-img-wrap {
+      position: relative;
+      height: 145px;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .card-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .card-badge-num {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(4px);
+      font-size: 10.5px;
+      font-weight: 800;
+      color: #e05329;
+      padding: 3px 8px;
+      border-radius: 3px;
+    }
+
+    .card-badge-tag {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: #e05329;
+      color: #ffffff;
+      font-size: 9.5px;
+      font-weight: 800;
+      padding: 3px 8px;
+      border-radius: 3px;
+      letter-spacing: 0.5px;
+    }
+
+    .card-body {
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .card-title {
+      font-size: 15.5px;
+      font-weight: 800;
+      color: #0f172a;
+      letter-spacing: 0.5px;
+      margin-bottom: 3px;
+    }
+
+    .card-subtitle {
+      font-size: 10.5px;
+      font-weight: 700;
+      color: #64748b;
+      margin-bottom: 10px;
+    }
+
+    .card-desc {
+      font-size: 12.5px;
+      color: #64748b;
+      line-height: 1.5;
+      margin-bottom: 16px;
+      flex-grow: 1;
+    }
+
+    .card-action {
+      font-size: 11.5px;
+      font-weight: 800;
+      color: #0f172a;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    /* ================= 7. THE WIDER ECOSYSTEM (8 CARDS) ================= */
+    .wider-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .wider-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.015);
+    }
+
+    .wider-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .wider-icon {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      border: 1px solid #e2e8f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      color: #0f172a;
+      background: #fafafa;
+    }
+
+    .wider-title {
+      font-size: 13.5px;
+      font-weight: 800;
+      color: #0f172a;
+      letter-spacing: 0.3px;
+    }
+
+    .wider-sub {
+      font-size: 10px;
+      font-weight: 600;
+      color: #64748b;
+    }
+
+    .wider-desc {
+      font-size: 12px;
+      color: #64748b;
+      line-height: 1.5;
+      margin-bottom: 14px;
+      flex-grow: 1;
+    }
+
+    .wider-action {
+      font-size: 11.5px;
+      font-weight: 800;
+      color: #0f172a;
+    }
+
+    /* ================= 8. ACROSS INDUSTRIES ================= */
+    .industries-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 14px;
+    }
+
+    .industry-badge {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 14px 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .ind-icon {
+      color: #e05329;
+      font-size: 15px;
+    }
+
+    .ind-name {
+      font-size: 11.5px;
+      font-weight: 800;
+      color: #0f172a;
+      letter-spacing: 0.3px;
+    }
+
+    /* ================= 9. EXPLORE VENTURES (FILTER TABS) ================= */
+    .filter-tabs-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .tab-pill {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 10px 18px;
+      font-size: 11.5px;
+      font-weight: 800;
+      color: #475569;
+      cursor: pointer;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      transition: all 0.2s;
+    }
+
+    .tab-pill.active {
+      background: #0f172a;
+      color: #ffffff;
+      border-color: #0f172a;
+    }
+
+    .tab-pill:hover:not(.active) {
+      border-color: #cbd5e1;
+      color: #0f172a;
+    }
+
+    /* ================= 10. WHAT'S NEXT (COMING SOON CARDS) ================= */
+    .next-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+    }
+
+    .next-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 24px 16px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.01);
+    }
+
+    .circle-placeholder {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 1px dashed #cbd5e1;
+      margin-bottom: 14px;
+    }
+
+    .next-status {
+      font-size: 12px;
+      font-weight: 800;
+      color: #0f172a;
+      letter-spacing: 0.6px;
+      margin-bottom: 10px;
+    }
+
+    .next-desc {
+      font-size: 12px;
+      color: #64748b;
+      line-height: 1.45;
+    }
+
+    /* ================= 11. DARK CTA BANNER ================= */
+    .cta-banner {
+      background: #08090a;
+      border-radius: 14px;
+      padding: 36px 42px;
+      color: #ffffff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 70px;
+    }
+
+    @media (max-width: 600px) {
+      .cta-banner {
+        margin-bottom: 40px;
+      }
+    }
+
+    .cta-banner::after {
+      content: '';
+      position: absolute;
+      right: -30px;
+      bottom: -30px;
+      width: 250px;
+      height: 180px;
+      background: radial-gradient(circle at bottom right, rgba(224, 83, 41, 0.25) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .cta-left h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 32px;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 6px;
+      letter-spacing: -0.3px;
+    }
+
+    .cta-left p {
+      font-size: 13.5px;
+      color: #94a3b8;
+    }
+
+    .cta-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .btn-orange {
+      background-color: #e05329;
+      color: #ffffff;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 12px 24px;
+      border-radius: 24px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: background 0.2s;
+    }
+
+    .btn-orange:hover {
+      background-color: #c9441d;
+    }
+
+    .btn-outline-dark {
+      background: transparent;
+      border: 1px solid #334155;
+      color: #ffffff;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 12px 24px;
+      border-radius: 24px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .link-join {
+      color: #ffffff;
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+      margin-left: 6px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* ================= RESPONSIVE BREAKDOWN ================= */
+    @media (max-width: 992px) {
+      .hero-section, .ecosystem-row, .section-row {
+        grid-template-columns: 1fr;
+      }
+      .flagship-grid, .wider-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .industries-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .hero-right {
+        height: 400px;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .section-row {
+        gap: 16px;
+      }
+      .flow-container {
+        flex-direction: column;
+      }
+      .flow-arrow {
+        transform: rotate(90deg);
+      }
+      .next-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .cta-banner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+      }
+      .cta-actions {
+        flex-wrap: wrap;
+      }
+    }
+
+    @media (max-width: 768px) {
+      header {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        width: calc(100% - 28px);
+        top: 10px;
+      }
+      nav {
+        width: 100%;
+        height: auto;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 4px;
+        padding: 10px;
+        border-radius: 20px;
+      }
+      nav a:not(.btn-funding) {
+        font-size: 9px;
+        padding: 5px 7px;
+      }
+      .btn-funding {
+        height: 46px;
+        width: 100%;
+        padding: 0 18px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .flagship-grid, .wider-grid, .stats-card, .industries-grid {
+        grid-template-columns: 1fr;
+      }
+      .stat-item:not(:last-child)::after {
+        display: none;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .hero-section {
+        padding: 24px 0 20px;
+        gap: 24px;
+      }
+      .hero-title {
+        font-size: 30px;
+      }
+      .hero-text {
+        font-size: 14px;
+      }
+      .hero-right {
+        height: 300px;
+      }
+      .hub-center {
+        width: 110px;
+        height: 110px;
+      }
+      .hub-center .hub-title {
+        font-size: 12px;
+      }
+      .hub-center .hub-sub {
+        font-size: 8px;
+      }
+      .satellite {
+        padding: 4px 10px;
+        gap: 6px;
+      }
+      .sat-icon {
+        width: 24px;
+        height: 24px;
+        font-size: 10px;
+      }
+      .sat-name {
+        font-size: 8px;
+      }
+      .sat-cat {
+        font-size: 6.5px;
+      }
+      .stats-card {
+        gap: 14px;
+        padding: 18px 10px;
+      }
+      .flow-container {
+        gap: 8px;
+      }
+      .flow-card {
+        padding: 16px 12px;
+        min-height: 150px;
+      }
+      .flow-title {
+        font-size: 11.5px;
+      }
+      .flow-desc {
+        font-size: 10.5px;
+      }
+      .flow-icon {
+        width: 30px;
+        height: 30px;
+        font-size: 16px;
+        margin-bottom: 10px;
+      }
+      .flagship-grid, .wider-grid, .next-grid {
+        gap: 14px;
+      }
+      .cta-left h2 {
+        font-size: 22px;
+      }
+      .cta-actions {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+      }
+      .cta-actions a {
+        justify-content: center;
+      }
+      .link-join {
+        margin-left: 0;
+      }
+      .net-node {
+        padding: 3px 8px;
+        font-size: 8.5px;
+      }
+    }
+  /* ===== FOOTER ===== */
+    .nxt-footer-section {
+      background: url('images/footer-bg.png') center 30%/cover no-repeat #080c14;
+      position: relative;
+      padding: 50px 20px 30px;
+      color: #ffffff;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .nxt-footer-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 50% 0%, rgba(255, 80, 35, 0.08) 0%, transparent 50%),
+        linear-gradient(180deg, rgba(15, 23, 42, 0.55) 0%, rgba(8, 12, 20, 0.85) 100%);
+      z-index: 1;
+    }
+
+    .nxt-footer-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .nxt-logo-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      padding: 10px 24px;
+      border-radius: 30px;
+      margin-bottom: 12px;
+    }
+
+    .nxt-logo-pill .nxt-text {
+      font-size: 20px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      color: #ffffff;
+    }
+
+    .nxt-logo-pill .x-red {
+      color: #ff5023;
+    }
+
+    .nxt-logo-pill .fund-text {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      color: #94a3b8;
+      margin-left: 2px;
+    }
+
+    .nxt-tagline {
+      font-size: 11px;
+      color: #94a3b8;
+      letter-spacing: 1px;
+      margin-bottom: 28px;
+      font-weight: 500;
+    }
+
+    .footer-links-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px 0;
+      margin-bottom: 20px;
+    }
+
+    .footer-links-row a {
+      color: #94a3b8;
+      font-size: 11px;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 4px 12px;
+      transition: color 0.2s;
+    }
+
+    .footer-links-row a:hover {
+      color: #ffffff;
+    }
+
+    .footer-links-row .sep {
+      color: #334155;
+      font-size: 9px;
+    }
+
+    .footer-email {
+      font-size: 11px;
+      color: #94a3b8;
+      margin-bottom: 22px;
+      font-weight: 500;
+    }
+
+    .footer-email i {
+      color: #ff5023;
+      margin-right: 6px;
+    }
+
+    .social-icons-row {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+
+    .social-btn {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.04);
+      color: #94a3b8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      text-decoration: none;
+      transition: all 0.25s ease;
+    }
+
+    .social-btn:hover {
+      background: #ff3b1d;
+      border-color: #ff3b1d;
+    }
+
+    .copyright-text {
+      font-size: 9.5px;
+      color: #475569;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+    }
+  /* ================== SCROLL REVEAL ANIMATIONS ================== */
+    [data-reveal] {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
+      will-change: opacity, transform;
+    }
+    [data-reveal].in-view {
+      opacity: 1;
+      transform: none;
+    }
+    [data-reveal="left"] { transform: translateX(-36px); }
+    [data-reveal="right"] { transform: translateX(36px); }
+    [data-reveal="zoom"] { transform: scale(0.93); }
+    [data-reveal="left"].in-view,
+    [data-reveal="right"].in-view,
+    [data-reveal="zoom"].in-view { transform: none; }
+
+    .flagship-card, .wider-card, .next-card, .flow-card, .info-card, .location-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+    .flagship-card:hover, .wider-card:hover, .next-card:hover, .flow-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 34px rgba(15, 23, 42, 0.1);
+      border-color: rgba(224, 83, 41, 0.28);
+    }
+
+    /* ================== MOBILE NAV ================== */
+    .menu-toggle, .mobile-only-btn { display: none; }
+
+    @media (max-width: 768px) {
+      header {
+        grid-template-columns: 1fr auto !important;
+        gap: 0 !important;
+        width: calc(100% - 24px) !important;
+        padding: 8px 12px;
+        top: 10px;
+      }
+      .menu-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        flex-direction: column;
+        gap: 5px;
+      }
+      .menu-toggle span {
+        display: block;
+        width: 20px;
+        height: 2px;
+        background: #0f172a;
+        border-radius: 4px;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+      }
+      header.menu-open .menu-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+      header.menu-open .menu-toggle span:nth-child(2) { opacity: 0; }
+      header.menu-open .menu-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+      header > nav {
+        position: fixed;
+        top: 60px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        height: auto;
+        width: 100%;
+        border-radius: 0;
+        padding: 0;
+        gap: 0;
+        border: none;
+        border-bottom: 1px solid #e2e8f0;
+        box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+        background: rgba(255,255,255,0.98);
+        backdrop-filter: blur(20px);
+        z-index: 200;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease, padding 0.4s ease;
+      }
+      header.menu-open > nav {
+        max-height: 400px;
+        padding: 8px 0 0;
+      }
+      header > nav a:not(.btn-funding) {
+        justify-content: center;
+        padding: 14px 24px;
+        font-size: 14px;
+        border-bottom: 1px solid #f1f5f9;
+        width: 100%;
+      }
+      header > nav a:not(.btn-funding):last-of-type { border-bottom: none; }
+      .desktop-only-btn { display: none !important; }
+      .mobile-only-btn {
+        display: inline-flex !important;
+        margin: 0 16px 12px;
+        width: calc(100% - 32px) !important;
+        height: 48px !important;
+        justify-content: center;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      [data-reveal] { opacity: 1 !important; transform: none !important; transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- ==================== 1. HEADER ==================== -->
+    <header id="site-header">
+      <a href="index.html" class="logo" style="text-decoration:none;">
+        <img src="images/ChatGPT Image Aug 21, 2026, 03_45_23 PM.png" alt="Celebso" style="height: 40px; width: auto; object-fit: contain;">
+      </a>
+      <nav>
+        <a href="about.html">About</a>
+        <a href="leadership.html">Leadership</a>
+        <a href="news.html">News</a>
+        <a href="patner.html">Partners</a>
+<a href="VENTURES.html" class="active">Ventures</a>
+      <a href="#" class="btn-funding mobile-only-btn">Apply for Funding</a>
+    </nav>
+    <a href="#" class="btn-funding desktop-only-btn">Apply for Funding</a>
+    <button class="menu-toggle" aria-label="Toggle Menu" onclick="document.getElementById('site-header').classList.toggle('menu-open')">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+    <!-- ==================== 2. HERO SECTION ==================== -->
+    <section class="hero-section">
+      <div class="hero-left" data-reveal="left">
+        <span class="tag-orange">CELEBSO VENTURES</span>
+        <h1 class="hero-title">Building Companies That Shape What Comes Next.</h1>
+        <p class="hero-text">
+          A connected ecosystem of companies, platforms and ventures working across technology, AI, capital, space, media, education, entrepreneurship and digital innovation.
+        </p>
+        <a href="#flagship" class="hero-link">Explore Our Ecosystem <i class="fa-solid fa-arrow-down" style="font-size:12px;"></i></a>
+      </div>
+
+      <div class="hero-right" data-reveal="right">
+        <div class="hub-container">
+
+          <svg class="hub-lines-svg" viewBox="0 0 500 380">
+            <defs>
+              <linearGradient id="hubGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#ff5023" />
+                <stop offset="100%" stop-color="#f97316" />
+              </linearGradient>
+            </defs>
+
+            <path class="base-line" d="M 250 190 C 232 145, 258 95, 250 40" />
+            <path class="flow-line" d="M 250 190 C 232 145, 258 95, 250 40" />
+
+            <path class="base-line" d="M 250 190 C 290 145, 340 100, 380 70" />
+            <path class="flow-line" d="M 250 190 C 290 145, 340 100, 380 70" />
+
+            <path class="base-line" d="M 250 190 C 310 185, 370 170, 420 150" />
+            <path class="flow-line" d="M 250 190 C 310 185, 370 170, 420 150" />
+
+            <path class="base-line" d="M 250 190 C 300 235, 360 265, 400 300" />
+            <path class="flow-line" d="M 250 190 C 300 235, 360 265, 400 300" />
+
+            <path class="base-line" d="M 250 190 C 262 250, 258 310, 270 350" />
+            <path class="flow-line" d="M 250 190 C 262 250, 258 310, 270 350" />
+
+            <path class="base-line" d="M 250 190 C 205 235, 165 265, 120 290" />
+            <path class="flow-line" d="M 250 190 C 205 235, 165 265, 120 290" />
+
+            <path class="base-line" d="M 250 190 C 195 185, 135 170, 80 160" />
+            <path class="flow-line" d="M 250 190 C 195 185, 135 170, 80 160" />
+
+            <path class="base-line" d="M 250 190 C 205 145, 155 100, 110 80" />
+            <path class="flow-line" d="M 250 190 C 205 145, 155 100, 110 80" />
+          </svg>
+
+          <div class="hub-center">
+            <span class="hub-title">CELEBSO</span>
+            <span class="hub-sub">GROUP</span>
+          </div>
+
+          <div class="satellite node-top">
+            <div class="sat-icon"><i class="fa-solid fa-microchip"></i></div>
+            <div class="sat-text">
+              <span class="sat-name">ANTELLAY</span>
+              <span class="sat-cat">AI &middot; Technology</span>
+            </div>
+          </div>
+
+          <div class="satellite node-top-right">
+            <div class="sat-icon"><i class="fa-solid fa-brain"></i></div>
+            <div class="sat-text">
+              <span class="sat-name">NUMEREXX</span>
+              <span class="sat-cat">Intelligence &middot; Data</span>
+            </div>
+          </div>
+
+          <div class="satellite node-right">
+            <div class="sat-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+            <div class="sat-text">
+              <span class="sat-name">CELEBSO SCHOOL</span>
+              <span class="sat-cat">Education &middot; Talent</span>
+            </div>
+          </div>
+
+          <div class="satellite node-bottom-right">
+            <div class="sat-icon"><i class="fa-solid fa-video"></i></div>
+            <div class="sat-text">
+              <span class="sat-name">CELEBSO PRODUCTIONS</span>
+              <span class="sat-cat">Media &middot; Entertainment</span>
+            </div>
+          </div>
+
+          <div class="satellite node-bottom">
+            <div class="sat-icon"><i class="fa-solid fa-compass"></i></div>
+            <div class="sat-text">
+              <span class="sat-name">STARTUP VALLEY</span>
+              <span class="sat-cat">Entrepreneurship</span>
+            </div>
+          </div>
+
+          <div class="satellite node-bottom-left">
+            <div class="sat-icon"><i class="fa-solid fa-satellite"></i></div>
+            <div class="sat-text">
+              <span class="sat-name">ANTELLAY SPACE</span>
+              <span class="sat-cat">Space Technology</span>
+            </div>
+          </div>
+
+          <div class="satellite node-left">
+            <div class="sat-icon"><i class="fa-solid fa-chart-line"></i></div>
+            <div class="sat-text">
+              <span class="sat-name">NXTFUND</span>
+              <span class="sat-cat">Capital &middot; Venture</span>
+            </div>
+          </div>
+
+          <div class="satellite node-top-left">
+            <div class="sat-icon"><i class="fa-solid fa-network-wired"></i></div>
+            <div class="sat-text">
+              <span class="sat-name">CELEBSOX</span>
+              <span class="sat-cat">Technology &middot; Network</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 3. STATS SECTION ==================== -->
+    <div class="stats-card" data-reveal="zoom">
+      <div class="stat-item">
+        <div class="stat-num">4+</div>
+        <div class="stat-label">Flagship Companies</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">12+</div>
+        <div class="stat-label">Ecosystem Ventures</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">6+</div>
+        <div class="stat-label">Technology Sectors</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">1</div>
+        <div class="stat-label">Connected Ecosystem</div>
+      </div>
+    </div>
+
+    <!-- ==================== 4. A CONNECTED ECOSYSTEM ==================== -->
+    <section class="section-row" data-reveal>
+      <div class="section-sidebar">
+        <h2>A Connected<br>Ecosystem</h2>
+        <p>Technology &bull; Capital &bull; Talent &bull; Media &bull; Infrastructure &bull; Opportunity &mdash; all connected inside one ecosystem.</p>
+      </div>
+
+      <div class="network-banner">
+        <div class="network-grid">
+
+          <div class="net-row">
+            <div class="net-node"><i class="fa-solid fa-microchip"></i> ANTELLAY</div>
+            <div class="net-node"><i class="fa-solid fa-network-wired"></i> CELEBSOX</div>
+            <div class="net-node"><i class="fa-solid fa-xmark"></i> NXTFUND</div>
+            <div class="net-node"><i class="fa-solid fa-satellite"></i> ANTELLAY SPACE</div>
+          </div>
+
+          <div class="net-row">
+            <div class="net-node"><i class="fa-solid fa-brain"></i> NUMEREXX</div>
+
+            <div class="net-center-hub">
+              <span class="hub-title">CELEBSO</span>
+              <span class="hub-sub">GROUP</span>
+            </div>
+
+            <div class="net-node"><i class="fa-solid fa-video"></i> CELEBSO PRODUCTIONS</div>
+          </div>
+
+          <div class="net-row">
+            <div class="net-node"><i class="fa-solid fa-graduation-cap"></i> CELEBSO SCHOOL</div>
+          </div>
+
+          <div class="net-row">
+            <div class="net-node"><i class="fa-solid fa-droplet"></i> BYIZON.AI</div>
+            <div class="net-node"><i class="fa-solid fa-atom"></i> GREHNI.AI</div>
+            <div class="net-node"><i class="fa-solid fa-building"></i> STARTUP VALLEY</div>
+            <div class="net-node"><i class="fa-solid fa-shield-halved"></i> SPACERENTIYA</div>
+            <div class="net-node"><i class="fa-solid fa-mountain"></i> THE TRIP HIKE</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 5. ONE ECOSYSTEM. MULTIPLE POSSIBILITIES ==================== -->
+    <section class="section-row" data-reveal>
+      <div class="section-sidebar">
+        <h2>One Ecosystem.<br>Multiple<br>Possibilities.</h2>
+        <p>Our ventures are designed to create opportunities for each other &mdash; sharing technology, talent, networks, visibility and resources to build stronger companies and platforms.</p>
+      </div>
+
+      <div class="flow-container">
+        <div class="flow-card">
+          <div class="flow-icon"><i class="fa-solid fa-cubes"></i></div>
+          <div class="flow-title">TECHNOLOGY</div>
+          <p class="flow-desc">Building advanced technology and intelligence.</p>
+        </div>
+
+        <div class="flow-arrow">&gt;</div>
+
+        <div class="flow-card">
+          <div class="flow-icon"><i class="fa-solid fa-users-gear"></i></div>
+          <div class="flow-title">TALENT</div>
+          <p class="flow-desc">Empowering people and developing the next generation.</p>
+        </div>
+
+        <div class="flow-arrow">&gt;</div>
+
+        <div class="flow-card">
+          <div class="flow-icon"><i class="fa-solid fa-building-columns"></i></div>
+          <div class="flow-title">CAPITAL</div>
+          <p class="flow-desc">Fueling ideas with capital and strategic investments.</p>
+        </div>
+
+        <div class="flow-arrow">&gt;</div>
+
+        <div class="flow-card">
+          <div class="flow-icon"><i class="fa-solid fa-diagram-project"></i></div>
+          <div class="flow-title">NETWORK</div>
+          <p class="flow-desc">Connecting companies, partners and global opportunities.</p>
+        </div>
+
+        <div class="flow-arrow">&gt;</div>
+
+        <div class="flow-card">
+          <div class="flow-icon"><i class="fa-solid fa-chart-line"></i></div>
+          <div class="flow-title">SCALE</div>
+          <p class="flow-desc">Scaling ventures and creating long-term global impact.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 6. OUR FLAGSHIP COMPANIES ==================== -->
+    <section class="ecosystem-row" id="flagship" data-reveal>
+      <div class="sidebar-info">
+        <h2>Our Flagship Companies</h2>
+        <p>The core companies driving the Celebso Group vision.</p>
+      </div>
+
+      <div class="flagship-grid" data-reveal="zoom">
+
+        <div class="flagship-card">
+          <div class="card-img-wrap">
+            <span class="card-badge-num">01</span>
+            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=400&q=80" alt="Antellay">
+          </div>
+          <div class="card-body">
+            <div class="card-title">ANTELLAY</div>
+            <div class="card-subtitle">AI &middot; Engineering &middot; Technology</div>
+            <p class="card-desc">Building technology and intelligence solutions for the next generation of digital and physical infrastructure.</p>
+            <a href="#" class="card-action">Explore Antellay &rarr;</a>
+          </div>
+        </div>
+
+        <div class="flagship-card">
+          <div class="card-img-wrap">
+            <span class="card-badge-num">02</span>
+            <span class="card-badge-tag">LAUNCH &mdash; JAN 2027</span>
+            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=400&q=80" alt="CelebsoX">
+          </div>
+          <div class="card-body">
+            <div class="card-title">CELEBSOX</div>
+            <div class="card-subtitle">Technology &middot; Network &middot; Community</div>
+            <p class="card-desc">Building platforms that connect people, technology, opportunities and the next generation of digital communities.</p>
+            <a href="#" class="card-action">Explore CelebsoX &rarr;</a>
+          </div>
+        </div>
+
+        <div class="flagship-card">
+          <div class="card-img-wrap">
+            <span class="card-badge-num">03</span>
+            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=400&q=80" alt="NXTFund">
+          </div>
+          <div class="card-body">
+            <div class="card-title">NXTFUND</div>
+            <div class="card-subtitle">Capital &middot; Venture &middot; Growth</div>
+            <p class="card-desc">Building a venture ecosystem connecting capital, founders, businesses and high-potential opportunities.</p>
+            <a href="#" class="card-action">Explore NXTFUND &rarr;</a>
+          </div>
+        </div>
+
+        <div class="flagship-card">
+          <div class="card-img-wrap">
+            <span class="card-badge-num">04</span>
+            <img src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=400&q=80" alt="Antellay Space">
+          </div>
+          <div class="card-body">
+            <div class="card-title">ANTELLAY SPACE</div>
+            <div class="card-subtitle">Space Technology &middot; Intelligence</div>
+            <p class="card-desc">Building AI-native intelligence and technology for the emerging space economy.</p>
+            <a href="#" class="card-action">Explore Antellay Space &rarr;</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== 7. EXPLORE VENTURES (TABS) ==================== -->
+    <section class="section-row" data-reveal>
+      <div class="section-sidebar">
+        <h2>Explore Ventures</h2>
+        <p>Filter ventures by categories across our ecosystem.</p>
+      </div>
+
+      <div class="filter-tabs-row">
+        <button class="tab-pill active">ALL</button>
+        <button class="tab-pill">AI & TECHNOLOGY</button>
+        <button class="tab-pill">CAPITAL</button>
+        <button class="tab-pill">SPACE</button>
+        <button class="tab-pill">MEDIA</button>
+        <button class="tab-pill">EDUCATION</button>
+        <button class="tab-pill">STARTUPS</button>
+        <button class="tab-pill">REAL ESTATE</button>
+        <button class="tab-pill">DIGITAL</button>
+      </div>
+    </section>
+
+    <!-- ==================== 8. THE WIDER ECOSYSTEM ==================== -->
+    <section class="ecosystem-row" data-reveal>
+      <div class="sidebar-info">
+        <h2>The Wider Ecosystem</h2>
+        <p>Beyond our flagship companies, Celebso Group is developing ventures across multiple emerging industries.</p>
+      </div>
+
+      <div class="wider-grid" data-reveal="zoom">
+
+        <div class="wider-card">
+          <div class="wider-header">
+            <div class="wider-icon"><i class="fa-solid fa-brain"></i></div>
+            <div>
+              <div class="wider-title">NUMEREXX</div>
+              <div class="wider-sub">Intelligence &middot; Data</div>
+            </div>
+          </div>
+          <p class="wider-desc">A venture focused on intelligence, data and emerging digital possibilities.</p>
+          <a href="#" class="wider-action">Explore &rarr;</a>
+        </div>
+
+        <div class="wider-card">
+          <div class="wider-header">
+            <div class="wider-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+            <div>
+              <div class="wider-title">CELEBSO SCHOOL</div>
+              <div class="wider-sub">Education &middot; Talent</div>
+            </div>
+          </div>
+          <p class="wider-desc">Building learning and development opportunities for the next generation of talent.</p>
+          <a href="#" class="wider-action">Explore &rarr;</a>
+        </div>
+
+        <div class="wider-card">
+          <div class="wider-header">
+            <div class="wider-icon"><i class="fa-solid fa-droplet"></i></div>
+            <div>
+              <div class="wider-title">BYIZON.AI</div>
+              <div class="wider-sub">AI &middot; Digital Innovation</div>
+            </div>
+          </div>
+          <p class="wider-desc">Exploring AI-powered digital products and future-facing technology.</p>
+          <a href="#" class="wider-action">Explore &rarr;</a>
+        </div>
+
+        <div class="wider-card">
+          <div class="wider-header">
+            <div class="wider-icon"><i class="fa-solid fa-atom"></i></div>
+            <div>
+              <div class="wider-title">GREHNI.AI</div>
+              <div class="wider-sub">AI &middot; Digital Innovation</div>
+            </div>
+          </div>
+          <p class="wider-desc">Building technology-driven solutions for emerging digital opportunities.</p>
+          <a href="#" class="wider-action">Explore &rarr;</a>
+        </div>
+
+        <div class="wider-card">
+          <div class="wider-header">
+            <div class="wider-icon"><i class="fa-solid fa-building"></i></div>
+            <div>
+              <div class="wider-title">STARTUP VALLEY</div>
+              <div class="wider-sub">Entrepreneurship &middot; Workspace</div>
+            </div>
+          </div>
+          <p class="wider-desc">A platform and environment designed to support founders, startups and entrepreneurial communities.</p>
+          <a href="#" class="wider-action">Explore &rarr;</a>
+        </div>
+
+        <div class="wider-card">
+          <div class="wider-header">
+            <div class="wider-icon"><i class="fa-solid fa-shield-halved"></i></div>
+            <div>
+              <div class="wider-title">SPACERENTIYA</div>
+              <div class="wider-sub">Real Estate &middot; Infrastructure</div>
+            </div>
+          </div>
+          <p class="wider-desc">Exploring real estate, workspace and infrastructure opportunities across emerging markets.</p>
+          <a href="#" class="wider-action">Explore &rarr;</a>
+        </div>
+
+        <div class="wider-card">
+          <div class="wider-header">
+            <div class="wider-icon"><i class="fa-solid fa-mountain"></i></div>
+            <div>
+              <div class="wider-title">THE TRIP HIKE</div>
+              <div class="wider-sub">Travel &middot; Experiences</div>
+            </div>
+          </div>
+          <p class="wider-desc">Building opportunities around travel, experiences and connected communities.</p>
+          <a href="#" class="wider-action">Explore &rarr;</a>
+        </div>
+
+        <div class="wider-card">
+          <div class="wider-header">
+            <div class="wider-icon"><i class="fa-solid fa-clapperboard"></i></div>
+            <div>
+              <div class="wider-title">CELEBSO PRODUCTIONS</div>
+              <div class="wider-sub">Media &middot; Entertainment</div>
+            </div>
+          </div>
+          <p class="wider-desc">Creating media, production and visibility opportunities across the Celebso ecosystem.</p>
+          <a href="#" class="wider-action">Explore &rarr;</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== 9. ACROSS INDUSTRIES ==================== -->
+    <section class="ecosystem-row" data-reveal>
+      <div class="sidebar-info">
+        <h2>Across Industries. One Vision.</h2>
+        <p>We build across industries that will define the future.</p>
+      </div>
+
+      <div class="industries-grid" data-reveal="zoom">
+        <div class="industry-badge">
+          <i class="fa-solid fa-microchip ind-icon"></i>
+          <span class="ind-name">ARTIFICIAL INTELLIGENCE</span>
+        </div>
+        <div class="industry-badge">
+          <i class="fa-solid fa-code ind-icon"></i>
+          <span class="ind-name">SOFTWARE</span>
+        </div>
+        <div class="industry-badge">
+          <i class="fa-solid fa-rocket ind-icon"></i>
+          <span class="ind-name">SPACE TECHNOLOGY</span>
+        </div>
+        <div class="industry-badge">
+          <i class="fa-solid fa-hand-holding-dollar ind-icon"></i>
+          <span class="ind-name">VENTURE & CAPITAL</span>
+        </div>
+        <div class="industry-badge">
+          <i class="fa-solid fa-robot ind-icon"></i>
+          <span class="ind-name">ROBOTICS</span>
+        </div>
+        <div class="industry-badge">
+          <i class="fa-solid fa-film ind-icon"></i>
+          <span class="ind-name">MEDIA & ENTERTAINMENT</span>
+        </div>
+        <div class="industry-badge">
+          <i class="fa-solid fa-graduation-cap ind-icon"></i>
+          <span class="ind-name">EDUCATION</span>
+        </div>
+        <div class="industry-badge">
+          <i class="fa-solid fa-building-columns ind-icon"></i>
+          <span class="ind-name">REAL ESTATE & INFRASTRUCTURE</span>
+        </div>
+        <div class="industry-badge">
+          <i class="fa-solid fa-lightbulb ind-icon"></i>
+          <span class="ind-name">DIGITAL INNOVATION</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 10. WHAT'S NEXT ==================== -->
+<section class="section-row" data-reveal>
+      <div class="section-sidebar">
+        <h2>We Are Just<br>Getting Started.</h2>
+        <p>Celebso Group continues to explore new industries, technologies and opportunities where ambitious ideas can create meaningful global impact.</p>
+      </div>
+
+      <div class="next-grid" data-reveal="zoom">
+        <div class="next-card">
+          <div class="circle-placeholder"></div>
+          <div class="next-status">COMING NEXT</div>
+          <p class="next-desc">Building future-ready companies across emerging sectors.</p>
+        </div>
+
+        <div class="next-card">
+          <div class="circle-placeholder"></div>
+          <div class="next-status">IN DEVELOPMENT</div>
+          <p class="next-desc">New ventures in development focused on solving tomorrow's challenges.</p>
+        </div>
+
+        <div class="next-card">
+          <div class="circle-placeholder"></div>
+          <div class="next-status">COMING NEXT</div>
+          <p class="next-desc">Exploring bold ideas that can create global opportunities.</p>
+        </div>
+
+        <div class="next-card">
+          <div class="circle-placeholder"></div>
+          <div class="next-status">IN DEVELOPMENT</div>
+          <p class="next-desc">Working on innovations that power the next decade and beyond.</p>
+        </div>
+
+        <div class="next-card">
+          <div class="circle-placeholder"></div>
+          <div class="next-status">2030+</div>
+          <p class="next-desc">Building companies for a world of limitless possibilities.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 11. DARK CTA BANNER ==================== -->
+    <section class="cta-banner" data-reveal="zoom">
+      <div class="cta-left">
+        <h2>Explore The Ecosystem.</h2>
+        <p>Discover the companies, platforms and ideas being built by Celebso Group.</p>
+      </div>
+
+      <div class="cta-actions">
+        <a href="#" class="btn-orange">Explore Companies &rarr;</a>
+        <a href="#" class="btn-outline-dark">Partner With Us &rarr;</a>
+        <a href="#" class="link-join">Join The Ecosystem &rarr;</a>
+      </div>
+    </section>
+
+  </div> <!-- End Container -->
+
+  <!-- FOOTER -->
+  <footer class="nxt-footer-section">
+    <div class="nxt-footer-content">
+      <div class="nxt-logo-pill">
+        <img src="images/ChatGPT Image Aug 18, 2026, 10_51_46 PM.png" alt="Celebso Group" style="height: 28px; width: auto; object-fit: contain;">
+      </div>
+
+      <div class="nxt-tagline">Building the Future Through Technology, Intelligence &amp; Innovation</div>
+
+      <div class="footer-links-row">
+        <a href="about.html">About Us</a>
+        <span class="sep">&bull;</span>
+        <a href="leadership.html">Leadership</a>
+        <span class="sep">&bull;</span>
+        <a href="VENTURES.html">Ventures</a>
+        <span class="sep">&bull;</span>
+        <a href="patner.html">Partners</a>
+        <span class="sep">&bull;</span>
+        <a href="news.html">News</a>
+        <span class="sep">&bull;</span>
+        <a href="contact.html">Contact Us</a>
+      </div>
+
+      <div class="footer-email">
+        <i class="fa-regular fa-envelope"></i> info@celebso.com
+      </div>
+
+      <div class="social-icons-row">
+        <a href="#" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" class="social-btn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="#" class="social-btn"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+
+      <div class="copyright-text">&copy; 2026 Celebso Group. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script>
+    const navbar = document.getElementById('site-header');
+    let lastScrollY = window.scrollY;
+
+    window.addEventListener('scroll', () => {
+      const currentY = window.scrollY;
+      if (navbar.classList.contains('menu-open')) { navbar.classList.remove('nav-hidden'); return; }
+      if (currentY > lastScrollY && currentY > 100) {
+        navbar.classList.add('nav-hidden');
+      } else {
+        navbar.classList.remove('nav-hidden');
+      }
+      lastScrollY = currentY;
+    }, { passive: true });
+
+    navbar.querySelectorAll('nav a:not(.btn-funding)').forEach(link => {
+      link.addEventListener('click', () => navbar.classList.remove('menu-open'));
+    });
+  </script>
+
+<script>
+    (function () {
+      const els = document.querySelectorAll('[data-reveal]');
+      if (!('IntersectionObserver' in window)) { els.forEach(el => el.classList.add('in-view')); return; }
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+      els.forEach(el => io.observe(el));
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,1767 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Celebso Group</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* ===== GLOBAL RESET & BASE ===== */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+body {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        color: #0f172a;
+        background-color: #ffffff;
+        line-height: 1.6;
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+        padding-top: 110px;
+      }
+
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .section-tag {
+      font-size: 10px;
+      font-weight: 800;
+      color: #d97706;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    /* ===== ABOUT HERO ===== */
+    .hero-section {
+      padding: 50px 0 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-content {
+      max-width: 820px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .hero-left {
+      margin: 0 auto;
+    }
+
+    .hero-title {
+      font-size: 42px;
+      font-weight: 800;
+      line-height: 1.15;
+      color: #0f172a;
+      letter-spacing: -0.5px;
+      margin-bottom: 24px;
+    }
+
+    .hero-title .dot {
+      color: #f59e0b;
+    }
+
+    .hero-text-sub {
+      font-size: 14px;
+      color: #475569;
+      margin-bottom: 16px;
+      line-height: 1.6;
+      max-width: 640px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero-text-lead {
+      font-size: 14.5px;
+      font-weight: 700;
+      color: #0f172a;
+      line-height: 1.65;
+      max-width: 640px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .world-map-bg {
+      width: 100%;
+      max-width: 520px;
+      height: 240px;
+      margin: 24px auto 0;
+      opacity: 0.35;
+      background-image: radial-gradient(#94a3b8 1.2px, transparent 1.2px);
+      background-size: 10px 10px;
+      mask-image: radial-gradient(ellipse at center, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 75%);
+      -webkit-mask-image: radial-gradient(ellipse at center, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 75%);
+      position: relative;
+    }
+
+    .map-overlay-svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* ===== OUR VISION ===== */
+    .vision-section {
+      padding: 50px 0 70px;
+      background: linear-gradient(180deg, #ffffff 0%, #fdfbf7 100%);
+      border-top: 1px solid #f1f5f9;
+    }
+
+    .vision-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 50px;
+      align-items: flex-start;
+    }
+
+    .vision-left {
+      position: relative;
+      padding-bottom: 120px;
+    }
+
+    .vision-title {
+      font-size: 28px;
+      font-weight: 800;
+      line-height: 1.2;
+      color: #0f172a;
+      letter-spacing: -0.3px;
+    }
+
+    .sunrise-graphic {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100px;
+      background: radial-gradient(ellipse at bottom center, rgba(245, 158, 11, 0.25) 0%, rgba(255, 255, 255, 0) 70%);
+      overflow: hidden;
+    }
+
+    .sunrise-graphic::before {
+      content: '';
+      position: absolute;
+      bottom: -40px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 300px;
+      height: 150px;
+      background: repeating-conic-gradient(from 270deg at 50% 100%, rgba(245, 158, 11, 0.15) 0deg 5deg, transparent 5deg 15deg);
+    }
+
+    .vision-right-text {
+      font-size: 12.5px;
+      color: #475569;
+      line-height: 1.7;
+    }
+
+    .vision-right-text p {
+      margin-bottom: 18px;
+    }
+
+    /* ===== OUR MISSION ===== */
+    .mission-section {
+      padding: 60px 0 50px;
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    .mission-grid {
+      display: grid;
+      grid-template-columns: 1fr auto 1.1fr;
+      gap: 35px;
+      align-items: center;
+    }
+
+    .mission-left h2 {
+      font-size: 26px;
+      font-weight: 800;
+      color: #0f172a;
+      line-height: 1.25;
+      letter-spacing: -0.3px;
+    }
+
+    .mission-divider {
+      width: 1px;
+      background-color: #e2e8f0;
+      height: 100%;
+      min-height: 120px;
+    }
+
+    .mission-right {
+      font-size: 11.5px;
+      color: #475569;
+      line-height: 1.65;
+    }
+
+    .mission-right p:first-child {
+      margin-bottom: 14px;
+    }
+
+    /* ===== 2040 VISION (DARK BANNER) ===== */
+    .dark-vision-section {
+      background-color: #08090c;
+      background-image: radial-gradient(circle at 50% 100%, #1e1b18 0%, #08090c 80%);
+      color: #ffffff;
+      padding: 60px 0 50px;
+      position: relative;
+    }
+
+    .dark-top-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 40px;
+      margin-bottom: 50px;
+    }
+
+    .dark-title {
+      font-size: 28px;
+      font-weight: 800;
+      line-height: 1.2;
+      color: #ffffff;
+      letter-spacing: -0.3px;
+    }
+
+    .dark-lead {
+      font-size: 15px;
+      font-weight: 700;
+      color: #f59e0b;
+      line-height: 1.5;
+      margin-bottom: 14px;
+    }
+
+    .dark-desc {
+      font-size: 11.5px;
+      color: #94a3b8;
+      line-height: 1.65;
+    }
+
+    /* 2040 Vision Timeline */
+    .px-timeline-container {
+      position: relative;
+      padding-top: 30px;
+    }
+
+    .px-timeline-line {
+      position: absolute;
+      top: 38px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, #d97706 0%, #f59e0b 50%, #d97706 100%);
+      box-shadow: 0 0 10px rgba(245, 158, 11, 0.5);
+    }
+
+    .px-timeline-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .px-timeline-item {
+      text-align: left;
+    }
+
+    .px-timeline-node {
+      width: 10px;
+      height: 10px;
+      background-color: #f59e0b;
+      border-radius: 50%;
+      box-shadow: 0 0 12px #f59e0b;
+      margin-bottom: 18px;
+    }
+
+    .px-timeline-year {
+      font-size: 16px;
+      font-weight: 800;
+      color: #ffffff;
+      display: inline-block;
+      margin-right: 6px;
+    }
+
+    .px-timeline-stage {
+      font-size: 14px;
+      font-weight: 700;
+      color: #d97706;
+    }
+
+    .px-timeline-text {
+      font-size: 10.5px;
+      color: #94a3b8;
+      line-height: 1.5;
+      margin-top: 8px;
+      padding-right: 15px;
+    }
+
+    /* ===== FOUNDER'S VISION ===== */
+    .founder-section {
+      padding: 60px 0;
+      background-color: #ffffff;
+    }
+
+    .founder-grid {
+      display: grid;
+      grid-template-columns: 210px 1.1fr 1fr;
+      gap: 35px;
+      align-items: center;
+    }
+
+    .founder-photo-wrap {
+      position: relative;
+      width: 100%;
+      height: 230px;
+      border-radius: 16px;
+      overflow: hidden;
+      background-color: #0f172a;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+    }
+
+    .founder-photo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(100%);
+    }
+
+    .founder-middle {
+      padding-right: 10px;
+    }
+
+    .founder-middle h2 {
+      font-size: 24px;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 20px;
+      letter-spacing: -0.3px;
+    }
+
+    .founder-name {
+      font-size: 16px;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 2px;
+    }
+
+    .founder-title {
+      font-size: 11px;
+      font-weight: 600;
+      color: #64748b;
+      margin-bottom: 14px;
+    }
+
+    .founder-desc {
+      font-size: 11px;
+      color: #475569;
+      line-height: 1.6;
+    }
+
+    .founder-quote-box {
+      border-left: 1px solid #f1f5f9;
+      padding-left: 30px;
+      position: relative;
+    }
+
+    .quote-icon {
+      font-size: 30px;
+      color: #f59e0b;
+      font-weight: 900;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .quote-text {
+      font-size: 14.5px;
+      font-weight: 600;
+      font-style: italic;
+      color: #0f172a;
+      line-height: 1.45;
+      margin-bottom: 16px;
+    }
+
+    .quote-author {
+      font-size: 11px;
+      font-weight: 700;
+      color: #64748b;
+      text-align: right;
+    }
+
+    /* ===== WHAT WE BELIEVE ===== */
+    .believe-section {
+      padding: 60px 0;
+      background-color: #f8fafc;
+    }
+
+    .believe-tag-wrap {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .believe-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+    }
+
+    .believe-card {
+      background: #ffffff;
+      border: 1px solid #f1f5f9;
+      border-radius: 12px;
+      padding: 22px 18px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .believe-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.04);
+    }
+
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+
+    .card-num {
+      font-size: 14px;
+      font-weight: 800;
+      color: #0f172a;
+    }
+
+    .card-icon {
+      font-size: 14px;
+      color: #f59e0b;
+    }
+
+    .card-title {
+      font-size: 13.5px;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 8px;
+    }
+
+    .card-bold-desc {
+      font-size: 10.5px;
+      font-weight: 700;
+      color: #1e293b;
+      line-height: 1.4;
+      margin-bottom: 10px;
+    }
+
+    .card-sub-desc {
+      font-size: 10px;
+      color: #64748b;
+      line-height: 1.5;
+    }
+
+    /* ===== OUR ECOSYSTEM ===== */
+    .ecosystem-section {
+      padding: 70px 0;
+      background-color: #ffffff;
+    }
+
+    .ecosystem-grid {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .ecosystem-left-title {
+      font-size: 28px;
+      font-weight: 800;
+      line-height: 1.2;
+      color: #0f172a;
+      margin-bottom: 16px;
+    }
+
+    .ecosystem-left-desc {
+      font-size: 12px;
+      color: #64748b;
+      line-height: 1.6;
+    }
+
+    .diagram-container {
+      position: relative;
+      width: 100%;
+      height: 380px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .diagram-svg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .diagram-svg path {
+      fill: none;
+    }
+
+    .diagram-svg .base-line {
+      stroke: #e2e8f0;
+      stroke-width: 1.5;
+      stroke-dasharray: 3 5;
+      opacity: 0.9;
+    }
+
+    .diagram-svg .flow-line {
+      stroke: url(#aboutGradient);
+      stroke-width: 2.2;
+      stroke-linecap: round;
+      stroke-dasharray: 6 10;
+      animation: line-flow 1.9s linear infinite;
+      filter: drop-shadow(0 0 4px rgba(255, 80, 35, 0.6));
+    }
+
+    @keyframes line-flow {
+      to { stroke-dashoffset: -32; }
+    }
+
+    .center-hub {
+      position: relative;
+      z-index: 5;
+      width: 110px;
+      height: 110px;
+      background: #0f172a;
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      text-align: center;
+      box-shadow: 0 0 0 6px rgba(245, 158, 11, 0.15), 0 10px 25px rgba(0,0,0,0.2);
+      border: 1px solid #f59e0b;
+    }
+
+    .center-hub .brand {
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.5px;
+    }
+
+    .center-hub .sub {
+      font-size: 11px;
+      font-weight: 800;
+      color: #f59e0b;
+    }
+
+    .node-pill {
+      position: absolute;
+      z-index: 6;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 20px;
+      padding: 5px 12px 5px 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+      white-space: nowrap;
+      opacity: 0;
+      transform: scale(0.4);
+      transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.22, 0.61, 0.36, 1), box-shadow 0.3s ease;
+    }
+
+    .ecosystem-grid.in-view .node-pill {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .ecosystem-grid.in-view .node-pill:hover {
+      transform: scale(1.08);
+      box-shadow: 0 10px 22px rgba(0,0,0,0.1);
+      transition-delay: 0s !important;
+    }
+
+    .center-hub {
+      opacity: 0;
+      transform: scale(0.6);
+      transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+    }
+
+    .ecosystem-grid.in-view .center-hub {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .node-badge {
+      width: 22px;
+      height: 22px;
+      background: #0f172a;
+      color: #ffffff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 9px;
+      font-weight: 800;
+    }
+
+    .node-info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .node-name {
+      font-size: 9.5px;
+      font-weight: 800;
+      color: #0f172a;
+      line-height: 1.1;
+    }
+
+    .node-type {
+      font-size: 7.5px;
+      color: #64748b;
+      font-weight: 600;
+    }
+
+    .pos-top { top: 10px; left: 50%; translate: -50% 0; transition-delay: 0.05s; }
+    .pos-top-right { top: 50px; right: 20px; transition-delay: 0.15s; }
+    .pos-right { top: 170px; right: 0px; transition-delay: 0.25s; }
+    .pos-bottom-right { bottom: 50px; right: 30px; transition-delay: 0.35s; }
+    .pos-bottom { bottom: 10px; left: 50%; translate: -50% 0; transition-delay: 0.45s; }
+    .pos-bottom-left { bottom: 60px; left: 20px; transition-delay: 0.55s; }
+    .pos-left { top: 170px; left: 0px; transition-delay: 0.65s; }
+    .pos-top-left { top: 50px; left: 20px; transition-delay: 0.75s; }
+
+    /* ===== OUR JOURNEY (TIMELINE) ===== */
+    .journey-section {
+      padding: 50px 0 70px;
+      background-color: #ffffff;
+    }
+
+    .timeline-container {
+      position: relative;
+      margin-top: 30px;
+    }
+
+    .timeline-track {
+      position: absolute;
+      top: 22px;
+      left: 10%;
+      right: 10%;
+      height: 1.5px;
+      background-color: #e2e8f0;
+      z-index: 1;
+    }
+
+    .timeline-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      position: relative;
+      z-index: 2;
+      text-align: center;
+    }
+
+    .timeline-node {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .node-circle {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background-color: #0f172a;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      margin-bottom: 14px;
+      border: 3px solid #ffffff;
+      box-shadow: 0 0 0 1px #e2e8f0;
+    }
+
+    .node-year {
+      font-size: 15px;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 4px;
+    }
+
+    .node-year.active {
+      color: #d97706;
+    }
+
+    .node-title {
+      font-size: 13px;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 6px;
+    }
+
+    .node-desc {
+      font-size: 10.5px;
+      color: #64748b;
+      line-height: 1.5;
+      padding: 0 12px;
+    }
+
+    /* ===== FOOTER ===== */
+    .nxt-footer-section {
+      background: url('images/footer-bg.png') center 30%/cover no-repeat #080c14;
+      position: relative;
+      padding: 50px 20px 30px;
+      color: #ffffff;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .nxt-footer-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 50% 0%, rgba(255, 80, 35, 0.08) 0%, transparent 50%),
+        linear-gradient(180deg, rgba(15, 23, 42, 0.55) 0%, rgba(8, 12, 20, 0.85) 100%);
+      z-index: 1;
+    }
+
+    .nxt-footer-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .nxt-logo-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      padding: 10px 24px;
+      border-radius: 30px;
+      margin-bottom: 12px;
+    }
+
+    .nxt-logo-pill .nxt-text {
+      font-size: 20px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      color: #ffffff;
+    }
+
+    .nxt-logo-pill .x-red {
+      color: #ff5023;
+    }
+
+    .nxt-logo-pill .fund-text {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      color: #94a3b8;
+      margin-left: 2px;
+    }
+
+    .nxt-tagline {
+      font-size: 11px;
+      color: #94a3b8;
+      letter-spacing: 1px;
+      margin-bottom: 28px;
+      font-weight: 500;
+    }
+
+    .footer-links-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px 0;
+      margin-bottom: 20px;
+    }
+
+    .footer-links-row a {
+      color: #94a3b8;
+      font-size: 11px;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 4px 12px;
+      transition: color 0.2s;
+    }
+
+    .footer-links-row a:hover {
+      color: #ffffff;
+    }
+
+    .footer-links-row .sep {
+      color: #334155;
+      font-size: 9px;
+    }
+
+    .footer-email {
+      font-size: 11px;
+      color: #94a3b8;
+      margin-bottom: 22px;
+      font-weight: 500;
+    }
+
+    .footer-email i {
+      color: #ff5023;
+      margin-right: 6px;
+    }
+
+    .social-icons-row {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+
+    .social-btn {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.04);
+      color: #94a3b8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      text-decoration: none;
+      transition: all 0.25s ease;
+    }
+
+    .social-btn:hover {
+      background: #ff3b1d;
+      border-color: #ff3b1d;
+    }
+
+    .copyright-text {
+      font-size: 9.5px;
+      color: #475569;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 900px) {
+      .hero-grid, .vision-grid, .dark-top-grid, .ecosystem-grid {
+        grid-template-columns: 1fr;
+      }
+      .believe-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .px-timeline-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+      }
+      .px-timeline-line {
+        display: none;
+      }
+      .diagram-container {
+        transform: scale(0.85);
+      }
+      .mission-grid, .founder-grid, .cta-top-grid {
+        grid-template-columns: 1fr;
+      }
+      .mission-divider {
+        display: none;
+      }
+      .founder-quote-box {
+        border-left: none;
+        border-top: 1px solid #f1f5f9;
+        padding-left: 0;
+        padding-top: 20px;
+      }
+      .timeline-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+      }
+      .timeline-track {
+        display: none;
+      }
+      .cta-actions-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+      }
+    }
+
+    @media (max-width: 550px) {
+      .believe-grid {
+        grid-template-columns: 1fr;
+      }
+      .px-timeline-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 30px;
+      }
+      .dark-title {
+        font-size: 22px;
+      }
+      .ecosystem-left-title {
+        font-size: 22px;
+      }
+      .founder-middle h2 {
+        font-size: 20px;
+      }
+      .founder-photo-wrap {
+        height: 200px;
+        max-width: 320px;
+        margin: 0 auto;
+      }
+      .ecosystem-right {
+        min-height: 400px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .diagram-container {
+        transform: scale(0.82);
+      }
+      .journey-section, .believe-section, .founder-section, .mission-section, .dark-vision-section {
+        padding: 40px 0;
+      }
+    }
+
+    @media (max-width: 550px) {
+      .container {
+        padding: 0 16px;
+      }
+      .hero-title {
+        font-size: 25px;
+      }
+      .hero-text-sub, .hero-text-lead {
+        font-size: 13.5px;
+      }
+      .world-map-bg {
+        height: 160px;
+        margin-top: 16px;
+      }
+      .diagram-container {
+        transform: scale(0.72);
+        height: 350px;
+      }
+      .node-pill {
+        padding: 3px 9px 3px 4px;
+        gap: 5px;
+      }
+      .node-badge {
+        width: 16px;
+        height: 16px;
+        font-size: 7px;
+      }
+      .node-name {
+        font-size: 8px;
+      }
+      .node-type {
+        font-size: 6px;
+      }
+      .center-hub .title {
+        font-size: 8px;
+      }
+      .center-hub .sub {
+        font-size: 7px;
+      }
+      .founder-photo-wrap {
+        height: 180px;
+        max-width: 280px;
+      }
+      .founder-middle {
+        padding-right: 0;
+      }
+      .founder-middle h2 {
+        font-size: 18px;
+      }
+      .timeline-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+      .px-timeline-grid {
+        gap: 20px;
+      }
+      .quote-text {
+        font-size: 13px;
+      }
+      .dark-lead {
+        font-size: 13.5px;
+      }
+      .dark-desc, .ecosystem-left-desc, .mission-right {
+        font-size: 11px;
+      }
+    }
+
+    /* ===== HEADER / NAVBAR ===== */
+    header {
+      height: auto;
+      border: 0;
+      background: transparent;
+      position: fixed;
+      top: 14px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: min(1180px, calc(100% - 48px));
+      max-width: min(1180px, calc(100% - 48px));
+      padding: 0 20px;
+      z-index: 100;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .logo img {
+      height: 44px;
+      width: auto;
+      object-fit: contain;
+      transition: transform 0.3s ease;
+    }
+
+    .logo:hover img {
+      transform: scale(1.05);
+    }
+
+    nav {
+      justify-self: center;
+      width: min(680px, 100%);
+      height: 54px;
+      padding: 0 14px;
+      border: 1px solid rgba(226, 232, 240, 0.9);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.75);
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.4), 0 0 36px rgba(15, 23, 42, 0.08);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.8px;
+    }
+
+    nav a:not(.btn-funding),
+    nav a:not(.btn-funding):visited {
+      display: inline-flex;
+      align-items: center;
+      position: relative;
+      white-space: nowrap;
+      color: #334155;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      padding: 6px 3px;
+      transition: color 0.3s ease;
+    }
+
+    nav a:not(.btn-funding)::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: #ff5023;
+      transition: width 0.3s ease, left 0.3s ease;
+      box-shadow: 0 0 8px rgba(255, 80, 35, 0.5);
+    }
+
+    nav a:not(.btn-funding):hover,
+    nav a.active {
+      color: #ff5023;
+    }
+
+    nav a:not(.btn-funding):hover::after,
+    nav a.active::after {
+      width: 100%;
+      left: 0;
+    }
+
+    .btn-funding {
+      height: 54px;
+      border: 1px solid rgba(255, 80, 35, 0.6);
+      border-radius: 999px;
+      background: linear-gradient(135deg, #ff5023, #f97316);
+      box-shadow: inset 0 0 22px rgba(239, 113, 61, 0.15), 0 0 24px rgba(255, 80, 35, 0.25);
+      color: #fff;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.8px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 0 24px;
+      white-space: nowrap;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .btn-funding::after {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #ffffff;
+      box-shadow: 0 0 16px 6px rgba(255, 128, 67, 0.6);
+    }
+
+    .btn-funding:hover {
+      transform: translateY(-1px);
+      box-shadow: inset 0 0 22px rgba(239, 113, 61, 0.2), 0 0 34px rgba(255, 80, 35, 0.4);
+    }
+
+    header.nav-hidden {
+      transform: translateX(-50%) translateY(-120%);
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    header {
+      transition: transform 0.4s ease, opacity 0.4s ease, visibility 0.4s ease;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        width: calc(100% - 28px);
+        top: 10px;
+      }
+      nav {
+        width: 100%;
+        height: auto;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 4px;
+        padding: 10px;
+        border-radius: 20px;
+      }
+      nav a:not(.btn-funding) {
+        font-size: 9px;
+        padding: 5px 7px;
+      }
+      .btn-funding {
+        height: 46px;
+        width: 100%;
+        padding: 0 18px;
+      }
+    }
+  /* ================== SCROLL REVEAL ANIMATIONS ================== */
+    [data-reveal] {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
+      will-change: opacity, transform;
+    }
+    [data-reveal].in-view {
+      opacity: 1;
+      transform: none;
+    }
+    [data-reveal="left"] { transform: translateX(-36px); }
+    [data-reveal="right"] { transform: translateX(36px); }
+    [data-reveal="zoom"] { transform: scale(0.93); }
+    [data-reveal="left"].in-view,
+    [data-reveal="right"].in-view,
+    [data-reveal="zoom"].in-view { transform: none; }
+
+    .mission-card, .milestone-card, .value-item, .msg-item, .stat-box {
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+    .mission-card:hover, .milestone-card:hover, .value-item:hover, .msg-item:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 34px rgba(15, 23, 42, 0.1);
+      border-color: rgba(217, 119, 6, 0.28);
+    }
+
+    /* ================== MOBILE NAV ================== */
+    .menu-toggle, .mobile-only-btn { display: none; }
+
+    @media (max-width: 768px) {
+      header {
+        grid-template-columns: 1fr auto !important;
+        gap: 0 !important;
+        width: calc(100% - 24px) !important;
+        padding: 8px 12px;
+        top: 10px;
+      }
+      .menu-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        flex-direction: column;
+        gap: 5px;
+      }
+      .menu-toggle span {
+        display: block;
+        width: 20px;
+        height: 2px;
+        background: #0f172a;
+        border-radius: 4px;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+      }
+      header.menu-open .menu-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+      header.menu-open .menu-toggle span:nth-child(2) { opacity: 0; }
+      header.menu-open .menu-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+      header > nav {
+        position: fixed;
+        top: 60px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        height: auto;
+        width: 100%;
+        border-radius: 0;
+        padding: 0;
+        gap: 0;
+        border: none;
+        border-bottom: 1px solid #e2e8f0;
+        box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+        background: rgba(255,255,255,0.98);
+        backdrop-filter: blur(20px);
+        z-index: 200;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease, padding 0.4s ease;
+      }
+      header.menu-open > nav {
+        max-height: 400px;
+        padding: 8px 0 0;
+      }
+      header > nav a:not(.btn-funding) {
+        justify-content: center;
+        padding: 14px 24px;
+        font-size: 14px;
+        border-bottom: 1px solid #f1f5f9;
+        width: 100%;
+      }
+      header > nav a:not(.btn-funding):last-of-type { border-bottom: none; }
+      .desktop-only-btn { display: none !important; }
+      .mobile-only-btn {
+        display: inline-flex !important;
+        margin: 0 16px 12px;
+        width: calc(100% - 32px) !important;
+        height: 48px !important;
+        justify-content: center;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      [data-reveal] { opacity: 1 !important; transform: none !important; transition: none !important; }
+      .node-pill, .center-hub { opacity: 1 !important; transform: none !important; transition: none !important; }
+      .diagram-svg .flow-line { animation: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header id="site-header">
+    <a href="index.html" class="logo" style="text-decoration:none;">
+      <img src="images/ChatGPT Image Aug 21, 2026, 03_45_23 PM.png" alt="Celebso" style="height: 40px; width: auto; object-fit: contain;">
+    </a>
+    <nav>
+      <a href="about.html" class="active">About</a>
+      <a href="leadership.html">Leadership</a>
+      <a href="news.html">News</a>
+      <a href="patner.html">Partners</a>
+      <a href="VENTURES.html">Ventures</a>
+      <a href="#" class="btn-funding mobile-only-btn">Apply for Funding</a>
+    </nav>
+    <a href="#" class="btn-funding desktop-only-btn">Apply for Funding</a>
+    <button class="menu-toggle" aria-label="Toggle Menu" onclick="document.getElementById('site-header').classList.toggle('menu-open')">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <!-- ==================== ABOUT HERO ==================== -->
+  <section class="hero-section" data-reveal>
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-left">
+          <span class="section-tag">ABOUT CELEBSO GROUP</span>
+          <h1 class="hero-title">Building What<br>Comes Next<span class="dot">.</span></h1>
+          <p class="hero-text-sub">
+            Celebso Group is building a connected ecosystem of technology, intelligence, capital and people &mdash; creating companies, platforms and opportunities designed for the future.
+          </p>
+          <p class="hero-text-lead">
+            Our ambition is simple: bring something new to every field we enter, empower people with talent and dreams, and build the infrastructure that can shape the next generation of global innovation.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== OUR VISION ==================== -->
+  <section class="vision-section" data-reveal="left">
+    <div class="container">
+      <div class="vision-grid">
+        <div class="vision-left">
+          <span class="section-tag">OUR VISION</span>
+          <h2 class="vision-title">From India to the World.<br>From Ideas to Impact.</h2>
+          <div class="sunrise-graphic"></div>
+        </div>
+
+        <div class="vision-right">
+          <div class="vision-right-text">
+            <p>
+              We envision a world where talent is not limited by geography, resources or opportunity. Celebso Group exists to discover ambitious people, support their dreams, build the technology around them and create platforms through which their ideas can compete with the world.
+            </p>
+            <p>
+              Our long-term vision is to build an ecosystem where technology, AI, capital, media, entrepreneurship and human talent work together &mdash; creating new possibilities across industries and opening pathways for the next generation of builders.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== OUR MISSION ==================== -->
+  <section class="mission-section" data-reveal="right">
+    <div class="container">
+      <span class="section-tag">OUR MISSION</span>
+      <div class="mission-grid">
+        <div class="mission-left">
+          <h2>Bridge the Gap Between Talent, Technology, Capital and Opportunity.</h2>
+        </div>
+
+        <div class="mission-divider"></div>
+
+        <div class="mission-right">
+          <p>
+            Our mission is to create an environment where ideas can become companies, talent can become capability, technology can become infrastructure and ambition can become measurable impact.
+          </p>
+          <p>
+            We want to help people who have the vision to build, the courage to start and the determination to compete with the world.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 2040 VISION (DARK BANNER) ==================== -->
+  <section class="dark-vision-section" data-reveal="zoom">
+    <div class="container">
+      <div class="dark-top-grid">
+        <div class="dark-left">
+          <span class="section-tag">THE 2040 VISION</span>
+          <h2 class="dark-title">Building the Infrastructure<br>for a New India.</h2>
+        </div>
+
+        <div class="dark-right">
+          <p class="dark-lead">
+            Our target is to help build an India that stands among the world's superpowers by 2040.
+          </p>
+          <p class="dark-desc">
+            We believe that global strength will be built through technology, innovation, talent, entrepreneurship and infrastructure. Our role is to build the companies, platforms and technological ecosystem that contribute to that future.
+          </p>
+        </div>
+      </div>
+
+      <div class="px-timeline-container">
+        <div class="px-timeline-line"></div>
+        <div class="px-timeline-grid">
+
+          <div class="px-timeline-item">
+            <div class="px-timeline-node"></div>
+            <div><span class="px-timeline-year">2026</span> <span class="px-timeline-stage">Build</span></div>
+            <p class="px-timeline-text">Create strong foundations, products, technology and teams.</p>
+          </div>
+
+          <div class="px-timeline-item">
+            <div class="px-timeline-node"></div>
+            <div><span class="px-timeline-year">2030</span> <span class="px-timeline-stage">Scale</span></div>
+            <p class="px-timeline-text">Expand our ecosystem across industries and global markets.</p>
+          </div>
+
+          <div class="px-timeline-item">
+            <div class="px-timeline-node"></div>
+            <div><span class="px-timeline-year">2035</span> <span class="px-timeline-stage">Connect</span></div>
+            <p class="px-timeline-text">Build deeper infrastructure connecting technology, capital, talent and opportunity.</p>
+          </div>
+
+          <div class="px-timeline-item">
+            <div class="px-timeline-node"></div>
+            <div><span class="px-timeline-year">2040</span> <span class="px-timeline-stage">Impact</span></div>
+            <p class="px-timeline-text">Contribute to an India capable of competing and leading on the global stage.</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOUNDER'S VISION ==================== -->
+  <section class="founder-section" data-reveal="left">
+    <div class="container">
+      <div class="founder-grid">
+        <div class="founder-photo-wrap">
+          <img src="images/ChatGPT Image Sep 11, 2026, 06_53_00 PM.png" alt="Veer Singh">
+        </div>
+
+        <div class="founder-middle">
+          <span class="section-tag">FOUNDER'S VISION</span>
+          <h2>A Vision Led From India</h2>
+
+          <div class="founder-name">Veer Singh</div>
+          <div class="founder-title">Founder, CEO & Chairman</div>
+
+          <p class="founder-desc">
+            The vision behind Celebso Group is to build an ecosystem where technology and human ambition come together &mdash; enabling people, companies and ideas to grow beyond their starting point.
+          </p>
+        </div>
+
+        <div class="founder-quote-box">
+          <div class="quote-icon">&#8220;</div>
+          <p class="quote-text">
+            I don't want to build just another company.<br>
+            I want to build an ecosystem that helps create the companies, talent and technology of tomorrow.
+          </p>
+          <div class="quote-author">&mdash; Veer Singh</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== WHAT WE BELIEVE ==================== -->
+  <section class="believe-section" data-reveal>
+    <div class="container">
+      <div class="believe-tag-wrap">
+        <span class="section-tag">WHAT WE BELIEVE</span>
+      </div>
+
+      <div class="believe-grid" data-reveal="zoom">
+        <div class="believe-card">
+          <div>
+            <div class="card-top">
+              <span class="card-num">01</span>
+              <span class="card-icon">&#128101;</span>
+            </div>
+            <h3 class="card-title">Talent</h3>
+            <p class="card-bold-desc">Talent exists everywhere. Opportunity doesn't.</p>
+          </div>
+          <p class="card-sub-desc">We want to help ambitious people turn their abilities and dreams into real opportunities.</p>
+        </div>
+
+        <div class="believe-card">
+          <div>
+            <div class="card-top">
+              <span class="card-num">02</span>
+              <span class="card-icon">&#128161;</span>
+            </div>
+            <h3 class="card-title">Innovation</h3>
+            <p class="card-bold-desc">Every industry can be reimagined.</p>
+          </div>
+          <p class="card-sub-desc">We enter fields with the mindset of creating something new, better and more meaningful.</p>
+        </div>
+
+        <div class="believe-card">
+          <div>
+            <div class="card-top">
+              <span class="card-num">03</span>
+              <span class="card-icon">&#9881;&#65039;</span>
+            </div>
+            <h3 class="card-title">Technology</h3>
+            <p class="card-bold-desc">Technology should create possibilities.</p>
+          </div>
+          <p class="card-sub-desc">We use AI, software, data and emerging technologies to build scalable infrastructure for the future.</p>
+        </div>
+
+        <div class="believe-card">
+          <div>
+            <div class="card-top">
+              <span class="card-num">04</span>
+              <span class="card-icon">&#127919;</span>
+            </div>
+            <h3 class="card-title">Opportunity</h3>
+            <p class="card-bold-desc">Dreams deserve a chance to compete.</p>
+          </div>
+          <p class="card-sub-desc">We want founders, creators, professionals and innovators to have access to platforms, networks and opportunities that help them grow.</p>
+        </div>
+
+        <div class="believe-card">
+          <div>
+            <div class="card-top">
+              <span class="card-num">05</span>
+              <span class="card-icon">&#9854;&#65039;</span>
+            </div>
+            <h3 class="card-title">Long-Term Thinking</h3>
+            <p class="card-bold-desc">We are building for decades, not quarters.</p>
+          </div>
+          <p class="card-sub-desc">Our ambition extends beyond individual products or companies. We are building an ecosystem designed for long-term global impact.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== OUR ECOSYSTEM ==================== -->
+  <section class="ecosystem-section" data-reveal="left">
+    <div class="container">
+      <div class="ecosystem-grid" data-reveal="zoom">
+        <div class="ecosystem-left">
+          <span class="section-tag">OUR ECOSYSTEM</span>
+          <h2 class="ecosystem-left-title">One Connected<br>Ecosystem</h2>
+          <p class="ecosystem-left-desc">
+            Celebso Group brings together multiple ventures across technology, AI, software, venture growth, space, robotics, digital innovation and other emerging industries.
+          </p>
+        </div>
+
+        <div class="ecosystem-right">
+          <div class="diagram-container">
+
+            <svg class="diagram-svg" viewBox="0 0 500 380">
+              <defs>
+                <linearGradient id="aboutGradient" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="500" y2="380">
+                  <stop offset="0%" stop-color="#ff5023" />
+                  <stop offset="100%" stop-color="#f97316" />
+                </linearGradient>
+              </defs>
+              <path class="base-line" d="M 250 190 C 234 145, 266 88, 250 40" />
+              <path class="flow-line" d="M 250 190 C 234 145, 266 88, 250 40" />
+              <path class="base-line" d="M 250 190 C 296 148, 342 100, 380 70" />
+              <path class="flow-line" d="M 250 190 C 296 148, 342 100, 380 70" />
+              <path class="base-line" d="M 250 190 C 310 176, 356 182, 400 190" />
+              <path class="flow-line" d="M 250 190 C 310 176, 356 182, 400 190" />
+              <path class="base-line" d="M 250 190 C 302 236, 338 272, 370 300" />
+              <path class="flow-line" d="M 250 190 C 302 236, 338 272, 370 300" />
+              <path class="base-line" d="M 250 190 C 265 250, 240 296, 250 340" />
+              <path class="flow-line" d="M 250 190 C 265 250, 240 296, 250 340" />
+              <path class="base-line" d="M 250 190 C 198 236, 162 272, 130 300" />
+              <path class="flow-line" d="M 250 190 C 198 236, 162 272, 130 300" />
+              <path class="base-line" d="M 250 190 C 190 176, 144 182, 100 190" />
+              <path class="flow-line" d="M 250 190 C 190 176, 144 182, 100 190" />
+              <path class="base-line" d="M 250 190 C 204 148, 158 100, 120 70" />
+              <path class="flow-line" d="M 250 190 C 204 148, 158 100, 120 70" />
+            </svg>
+
+            <div class="center-hub">
+              <span class="brand">CELEBSO</span>
+              <span class="sub">GROUPX</span>
+            </div>
+
+            <div class="node-pill pos-top">
+              <div class="node-badge">A</div>
+              <div class="node-info">
+                <span class="node-name">ANTELLAY</span>
+                <span class="node-type">AI &middot; Engineering &middot; Innovation</span>
+              </div>
+            </div>
+
+            <div class="node-pill pos-top-right">
+              <div class="node-badge">X</div>
+              <div class="node-info">
+                <span class="node-name">CELEBSOX</span>
+                <span class="node-type">Technology &middot; Network &middot; Community</span>
+              </div>
+            </div>
+
+            <div class="node-pill pos-right">
+              <div class="node-badge">A</div>
+              <div class="node-info">
+                <span class="node-name">ANTELLAY SPACE</span>
+                <span class="node-type">Space Technology &middot; Intelligence</span>
+              </div>
+            </div>
+
+            <div class="node-pill pos-bottom-right">
+              <div class="node-badge">S</div>
+              <div class="node-info">
+                <span class="node-name">CELEBSO SCHOOL</span>
+                <span class="node-type">Learning &middot; Talent</span>
+              </div>
+            </div>
+
+            <div class="node-pill pos-bottom">
+              <div class="node-badge">SV</div>
+              <div class="node-info">
+                <span class="node-name">STARTUP VALLEY</span>
+                <span class="node-type">Entrepreneurship &middot; Workspace</span>
+              </div>
+            </div>
+
+            <div class="node-pill pos-bottom-left">
+              <div class="node-badge">CP</div>
+              <div class="node-info">
+                <span class="node-name">CELEBSO PRODUCTIONS</span>
+                <span class="node-type">Media &middot; Visibility</span>
+              </div>
+            </div>
+
+            <div class="node-pill pos-left">
+              <div class="node-badge">N</div>
+              <div class="node-info">
+                <span class="node-name">NUMEREXX</span>
+                <span class="node-type">Intelligence &middot; Data</span>
+              </div>
+            </div>
+
+            <div class="node-pill pos-top-left">
+              <div class="node-badge">N</div>
+              <div class="node-info">
+                <span class="node-name">NXTFUND</span>
+                <span class="node-type">Capital &middot; Venture &middot; Growth</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== OUR JOURNEY (TIMELINE) ==================== -->
+  <section class="journey-section" data-reveal>
+    <div class="container">
+      <span class="section-tag">OUR JOURNEY</span>
+
+      <div class="timeline-container">
+        <div class="timeline-track"></div>
+
+        <div class="timeline-grid">
+
+          <div class="timeline-node">
+            <div class="node-circle"><i class="fa-regular fa-calendar"></i></div>
+            <div class="node-year">2021</div>
+            <div class="node-title">The Beginning</div>
+            <p class="node-desc">The foundation of the Celebso vision.</p>
+          </div>
+
+          <div class="timeline-node">
+            <div class="node-circle"><i class="fa-solid fa-rocket"></i></div>
+            <div class="node-year active">2026</div>
+            <div class="node-title">Building the Ecosystem</div>
+            <p class="node-desc">Expanding across technology, AI, capital, space and entrepreneurship.</p>
+          </div>
+
+          <div class="timeline-node">
+            <div class="node-circle"><i class="fa-solid fa-globe"></i></div>
+            <div class="node-year">2030</div>
+            <div class="node-title">Global Expansion</div>
+            <p class="node-desc">Taking the ecosystem beyond India.</p>
+          </div>
+
+          <div class="timeline-node">
+            <div class="node-circle"><i class="fa-solid fa-star"></i></div>
+            <div class="node-year">2040</div>
+            <div class="node-title">The Long-Term Vision</div>
+            <p class="node-desc">Building an ecosystem contributing to India's emergence as a global superpower.</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="nxt-footer-section">
+    <div class="nxt-footer-content">
+      <div class="nxt-logo-pill">
+        <img src="images/ChatGPT Image Aug 18, 2026, 10_51_46 PM.png" alt="Celebso Group" style="height: 28px; width: auto; object-fit: contain;">
+      </div>
+
+      <div class="nxt-tagline">Building the Future Through Technology, Intelligence &amp; Innovation</div>
+
+      <div class="footer-links-row">
+        <a href="about.html">About Us</a>
+        <span class="sep">&bull;</span>
+        <a href="leadership.html">Leadership</a>
+        <span class="sep">&bull;</span>
+        <a href="VENTURES.html">Ventures</a>
+        <span class="sep">&bull;</span>
+        <a href="patner.html">Partners</a>
+        <span class="sep">&bull;</span>
+        <a href="news.html">News</a>
+        <span class="sep">&bull;</span>
+        <a href="contact.html">Contact Us</a>
+      </div>
+
+      <div class="footer-email">
+        <i class="fa-regular fa-envelope"></i> info@celebso.com
+      </div>
+
+      <div class="social-icons-row">
+        <a href="#" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" class="social-btn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="#" class="social-btn"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+
+      <div class="copyright-text">&copy; 2026 Celebso Group. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script>
+    const navbar = document.getElementById('site-header');
+    let lastScrollY = window.scrollY;
+
+    window.addEventListener('scroll', () => {
+      const currentY = window.scrollY;
+      if (navbar.classList.contains('menu-open')) { navbar.classList.remove('nav-hidden'); return; }
+      if (currentY > lastScrollY && currentY > 100) {
+        navbar.classList.add('nav-hidden');
+      } else {
+        navbar.classList.remove('nav-hidden');
+      }
+      lastScrollY = currentY;
+    }, { passive: true });
+
+    navbar.querySelectorAll('nav a:not(.btn-funding)').forEach(link => {
+      link.addEventListener('click', () => navbar.classList.remove('menu-open'));
+    });
+  </script>
+
+<script>
+    (function () {
+      const els = document.querySelectorAll('[data-reveal]');
+      if (!('IntersectionObserver' in window)) { els.forEach(el => el.classList.add('in-view')); return; }
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+      els.forEach(el => io.observe(el));
+    })();
+  </script>
+</body>
+</html>
