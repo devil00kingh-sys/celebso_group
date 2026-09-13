@@ -805,6 +805,15 @@ body {
       gap: 18px;
     }
 
+    .filter-empty {
+      display: none;
+      text-align: center;
+      color: #94a3b8;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 40px 0;
+    }
+
     .wider-card {
       background: #ffffff;
       border: 1px solid #e2e8f0;
@@ -1480,12 +1489,12 @@ body {
       <nav>
         <a href="about.html">About</a>
         <a href="leadership.html">Leadership</a>
-        <a href="news.html">News</a>
+        <a href="gallery.html">Gallery</a>
         <a href="patner.html">Partners</a>
 <a href="VENTURES.html" class="active">Ventures</a>
-      <a href="#" class="btn-funding mobile-only-btn">Apply for Funding</a>
+      <a href="contact.html" class="btn-funding mobile-only-btn">Apply for Funding</a>
     </nav>
-    <a href="#" class="btn-funding desktop-only-btn">Apply for Funding</a>
+    <a href="contact.html" class="btn-funding desktop-only-btn">Apply for Funding</a>
     <button class="menu-toggle" aria-label="Toggle Menu" onclick="document.getElementById('site-header').classList.toggle('menu-open')">
       <span></span><span></span><span></span>
     </button>
@@ -1668,7 +1677,7 @@ body {
             <div class="net-node"><i class="fa-solid fa-atom"></i> GREHNI.AI</div>
             <div class="net-node"><i class="fa-solid fa-building"></i> STARTUP VALLEY</div>
             <div class="net-node"><i class="fa-solid fa-shield-halved"></i> SPACERENTIYA</div>
-            <div class="net-node"><i class="fa-solid fa-mountain"></i> THE TRIP HIKE</div>
+            <div class="net-node"><i class="fa-solid fa-mountain"></i> VEIRAKAS</div>
           </div>
 
         </div>
@@ -1815,9 +1824,9 @@ body {
         <p>Beyond our flagship companies, Celebso Group is developing ventures across multiple emerging industries.</p>
       </div>
 
-      <div class="wider-grid" data-reveal="zoom">
+      <div class="wider-grid" id="wider-grid" data-reveal="zoom">
 
-        <div class="wider-card">
+        <div class="wider-card" data-filter="AI &amp; TECHNOLOGY">
           <div class="wider-header">
             <div class="wider-icon"><i class="fa-solid fa-brain"></i></div>
             <div>
@@ -1829,7 +1838,7 @@ body {
           <a href="#" class="wider-action">Explore &rarr;</a>
         </div>
 
-        <div class="wider-card">
+        <div class="wider-card" data-filter="EDUCATION">
           <div class="wider-header">
             <div class="wider-icon"><i class="fa-solid fa-graduation-cap"></i></div>
             <div>
@@ -1841,7 +1850,7 @@ body {
           <a href="#" class="wider-action">Explore &rarr;</a>
         </div>
 
-        <div class="wider-card">
+        <div class="wider-card" data-filter="AI &amp; TECHNOLOGY DIGITAL">
           <div class="wider-header">
             <div class="wider-icon"><i class="fa-solid fa-droplet"></i></div>
             <div>
@@ -1853,7 +1862,7 @@ body {
           <a href="#" class="wider-action">Explore &rarr;</a>
         </div>
 
-        <div class="wider-card">
+        <div class="wider-card" data-filter="AI &amp; TECHNOLOGY DIGITAL">
           <div class="wider-header">
             <div class="wider-icon"><i class="fa-solid fa-atom"></i></div>
             <div>
@@ -1865,7 +1874,7 @@ body {
           <a href="#" class="wider-action">Explore &rarr;</a>
         </div>
 
-        <div class="wider-card">
+        <div class="wider-card" data-filter="STARTUPS">
           <div class="wider-header">
             <div class="wider-icon"><i class="fa-solid fa-building"></i></div>
             <div>
@@ -1877,7 +1886,7 @@ body {
           <a href="#" class="wider-action">Explore &rarr;</a>
         </div>
 
-        <div class="wider-card">
+        <div class="wider-card" data-filter="REAL ESTATE">
           <div class="wider-header">
             <div class="wider-icon"><i class="fa-solid fa-shield-halved"></i></div>
             <div>
@@ -1889,11 +1898,11 @@ body {
           <a href="#" class="wider-action">Explore &rarr;</a>
         </div>
 
-        <div class="wider-card">
+        <div class="wider-card" data-filter="STARTUPS DIGITAL">
           <div class="wider-header">
             <div class="wider-icon"><i class="fa-solid fa-mountain"></i></div>
             <div>
-              <div class="wider-title">THE TRIP HIKE</div>
+              <div class="wider-title">VEIRAKAS</div>
               <div class="wider-sub">Travel &middot; Experiences</div>
             </div>
           </div>
@@ -1901,7 +1910,7 @@ body {
           <a href="#" class="wider-action">Explore &rarr;</a>
         </div>
 
-        <div class="wider-card">
+<div class="wider-card" data-filter="MEDIA">
           <div class="wider-header">
             <div class="wider-icon"><i class="fa-solid fa-clapperboard"></i></div>
             <div>
@@ -1913,7 +1922,46 @@ body {
           <a href="#" class="wider-action">Explore &rarr;</a>
         </div>
 
+        <div class="wider-card" data-filter="AI &amp; TECHNOLOGY">
+          <div class="wider-header">
+            <div class="wider-icon"><i class="fa-solid fa-microchip"></i></div>
+            <div>
+              <div class="wider-title">ANTELLAY</div>
+              <div class="wider-sub">AI &middot; Engineering &middot; Technology</div>
+            </div>
+          </div>
+          <p class="wider-desc">Building technology and intelligence solutions for the next generation of digital and physical infrastructure.</p>
+          <a href="#" class="wider-action">Explore &rarr;</a>
+        </div>
+
+        <div class="wider-card" data-filter="CAPITAL">
+          <div class="wider-header">
+            <div class="wider-icon"><i class="fa-solid fa-xmark"></i></div>
+            <div>
+              <div class="wider-title">NXTFUND</div>
+              <div class="wider-sub">Capital &middot; Venture &middot; Growth</div>
+            </div>
+          </div>
+          <p class="wider-desc">Building a venture ecosystem connecting capital, founders, businesses and high-potential opportunities.</p>
+          <a href="#" class="wider-action">Explore &rarr;</a>
+        </div>
+
+        <div class="wider-card" data-filter="SPACE">
+          <div class="wider-header">
+            <div class="wider-icon"><i class="fa-solid fa-satellite"></i></div>
+            <div>
+              <div class="wider-title">ANTELLAY SPACE</div>
+              <div class="wider-sub">Space Technology &middot; Intelligence</div>
+            </div>
+          </div>
+          <p class="wider-desc">Building AI-native intelligence and technology for the emerging space economy.</p>
+          <a href="#" class="wider-action">Explore &rarr;</a>
+        </div>
+
       </div>
+
+      <p class="filter-empty" id="filter-empty">No ventures match this category yet.</p>
+
     </section>
 
     <!-- ==================== 9. ACROSS INDUSTRIES ==================== -->
@@ -2089,6 +2137,30 @@ body {
         });
       }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
       els.forEach(el => io.observe(el));
+    })();
+
+    (function () {
+      const tabs = document.querySelectorAll('.tab-pill');
+      const cards = document.querySelectorAll('#wider-grid .wider-card');
+      const empty = document.getElementById('filter-empty');
+
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          tabs.forEach(t => t.classList.remove('active'));
+          tab.classList.add('active');
+          const filter = tab.textContent.trim();
+          let visible = 0;
+
+          cards.forEach(card => {
+            const cats = (card.dataset.filter || '').split(/\s+/);
+            const match = filter === 'ALL' || cats.includes(filter);
+            card.style.display = match ? '' : 'none';
+            if (match) visible++;
+          });
+
+          empty.style.display = visible === 0 ? 'block' : 'none';
+        });
+      });
     })();
   </script>
 </body>

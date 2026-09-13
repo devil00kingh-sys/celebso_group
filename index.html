@@ -181,10 +181,11 @@ body {
     .hero {
       position: relative;
       background: linear-gradient(135deg, #f2f6ff 0%, #fafcff 50%, #fef6f0 100%);
-      padding: 90px 40px 110px;
-      border-radius: 20px;
+      padding: 90px 0 110px;
+      border-radius: 0;
       overflow: hidden;
       min-height: 520px;
+      width: 100%;
       display: flex;
       align-items: center;
       margin-bottom: 40px;
@@ -193,14 +194,9 @@ body {
     .hero::after {
       content: '';
       position: absolute;
-      right: 0;
-      top: 0;
-      width: 62%;
-      height: 100%;
-      background: url('images/ChatGPT Image Sep 11, 2026, 11_03_29 AM.png') right center/cover no-repeat;
+      inset: 0;
+      background: url('images/ChatGPT Image Sep 11, 2026, 11_03_29 AM.png') center/cover no-repeat;
       opacity: 0.9;
-      mask-image: linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,0.55) 75%, rgba(0,0,0,0.15) 100%);
-      -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,0.55) 75%, rgba(0,0,0,0.15) 100%);
       pointer-events: none;
     }
 
@@ -208,15 +204,19 @@ body {
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(to right, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.6) 45%, rgba(255,255,255,0) 75%);
+      background: linear-gradient(to right, rgba(255,255,255,0.96) 0%, rgba(255,255,255,0.78) 40%, rgba(255,255,255,0.35) 65%, rgba(255,255,255,0) 100%);
       z-index: 1;
       pointer-events: none;
     }
 
     .hero-content {
-      max-width: 620px;
+      max-width: 640px;
       position: relative;
       z-index: 2;
+      margin: 0;
+      padding-left: clamp(24px, 8vw, 110px);
+      padding-right: 24px;
+      text-align: left;
     }
 
     .tagline {
@@ -315,14 +315,15 @@ body {
 
     .partners-track {
       display: flex;
-      gap: 60px;
-      animation: partners-scroll 22s linear infinite;
+      width: max-content;
+      animation: partners-scroll 55s linear infinite;
     }
 
     .partners-set {
       display: flex;
       align-items: center;
       gap: 60px;
+      padding-right: 60px;
       flex-shrink: 0;
     }
 
@@ -343,6 +344,13 @@ body {
     .partner-100x { color: #e53935; font-weight: 900; }
     .partner-sequoia { color: #1b5e20; font-family: serif; letter-spacing: 2px; }
     .partner-titan { color: #0d47a1; letter-spacing: 3px; }
+
+    .partner-logo-img {
+      height: 46px;
+      width: auto;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
 
     /* ===== ABOUT SECTION ===== */
     .about-section {
@@ -423,22 +431,22 @@ body {
     }
 
     .vision-content h3 {
-      font-size: 15px;
+      font-size: 21px;
       font-weight: 700;
       color: #1e293b;
       margin-bottom: 20px;
     }
 
     .vision-content ul {
-      list-style-type: disc;
-      padding-left: 18px;
+      list-style: none;
+      padding-left: 0;
     }
 
     .vision-content li {
-      font-size: 12px;
+      font-size: 15.5px;
       color: #475569;
       margin-bottom: 18px;
-      line-height: 1.6;
+      line-height: 1.7;
     }
 
     /* ===== BIG BRANDING FOOTER (from file 1) ===== */
@@ -973,7 +981,7 @@ body {
     /* ===== HERO BRAND LOGO ===== */
     .hero-brand {
       text-align: center;
-      padding: 20px 0 50px;
+      padding: 60px 0 50px;
     }
 
     .brand-title {
@@ -983,6 +991,14 @@ body {
       color: #0f172a;
       text-transform: uppercase;
       margin-bottom: 6px;
+    }
+
+    .brand-logo {
+      max-width: 560px;
+      width: 90%;
+      height: auto;
+      display: block;
+      margin: 0 auto 6px;
     }
 
     .brand-subtext {
@@ -1058,7 +1074,8 @@ body {
 
     .main-card-image {
       width: 100%;
-      height: 250px;
+      height: auto;
+      aspect-ratio: 4 / 3;
       overflow: hidden;
       position: relative;
     }
@@ -1067,6 +1084,7 @@ body {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: center top;
     }
 
     .main-card-body {
@@ -1888,13 +1906,31 @@ body {
 
     /* ===== PRESS LOGOS ===== */
     .press-section {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 25px 10px;
+      overflow: hidden;
+      padding: 25px 0;
       margin-bottom: 40px;
       opacity: 0.75;
       background-color: #faf8f5;
+    }
+
+    .press-track {
+      display: flex;
+      align-items: center;
+      width: max-content;
+      animation: press-scroll 30s linear infinite;
+    }
+
+    .press-set {
+      display: flex;
+      align-items: center;
+      gap: 80px;
+      padding-right: 80px;
+      flex-shrink: 0;
+    }
+
+    @keyframes press-scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
     }
 
     .press-logo {
@@ -1904,6 +1940,7 @@ body {
       letter-spacing: -0.3px;
       display: flex;
       align-items: center;
+      white-space: nowrap;
     }
 
     .logo-entrepreneur {
@@ -2225,7 +2262,7 @@ body {
         font-size: 28px;
       }
       .hero {
-        padding: 70px 24px;
+        padding: 70px 0;
         min-height: auto;
       }
       .stats-grid {
@@ -2248,9 +2285,7 @@ body {
         grid-template-columns: 1fr;
       }
       .press-section {
-        flex-wrap: wrap;
-        gap: 15px;
-        justify-content: center;
+        padding: 20px 0;
       }
     }
 
@@ -2289,9 +2324,7 @@ body {
         min-height: 460px;
       }
       .press-section {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
+        padding: 18px 0;
       }
     }
 
@@ -2300,7 +2333,7 @@ body {
         padding: 0 14px;
       }
       .hero {
-        padding: 90px 14px 46px;
+        padding: 90px 0 46px;
       }
       .hero h1 {
         font-size: 26px;
@@ -2423,7 +2456,7 @@ body {
         gap: 14px;
       }
       .press-section {
-        gap: 12px;
+        padding: 16px 0;
       }
     }
   /* ================== SCROLL REVEAL ANIMATIONS ================== */
@@ -2628,20 +2661,19 @@ body {
     <nav>
       <a href="about.html">About</a>
       <a href="leadership.html">Leadership</a>
-      <a href="news.html">News</a>
+      <a href="gallery.html">Gallery</a>
       <a href="patner.html">Partners</a>
       <a href="VENTURES.html">Ventures</a>
-      <a href="#" class="btn-funding mobile-only-btn">Apply for Funding</a>
+      <a href="contact.html" class="btn-funding mobile-only-btn">Apply for Funding</a>
     </nav>
-    <a href="#" class="btn-funding desktop-only-btn">Apply for Funding</a>
+    <a href="contact.html" class="btn-funding desktop-only-btn">Apply for Funding</a>
     <button class="menu-toggle" aria-label="Toggle Menu" onclick="document.getElementById('site-header').classList.toggle('menu-open')">
       <span></span><span></span><span></span>
     </button>
   </header>
 
   <!-- ==================== HERO SECTION ==================== -->
-  <div class="container">
-    <section class="hero">
+  <section class="hero">
       <div class="hero-content">
         <div class="tagline">&#10022; CELEBSO GROUP</div>
         <h1 class="hero-title" aria-label="Building the Future Through Technology, Intelligence &amp; Innovation.">
@@ -2656,27 +2688,96 @@ body {
         </div>
       </div>
     </section>
-  </div>
 
   <!-- ==================== PARTNERS (Marquee) ==================== -->
-  <div class="container">
-    <section class="partners" data-reveal>
-      <div class="partners-track">
+  <section class="partners" data-reveal>
+<div class="partners-track">
         <div class="partners-set">
-          <div class="partner-logo partner-softbank">SoftBank</div>
-          <div class="partner-logo partner-100x">100X</div>
-          <div class="partner-logo partner-sequoia">SEQUOIA Sequoia</div>
-          <div class="partner-logo partner-titan">TITAN</div>
+          <img class="partner-logo-img" src="images/ChatGPT Image Sep 4, 2026, 12_03_34 PM.png" alt="Partner logo" loading="lazy">
+          <img class="partner-logo-img" src="images/ChatGPT Image Sep 4, 2026, 12_06_13 PM.png" alt="Partner logo" loading="lazy">
+          <img class="partner-logo-img" src="images/ChatGPT Image Sep 4, 2026, 12_08_09 PM.png" alt="Partner logo" loading="lazy">
+          <img class="partner-logo-img" src="images/ChatGPT Image Sep 4, 2026, 12_08_56 PM.png" alt="Partner logo" loading="lazy">
+          <img class="partner-logo-img" src="images/ChatGPT Image Sep 4, 2026, 12_04_21 PM.png" alt="Partner logo" loading="lazy">
         </div>
         <div class="partners-set" aria-hidden="true">
-          <div class="partner-logo partner-softbank">SoftBank</div>
-          <div class="partner-logo partner-100x">100X</div>
-          <div class="partner-logo partner-sequoia">SEQUOIA Sequoia</div>
-          <div class="partner-logo partner-titan">TITAN</div>
+          <img class="partner-logo-img" src="images/ChatGPT Image Sep 4, 2026, 12_03_34 PM.png" alt="Partner logo" loading="lazy">
+          <img class="partner-logo-img" src="images/ChatGPT Image Sep 4, 2026, 12_06_13 PM.png" alt="Partner logo" loading="lazy">
+          <img class="partner-logo-img" src="images/ChatGPT Image Sep 4, 2026, 12_08_09 PM.png" alt="Partner logo" loading="lazy">
+          <img class="partner-logo-img" src="images/ChatGPT Image Sep 4, 2026, 12_08_56 PM.png" alt="Partner logo" loading="lazy">
+          <img class="partner-logo-img" src="images/ChatGPT Image Sep 4, 2026, 12_04_21 PM.png" alt="Partner logo" loading="lazy">
+        </div>
+        <div class="partners-set" aria-hidden="true">
+          <img class="partner-logo-img" src="images/ChatGPT Image Sep 4, 2026, 12_03_34 PM.png" alt="Partner logo" loading="lazy">
+          <img class="partner-logo-img" src="images/ChatGPT Image Sep 4, 2026, 12_06_13 PM.png" alt="Partner logo" loading="lazy">
+          <img class="partner-logo-img" src="images/ChatGPT Image Sep 4, 2026, 12_08_09 PM.png" alt="Partner logo" loading="lazy">
+          <img class="partner-logo-img" src="images/ChatGPT Image Sep 4, 2026, 12_08_56 PM.png" alt="Partner logo" loading="lazy">
+          <img class="partner-logo-img" src="images/ChatGPT Image Sep 4, 2026, 12_04_21 PM.png" alt="Partner logo" loading="lazy">
+        </div>
+        <div class="partners-set" aria-hidden="true">
+          <img class="partner-logo-img" src="images/ChatGPT Image Sep 4, 2026, 12_03_34 PM.png" alt="Partner logo" loading="lazy">
+          <img class="partner-logo-img" src="images/ChatGPT Image Sep 4, 2026, 12_06_13 PM.png" alt="Partner logo" loading="lazy">
+          <img class="partner-logo-img" src="images/ChatGPT Image Sep 4, 2026, 12_08_09 PM.png" alt="Partner logo" loading="lazy">
+          <img class="partner-logo-img" src="images/ChatGPT Image Sep 4, 2026, 12_08_56 PM.png" alt="Partner logo" loading="lazy">
+          <img class="partner-logo-img" src="images/ChatGPT Image Sep 4, 2026, 12_04_21 PM.png" alt="Partner logo" loading="lazy">
+        </div>
+        <div class="partners-set" aria-hidden="true">
+          <img class="partner-logo-img" src="images/ChatGPT Image Sep 4, 2026, 12_03_34 PM.png" alt="Partner logo" loading="lazy">
+          <img class="partner-logo-img" src="images/ChatGPT Image Sep 4, 2026, 12_06_13 PM.png" alt="Partner logo" loading="lazy">
+          <img class="partner-logo-img" src="images/ChatGPT Image Sep 4, 2026, 12_08_09 PM.png" alt="Partner logo" loading="lazy">
+          <img class="partner-logo-img" src="images/ChatGPT Image Sep 4, 2026, 12_08_56 PM.png" alt="Partner logo" loading="lazy">
+          <img class="partner-logo-img" src="images/ChatGPT Image Sep 4, 2026, 12_04_21 PM.png" alt="Partner logo" loading="lazy">
+        </div>
+        <div class="partners-set" aria-hidden="true">
+          <img class="partner-logo-img" src="images/ChatGPT Image Sep 4, 2026, 12_03_34 PM.png" alt="Partner logo" loading="lazy">
+          <img class="partner-logo-img" src="images/ChatGPT Image Sep 4, 2026, 12_06_13 PM.png" alt="Partner logo" loading="lazy">
+          <img class="partner-logo-img" src="images/ChatGPT Image Sep 4, 2026, 12_08_09 PM.png" alt="Partner logo" loading="lazy">
+          <img class="partner-logo-img" src="images/ChatGPT Image Sep 4, 2026, 12_08_56 PM.png" alt="Partner logo" loading="lazy">
+          <img class="partner-logo-img" src="images/ChatGPT Image Sep 4, 2026, 12_04_21 PM.png" alt="Partner logo" loading="lazy">
+        </div>
+        <div class="partners-set" aria-hidden="true">
+          <img class="partner-logo-img" src="images/ChatGPT Image Sep 4, 2026, 12_03_34 PM.png" alt="Partner logo" loading="lazy">
+          <img class="partner-logo-img" src="images/ChatGPT Image Sep 4, 2026, 12_06_13 PM.png" alt="Partner logo" loading="lazy">
+          <img class="partner-logo-img" src="images/ChatGPT Image Sep 4, 2026, 12_08_09 PM.png" alt="Partner logo" loading="lazy">
+          <img class="partner-logo-img" src="images/ChatGPT Image Sep 4, 2026, 12_08_56 PM.png" alt="Partner logo" loading="lazy">
+          <img class="partner-logo-img" src="images/ChatGPT Image Sep 4, 2026, 12_04_21 PM.png" alt="Partner logo" loading="lazy">
+        </div>
+        <div class="partners-set" aria-hidden="true">
+          <img class="partner-logo-img" src="images/ChatGPT Image Sep 4, 2026, 12_03_34 PM.png" alt="Partner logo" loading="lazy">
+          <img class="partner-logo-img" src="images/ChatGPT Image Sep 4, 2026, 12_06_13 PM.png" alt="Partner logo" loading="lazy">
+          <img class="partner-logo-img" src="images/ChatGPT Image Sep 4, 2026, 12_08_09 PM.png" alt="Partner logo" loading="lazy">
+          <img class="partner-logo-img" src="images/ChatGPT Image Sep 4, 2026, 12_08_56 PM.png" alt="Partner logo" loading="lazy">
+          <img class="partner-logo-img" src="images/ChatGPT Image Sep 4, 2026, 12_04_21 PM.png" alt="Partner logo" loading="lazy">
+        </div>
+        <div class="partners-set" aria-hidden="true">
+          <img class="partner-logo-img" src="images/ChatGPT Image Sep 4, 2026, 12_03_34 PM.png" alt="Partner logo" loading="lazy">
+          <img class="partner-logo-img" src="images/ChatGPT Image Sep 4, 2026, 12_06_13 PM.png" alt="Partner logo" loading="lazy">
+          <img class="partner-logo-img" src="images/ChatGPT Image Sep 4, 2026, 12_08_09 PM.png" alt="Partner logo" loading="lazy">
+          <img class="partner-logo-img" src="images/ChatGPT Image Sep 4, 2026, 12_08_56 PM.png" alt="Partner logo" loading="lazy">
+          <img class="partner-logo-img" src="images/ChatGPT Image Sep 4, 2026, 12_04_21 PM.png" alt="Partner logo" loading="lazy">
+        </div>
+        <div class="partners-set" aria-hidden="true">
+          <img class="partner-logo-img" src="images/ChatGPT Image Sep 4, 2026, 12_03_34 PM.png" alt="Partner logo" loading="lazy">
+          <img class="partner-logo-img" src="images/ChatGPT Image Sep 4, 2026, 12_06_13 PM.png" alt="Partner logo" loading="lazy">
+          <img class="partner-logo-img" src="images/ChatGPT Image Sep 4, 2026, 12_08_09 PM.png" alt="Partner logo" loading="lazy">
+          <img class="partner-logo-img" src="images/ChatGPT Image Sep 4, 2026, 12_08_56 PM.png" alt="Partner logo" loading="lazy">
+          <img class="partner-logo-img" src="images/ChatGPT Image Sep 4, 2026, 12_04_21 PM.png" alt="Partner logo" loading="lazy">
+        </div>
+        <div class="partners-set" aria-hidden="true">
+          <img class="partner-logo-img" src="images/ChatGPT Image Sep 4, 2026, 12_03_34 PM.png" alt="Partner logo" loading="lazy">
+          <img class="partner-logo-img" src="images/ChatGPT Image Sep 4, 2026, 12_06_13 PM.png" alt="Partner logo" loading="lazy">
+          <img class="partner-logo-img" src="images/ChatGPT Image Sep 4, 2026, 12_08_09 PM.png" alt="Partner logo" loading="lazy">
+          <img class="partner-logo-img" src="images/ChatGPT Image Sep 4, 2026, 12_08_56 PM.png" alt="Partner logo" loading="lazy">
+          <img class="partner-logo-img" src="images/ChatGPT Image Sep 4, 2026, 12_04_21 PM.png" alt="Partner logo" loading="lazy">
+        </div>
+        <div class="partners-set" aria-hidden="true">
+          <img class="partner-logo-img" src="images/ChatGPT Image Sep 4, 2026, 12_03_34 PM.png" alt="Partner logo" loading="lazy">
+          <img class="partner-logo-img" src="images/ChatGPT Image Sep 4, 2026, 12_06_13 PM.png" alt="Partner logo" loading="lazy">
+          <img class="partner-logo-img" src="images/ChatGPT Image Sep 4, 2026, 12_08_09 PM.png" alt="Partner logo" loading="lazy">
+          <img class="partner-logo-img" src="images/ChatGPT Image Sep 4, 2026, 12_08_56 PM.png" alt="Partner logo" loading="lazy">
+          <img class="partner-logo-img" src="images/ChatGPT Image Sep 4, 2026, 12_04_21 PM.png" alt="Partner logo" loading="lazy">
         </div>
       </div>
-    </section>
-  </div>
+  </section>
 
   <!-- ==================== ABOUT + STATS ==================== -->
   <div class="container">
@@ -2846,7 +2947,7 @@ body {
     <section class="cta-banner-wrapper" data-reveal="zoom">
       <div class="cta-left">
         <div class="cta-buttons">
-          <button class="btn-red">Apply For Funding &rarr;</button>
+          <a href="contact.html" class="btn-red">Apply For Funding &rarr;</a>
           <button class="btn-outline-dark">Explore Startup Valley</button>
         </div>
         <div class="cta-text">
@@ -2857,27 +2958,6 @@ body {
       <div class="banner-overlay-card">
         <span class="small-icon">&#128640;</span>
         <span class="text">Startup<br>Incubation</span>
-      </div>
-    </section>
-
-    <!-- Meetup Banner -->
-    <section class="meetup-card" data-reveal>
-      <div class="meetup-img">
-        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="Meetup Event">
-      </div>
-      <div class="meetup-content">
-        <div class="badge-upcoming">
-          <span></span> UPCOMING
-        </div>
-        <h3>NXTFund Founder Meetup &ndash; Bengaluru</h3>
-        <p>An exclusive evening for founders to connect, collaborate and grow together.</p>
-        <div class="meetup-footer">
-          <div class="meetup-meta">
-            <span>&#128197; 20 Aug 2026</span>
-            <span>&#128205; Bengaluru, India</span>
-          </div>
-          <button class="btn-register">Register &rarr;</button>
-        </div>
       </div>
     </section>
   </div>
@@ -2959,9 +3039,30 @@ body {
         </div>
       </section>
 
+      <!-- Meetup Banner -->
+      <section class="meetup-card" data-reveal>
+        <div class="meetup-img">
+          <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="Meetup Event">
+        </div>
+        <div class="meetup-content">
+          <div class="badge-upcoming">
+            <span></span> UPCOMING
+          </div>
+          <h3>NXTFund Founder Meetup &ndash; Bengaluru</h3>
+          <p>An exclusive evening for founders to connect, collaborate and grow together.</p>
+          <div class="meetup-footer">
+            <div class="meetup-meta">
+              <span>&#128197; 20 Aug 2026</span>
+              <span>&#128205; Bengaluru, India</span>
+            </div>
+            <button class="btn-register">Register &rarr;</button>
+          </div>
+        </div>
+      </section>
+
       <!-- Antellay Brand Logo -->
       <section class="hero-brand" data-reveal>
-        <h1 class="brand-title">A N T E L L A Y .</h1>
+        <img class="brand-logo" src="images/ChatGPT Image Sep 13, 2026, 09_21_17 AM.png" alt="A N T E L L A Y Logo">
         <div class="brand-subtext">AI &bull; GIS &bull; Engineering &bull; Innovation</div>
       </section>
 
@@ -2976,25 +3077,25 @@ body {
         <div class="brands-grid">
           <div class="main-brand-card">
             <div class="main-card-image">
-              <img src="images/WhatsApp Image 2026-09-03 at 9.48.57 PM.jpeg" alt="VR Woman Antellay Space">
+              <img src="images/WhatsApp Image 2026-09-12 at 8.51.06 PM.jpeg" alt="CelebsoX Phone App">
             </div>
             <div class="main-card-body">
-              <h3 class="main-card-title">A N T E L L A Y Space</h3>
-              <p class="main-card-desc">Revolutionizing logistics through real-time quantum optimization and autonomous fleet management.</p>
+              <h3 class="main-card-title">CelebsoX</h3>
+              <p class="main-card-desc">Autonomous treasury management for high-grow...</p>
               <div class="tags">
                 <span class="tag">AI/ML</span>
-                <span class="tag">Logistics</span>
+                <span class="tag">Treasury</span>
               </div>
             </div>
           </div>
           <div class="side-brands-stack">
             <div class="side-card">
               <div class="side-card-img">
-                <img src="images/Gemini_Generated_Image_f7jqlof7jqlof7jq.png" alt="CelebsoX Phone App">
+                <img src="images/WhatsApp Image 2026-09-03 at 9.48.57 PM.jpeg" alt="VR Woman Antellay Space">
               </div>
               <div class="side-card-content">
-                <h3>CelebsoX</h3>
-                <p>Autonomous treasury management for high-grow...</p>
+                <h3>A N T E L L A Y Space</h3>
+                <p>Revolutionizing logistics through real-time quantum optimization and autonomous fleet management.</p>
               </div>
             </div>
             <div class="side-card">
@@ -3067,7 +3168,7 @@ body {
             </div>
           </div>
           <div class="btn-apply-wrap">
-            <a href="#" class="btn-apply-school">Apply Now &rarr;</a>
+            <a href="https://school.celebso.com/" target="_blank" rel="noopener" class="btn-apply-school">Apply Now &rarr;</a>
             <div class="school-subtext">Join. Learn. Grow.</div>
           </div>
         </div>
@@ -3200,15 +3301,24 @@ body {
   </div>
 
   <!-- ==================== PRESS LOGOS ==================== -->
-  <div class="container">
-    <section class="press-section" data-reveal>
-      <div class="press-logo logo-entrepreneur">entrepreneur <span>INDIA</span></div>
-      <div class="press-logo logo-zoom">ZOOM</div>
-      <div class="press-logo logo-startupnews">StartupNews.fyi</div>
-      <div class="press-logo logo-yourstory">YOURSTORY</div>
-      <div class="press-logo logo-forbes">Forbes <span>INDIA</span></div>
-    </section>
-  </div>
+  <section class="press-section" data-reveal>
+    <div class="press-track">
+      <div class="press-set">
+        <div class="press-logo logo-entrepreneur">entrepreneur <span>INDIA</span></div>
+        <div class="press-logo logo-zoom">ZOOM</div>
+        <div class="press-logo logo-startupnews">StartupNews.fyi</div>
+        <div class="press-logo logo-yourstory">YOURSTORY</div>
+        <div class="press-logo logo-forbes">Forbes <span>INDIA</span></div>
+      </div>
+      <div class="press-set" aria-hidden="true">
+        <div class="press-logo logo-entrepreneur">entrepreneur <span>INDIA</span></div>
+        <div class="press-logo logo-zoom">ZOOM</div>
+        <div class="press-logo logo-startupnews">StartupNews.fyi</div>
+        <div class="press-logo logo-yourstory">YOURSTORY</div>
+        <div class="press-logo logo-forbes">Forbes <span>INDIA</span></div>
+      </div>
+    </div>
+  </section>
 
   <!-- ==================== INCUBATION HERO ==================== -->
   <div class="container">
