@@ -132,11 +132,11 @@
 
         .btn-funding {
             height: 54px;
-            border: 1px solid rgba(255, 80, 35, 0.6);
+            border: 1px solid rgba(245, 166, 35, 0.7);
             border-radius: 999px;
-            background: linear-gradient(135deg, #ff5023, #f97316);
-            box-shadow: inset 0 0 22px rgba(239, 113, 61, 0.15), 0 0 24px rgba(255, 80, 35, 0.25);
-            color: #fff;
+            background: linear-gradient(135deg, #facc15, #f5a623);
+            box-shadow: inset 0 0 22px rgba(250, 204, 21, 0.15), 0 0 24px rgba(245, 166, 35, 0.3);
+            color: #0f172a;
             text-decoration: none;
             text-transform: uppercase;
             font-size: 10px;
@@ -156,13 +156,13 @@
             width: 8px;
             height: 8px;
             border-radius: 50%;
-            background: #ffffff;
-            box-shadow: 0 0 16px 6px rgba(255, 128, 67, 0.6);
+            background: #0f172a;
+            box-shadow: 0 0 16px 6px rgba(245, 166, 35, 0.55);
         }
 
         .btn-funding:hover {
             transform: translateY(-1px);
-            box-shadow: inset 0 0 22px rgba(239, 113, 61, 0.2), 0 0 34px rgba(255, 80, 35, 0.4);
+            box-shadow: inset 0 0 22px rgba(250, 204, 21, 0.25), 0 0 34px rgba(245, 166, 35, 0.5);
         }
 
         header.nav-hidden {
@@ -452,9 +452,9 @@
       <a href="gallery.html">Gallery</a>
       <a href="patner.html" class="active">Partners</a>
       <a href="VENTURES.html">Ventures</a>
-      <a href="contact.html" class="btn-funding mobile-only-btn">Apply for Funding</a>
+      <a href="contact.html" class="btn-funding mobile-only-btn">Contact Us</a>
     </nav>
-    <a href="contact.html" class="btn-funding desktop-only-btn">Apply for Funding</a>
+    <a href="contact.html" class="btn-funding desktop-only-btn">Contact Us</a>
     <button class="menu-toggle" aria-label="Toggle Menu" onclick="document.getElementById('site-header').classList.toggle('menu-open')">
       <span></span><span></span><span></span>
     </button>
@@ -495,41 +495,41 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="partners-grid">
             <!-- Dynamically rendered from /api/partners -->
 
-            <div class="border border-gray-100 rounded-2xl p-8 flex flex-col items-center text-center hover:shadow-lg transition-shadow bg-white" data-category="corporate technology">
-                <img src="images/ChatGPT Image Sep 1, 2026, 10_01_54 AM.png" alt="Microsoft" class="partner-logo-img h-12 object-contain mb-6">
-                <h4 class="font-bold text-gray-900 mb-1">Microsoft</h4>
-                <p class="text-xs font-semibold text-brand-orange mb-4">Technology Partner</p>
-                <p class="text-sm text-gray-500 mb-6 flex-grow leading-relaxed">Empowering startups with world-class technology and developer tools.</p>
+            <div class="border border-gray-100 rounded-2xl p-8 flex flex-col items-center text-center hover:shadow-lg transition-shadow bg-white" data-category="ecosystem">
+                <img src="images/ChatGPT Image Sep 4, 2026, 12_06_13 PM.png" alt="Startup Chaupal" class="partner-logo-img h-12 object-contain mb-6">
+                <h4 class="font-bold text-gray-900 mb-1">Startup Chaupal</h4>
+                <p class="text-xs font-semibold text-brand-orange mb-4">Startup Ecosystem Partner</p>
+                <p class="text-sm text-gray-500 mb-6 flex-grow leading-relaxed">Connecting founders, investors and ecosystem stakeholders.</p>
                 <a href="#" class="text-brand-orange text-sm font-medium hover:underline inline-flex items-center">
                     View Partner <i class="fa-solid fa-arrow-right ml-1 text-xs"></i>
                 </a>
             </div>
 
-            <div class="border border-gray-100 rounded-2xl p-8 flex flex-col items-center text-center hover:shadow-lg transition-shadow bg-white" data-category="corporate service technology">
-                <img src="images/ChatGPT Image Sep 1, 2026, 10_07_02 AM.png" alt="HubSpot" class="partner-logo-img h-10 object-contain mb-8">
-                <h4 class="font-bold text-gray-900 mb-1">HubSpot</h4>
-                <p class="text-xs font-semibold text-brand-orange mb-4">Growth Partner</p>
-                <p class="text-sm text-gray-500 mb-6 flex-grow leading-relaxed">Helping startups grow better with CRM, marketing and automation tools.</p>
+            <div class="border border-gray-100 rounded-2xl p-8 flex flex-col items-center text-center hover:shadow-lg transition-shadow bg-white" data-category="ecosystem investor">
+                <img src="images/ChatGPT Image Sep 4, 2026, 12_08_09 PM.png" alt="Marwari Catalysts" class="partner-logo-img h-12 object-contain mb-6">
+                <h4 class="font-bold text-gray-900 mb-1">Marwari Catalysts</h4>
+                <p class="text-xs font-semibold text-brand-orange mb-4">Investment & Startup Partner</p>
+                <p class="text-sm text-gray-500 mb-6 flex-grow leading-relaxed">Supporting high-potential startups through investment and mentorship.</p>
                 <a href="#" class="text-brand-orange text-sm font-medium hover:underline inline-flex items-center">
                     View Partner <i class="fa-solid fa-arrow-right ml-1 text-xs"></i>
                 </a>
             </div>
 
-            <div class="border border-gray-100 rounded-2xl p-8 flex flex-col items-center text-center hover:shadow-lg transition-shadow bg-white" data-category="corporate service technology">
-                <img src="images/ChatGPT Image Sep 1, 2026, 10_08_53 AM.png" alt="Slack" class="partner-logo-img h-10 object-contain mb-8">
-                <h4 class="font-bold text-gray-900 mb-1">Slack</h4>
-                <p class="text-xs font-semibold text-brand-orange mb-4">Collaboration Partner</p>
-                <p class="text-sm text-gray-500 mb-6 flex-grow leading-relaxed">Bringing teams and tools together to build and ship faster.</p>
+            <div class="border border-gray-100 rounded-2xl p-8 flex flex-col items-center text-center hover:shadow-lg transition-shadow bg-white" data-category="ecosystem">
+                <img src="images/ChatGPT Image Sep 4, 2026, 12_08_56 PM.png" alt="iStart Rajasthan" class="partner-logo-img h-12 object-contain mb-6">
+                <h4 class="font-bold text-gray-900 mb-1">iStart Rajasthan</h4>
+                <p class="text-xs font-semibold text-brand-orange mb-4">Startup Ecosystem Partner</p>
+                <p class="text-sm text-gray-500 mb-6 flex-grow leading-relaxed">Supporting Rajasthan's startup ecosystem through incubation and mentorship.</p>
                 <a href="#" class="text-brand-orange text-sm font-medium hover:underline inline-flex items-center">
                     View Partner <i class="fa-solid fa-arrow-right ml-1 text-xs"></i>
                 </a>
             </div>
 
-            <div class="border border-gray-100 rounded-2xl p-8 flex flex-col items-center text-center hover:shadow-lg transition-shadow bg-white" data-category="corporate technology">
-                <img src="images/ChatGPT Image Sep 11, 2026, 11_07_59 PM.png" alt="Google" class="partner-logo-img h-12 object-contain mb-6">
-                <h4 class="font-bold text-gray-900 mb-1">Google</h4>
-                <p class="text-xs font-semibold text-brand-orange mb-4">Technology Partner</p>
-                <p class="text-sm text-gray-500 mb-6 flex-grow leading-relaxed">Helping startups build, scale and innovate with Google's technology ecosystem.</p>
+            <div class="border border-gray-100 rounded-2xl p-8 flex flex-col items-center text-center hover:shadow-lg transition-shadow bg-white" data-category="investor ecosystem">
+                <img src="images/ChatGPT Image Sep 4, 2026, 12_04_21 PM.png" alt="Fluid Ventures" class="partner-logo-img h-12 object-contain mb-6">
+                <h4 class="font-bold text-gray-900 mb-1">Fluid Ventures</h4>
+                <p class="text-xs font-semibold text-brand-orange mb-4">Venture Partner</p>
+                <p class="text-sm text-gray-500 mb-6 flex-grow leading-relaxed">Supporting emerging startups with capital and strategic guidance.</p>
                 <a href="#" class="text-brand-orange text-sm font-medium hover:underline inline-flex items-center">
                     View Partner <i class="fa-solid fa-arrow-right ml-1 text-xs"></i>
                 </a>
@@ -570,46 +570,6 @@
                 <h4 class="font-bold text-gray-900 mb-1">IDFC FIRST Bank</h4>
                 <p class="text-xs font-semibold text-brand-orange mb-4">Banking Partner</p>
                 <p class="text-sm text-gray-500 mb-6 flex-grow leading-relaxed">Supporting entrepreneurs and businesses with modern financial solutions.</p>
-                <a href="#" class="text-brand-orange text-sm font-medium hover:underline inline-flex items-center">
-                    View Partner <i class="fa-solid fa-arrow-right ml-1 text-xs"></i>
-                </a>
-            </div>
-
-            <div class="border border-gray-100 rounded-2xl p-8 flex flex-col items-center text-center hover:shadow-lg transition-shadow bg-white" data-category="ecosystem">
-                <img src="images/ChatGPT Image Sep 4, 2026, 12_06_13 PM.png" alt="Startup Chaupal" class="partner-logo-img h-12 object-contain mb-6">
-                <h4 class="font-bold text-gray-900 mb-1">Startup Chaupal</h4>
-                <p class="text-xs font-semibold text-brand-orange mb-4">Startup Ecosystem Partner</p>
-                <p class="text-sm text-gray-500 mb-6 flex-grow leading-relaxed">Connecting founders, investors and ecosystem stakeholders.</p>
-                <a href="#" class="text-brand-orange text-sm font-medium hover:underline inline-flex items-center">
-                    View Partner <i class="fa-solid fa-arrow-right ml-1 text-xs"></i>
-                </a>
-            </div>
-
-            <div class="border border-gray-100 rounded-2xl p-8 flex flex-col items-center text-center hover:shadow-lg transition-shadow bg-white" data-category="ecosystem investor">
-                <img src="images/ChatGPT Image Sep 4, 2026, 12_08_09 PM.png" alt="Marwari Catalysts" class="partner-logo-img h-12 object-contain mb-6">
-                <h4 class="font-bold text-gray-900 mb-1">Marwari Catalysts</h4>
-                <p class="text-xs font-semibold text-brand-orange mb-4">Investment & Startup Partner</p>
-                <p class="text-sm text-gray-500 mb-6 flex-grow leading-relaxed">Supporting high-potential startups through investment and mentorship.</p>
-                <a href="#" class="text-brand-orange text-sm font-medium hover:underline inline-flex items-center">
-                    View Partner <i class="fa-solid fa-arrow-right ml-1 text-xs"></i>
-                </a>
-            </div>
-
-            <div class="border border-gray-100 rounded-2xl p-8 flex flex-col items-center text-center hover:shadow-lg transition-shadow bg-white" data-category="ecosystem">
-                <img src="images/ChatGPT Image Sep 4, 2026, 12_08_56 PM.png" alt="iStart Rajasthan" class="partner-logo-img h-12 object-contain mb-6">
-                <h4 class="font-bold text-gray-900 mb-1">iStart Rajasthan</h4>
-                <p class="text-xs font-semibold text-brand-orange mb-4">Startup Ecosystem Partner</p>
-                <p class="text-sm text-gray-500 mb-6 flex-grow leading-relaxed">Supporting Rajasthan's startup ecosystem through incubation and mentorship.</p>
-                <a href="#" class="text-brand-orange text-sm font-medium hover:underline inline-flex items-center">
-                    View Partner <i class="fa-solid fa-arrow-right ml-1 text-xs"></i>
-                </a>
-            </div>
-
-            <div class="border border-gray-100 rounded-2xl p-8 flex flex-col items-center text-center hover:shadow-lg transition-shadow bg-white" data-category="investor ecosystem">
-                <img src="images/ChatGPT Image Sep 4, 2026, 12_04_21 PM.png" alt="Fluid Ventures" class="partner-logo-img h-12 object-contain mb-6">
-                <h4 class="font-bold text-gray-900 mb-1">Fluid Ventures</h4>
-                <p class="text-xs font-semibold text-brand-orange mb-4">Venture Partner</p>
-                <p class="text-sm text-gray-500 mb-6 flex-grow leading-relaxed">Supporting emerging startups with capital and strategic guidance.</p>
                 <a href="#" class="text-brand-orange text-sm font-medium hover:underline inline-flex items-center">
                     View Partner <i class="fa-solid fa-arrow-right ml-1 text-xs"></i>
                 </a>
